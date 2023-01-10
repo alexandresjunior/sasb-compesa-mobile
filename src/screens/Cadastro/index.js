@@ -111,7 +111,7 @@ const estilos = StyleSheet.create({
         borderColor: "#CACACA",
         borderWidth: 1,
         padding: 10,
-
+        backgroundColor: "white"
     },
     link: {
         color: "#223F99",
