@@ -4,7 +4,7 @@ import logo from "../../../assets/compesa_favicon.png";
 
 const TelaInicial = () => {
     return (
-        <View>
+        <View style={estilos.container}>
             <Image source={logo} style={estilos.imagem} />
 
             <View style={estilos.botoes}>
@@ -22,8 +22,14 @@ const TelaInicial = () => {
 export default TelaInicial;
 
 const estilos = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     imagem: {
-        marginTop: 150,
+        marginTop: 100,
         width: 200,
         height: 200,
     },
