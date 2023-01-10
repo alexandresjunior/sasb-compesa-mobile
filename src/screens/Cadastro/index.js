@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import logo from "../../../assets/sasb_compesa_logo.png";
 
 const Cadastro = () => {
+    const navigation = useNavigation();
+
     const [matricula, setMatricula] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -19,7 +22,7 @@ const Cadastro = () => {
                     <Text style={estilos.titulo}>Bem-vindo!</Text>
                     <View style={estilos.containerRow}>
                         <Text>Já possui uma conta?</Text>
-                        <TouchableOpacity onPress={() => { }}>
+                        <TouchableOpacity onPress={() => { navigation.navigate('Log In') }}>
                             <Text style={estilos.link}>Acessar minha conta</Text>
                         </TouchableOpacity>
                     </View>
@@ -67,7 +70,7 @@ const Cadastro = () => {
 
                 <TouchableOpacity
                     style={estilos.botao}
-                    onPress={() => { }}>
+                    onPress={() => { navigation.navigate('Tab Rotas') }}>
                     <Text style={estilos.textoBotao}>CADASTRAR</Text>
                 </TouchableOpacity>
             </View>

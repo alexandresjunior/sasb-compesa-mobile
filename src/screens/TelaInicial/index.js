@@ -1,17 +1,20 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import logo from "../../../assets/compesa_favicon.png";
 
 const TelaInicial = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={estilos.container}>
             <Image source={logo} style={estilos.imagem} />
 
             <View style={estilos.botoes}>
-                <TouchableOpacity style={estilos.botaoLogIn} onPress={() => { }}>
+                <TouchableOpacity style={estilos.botaoLogIn} onPress={() => { navigation.navigate('Log In') }}>
                     <Text style={estilos.textoBotaoLogIn}>ENTRAR</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoSignUp} onPress={() => { }}>
+                <TouchableOpacity style={estilos.botaoSignUp} onPress={() => { navigation.navigate('Cadastro') }}>
                     <Text style={estilos.textoBotaoSignUp}>CADASTRAR</Text>
                 </TouchableOpacity>
             </View>

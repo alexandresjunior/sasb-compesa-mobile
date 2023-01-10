@@ -1,9 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import logo from "../../../assets/sasb_compesa_logo.png";
 
 const Login = () => {
+    const navigation = useNavigation();
+
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [checked, setChecked] = useState(false);
@@ -19,7 +22,7 @@ const Login = () => {
                     <Text style={estilos.titulo}>Bem-vindo!</Text>
                     <View style={estilos.containerRow}>
                         <Text>Não possui uma conta?</Text>
-                        <TouchableOpacity onPress={() => { }}>
+                        <TouchableOpacity onPress={() => { navigation.navigate('Cadastro') }}>
                             <Text style={estilos.link}>Cadastrar nova conta</Text>
                         </TouchableOpacity>
                     </View>
@@ -47,7 +50,7 @@ const Login = () => {
 
                 <TouchableOpacity
                     style={estilos.botao}
-                    onPress={() => { }}>
+                    onPress={() => { navigation.navigate('Tab Rotas') }}>
                     <Text style={estilos.textoBotao}>ENTRAR</Text>
                 </TouchableOpacity>
 

@@ -15,7 +15,7 @@ const TabRotas = () => {
                 let iconName = "home";
 
                 if (route.name === "Inspecoes") {
-                    iconName = "simple-line-icons:docs";
+                    iconName = "docs";
 
                     return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
                 }
