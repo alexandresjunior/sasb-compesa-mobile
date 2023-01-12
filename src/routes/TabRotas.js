@@ -4,6 +4,7 @@ import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import SimpleLineIconsIcon from "react-native-vector-icons/SimpleLineIcons";
 import Home from "../screens/Home";
 import Inspecoes from "../screens/Inspecoes";
+import InspecoesStackRotas from "./InspecoesStackRotas";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +27,7 @@ const TabRotas = () => {
             tabBarInactiveTintColor: "#000000"
         })}>
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Inspecoes" component={Inspecoes} />
+            <Tab.Screen name="Inspecoes" component={InspecoesStackRotas} />
         </Tab.Navigator>
     )
 }
