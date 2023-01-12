@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import HorizontalCard from "../../components/HorizontalCard";
-import { inspecoes } from "../../mocks/inspecoes";
+import { inspecoes } from "../../mocks";
 import Botao from "./components/Botao";
 import Cabecalho from "./components/Cabecalho";
 

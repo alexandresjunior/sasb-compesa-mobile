@@ -35,3 +35,22 @@ export const inspecoes = [
         responsavel: "Eng. Hudson Pedrosa"
     }
 ]
+
+export const inspecao = {
+    data: "20/12/2022",
+    numVistoria: "05",
+    inspetor: "Eng. Taianne Ellis",
+    responsavel: "Eng. Hudson Pedrosa"
+}
+
+export const barragem = {
+    nome: "Jaime Nejaim",
+    empreendedor: "COMPESA/GNR Agreste Central",
+    bacia: "Olho d’Água/UP03 - Rio Ipojuca",
+    cotaAtualNivelAgua: "-",
+    municipio: "Caruaru",
+    estado: "PE",
+    latitude: "-8.357694",
+    longitude: "-36.031853",
+    sistemaCoordenadas: "SIRGAS 2000",
+}
