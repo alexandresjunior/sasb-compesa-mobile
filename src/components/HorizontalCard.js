@@ -19,6 +19,10 @@ const HorizontalCard = ({ inspecao }) => {
                     <Text style={[estilos.texto, { fontWeight: "bold" }]}>Responsável Técnico: </Text>
                     <Text style={estilos.texto}>{inspecao.responsavel}</Text>
                 </View>
+                <View style={estilos.row}>
+                    <Text style={[estilos.texto, { fontWeight: "bold" }]}>Status: </Text>
+                    <Text style={[estilos.texto, { fontWeight: "bold", color: inspecao.status === 'Concluída' ? "#8BC63E" : "#FDCC0D" }]}>{inspecao.status}</Text>
+                </View>
             </View>
         </TouchableOpacity>
     )
