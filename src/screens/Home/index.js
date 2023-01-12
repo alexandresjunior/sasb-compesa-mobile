@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <View style={estilos.cabecalho}>
-                <View style={estilos.containerRow}>
+                <View style={estilos.row}>
                     <View>
                         <Text style={estilos.titulo}>Bem vindo!</Text>
                         <Text style={estilos.usuario}>Alexandre de Souza Jr.</Text>
@@ -41,7 +41,7 @@ const estilos = StyleSheet.create({
         height: 150,
         backgroundColor: "#223F99",
     },
-    containerRow: {
+    row: {
         flexDirection: "row",
         marginTop: 80,
         justifyContent: "space-between",

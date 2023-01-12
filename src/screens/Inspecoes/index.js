@@ -1,13 +1,11 @@
 import React from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HorizontalCard from "../../components/HorizontalCard";
 import { inspecoes } from "../../mocks/inspecoes";
 
 const Inspecoes = () => {
-    console.log(inspecoes)
     return (
         <FlatList
-            style={estilos.lista}
             data={inspecoes}
             renderItem={({ item }) => <HorizontalCard inspecao={item} />}
             keyExtractor={item => item.id}
@@ -15,7 +13,7 @@ const Inspecoes = () => {
                 return (
                     <>
                         <View style={estilos.cabecalho}>
-                            <View style={estilos.containerRow}>
+                            <View style={estilos.row}>
                                 <Text style={estilos.tituloBranco}>Barragem Jaime Nejaim</Text>
                             </View>
                         </View>
@@ -24,6 +22,17 @@ const Inspecoes = () => {
                             <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
                         </View>
                     </>
+                )
+            }}
+            ListFooterComponent={() => {
+                return (
+                    <View style={estilos.container}>
+                        <TouchableOpacity
+                            style={estilos.botao}
+                            onPress={() => { }}>
+                            <Text style={estilos.textoBotao}>Nova Inspeção</Text>
+                        </TouchableOpacity>
+                    </View>
                 )
             }}
         />
@@ -38,9 +47,11 @@ const estilos = StyleSheet.create({
         backgroundColor: "#223F99",
     },
     container: {
-        margin: 25
+        marginHorizontal: 25,
+        marginTop: 25,
+        marginBottom: 15
     },
-    containerRow: {
+    row: {
         flexDirection: "row",
         marginTop: 100,
         justifyContent: "space-between",
@@ -76,6 +87,19 @@ const estilos = StyleSheet.create({
         elevation: 2,
         padding: 15
     },
-    lista: {
-    }
+    botao: {
+        backgroundColor: "#223F99",
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: "#223F99",
+        width: 200,
+        padding: 15,
+        alignSelf: "center",
+        marginBottom: 10
+    },
+    textoBotao: {
+        textAlign: "center",
+        color: "#FFF",
+        fontWeight: "bold"
+    },
 })

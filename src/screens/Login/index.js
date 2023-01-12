@@ -115,7 +115,6 @@ const estilos = StyleSheet.create({
     },
     botao: {
         backgroundColor: "#223F99",
-        padding: 10,
         borderRadius: 5,
         borderWidth: 1,
         borderColor: "#223F99",
@@ -125,7 +124,7 @@ const estilos = StyleSheet.create({
     },
     textoBotao: {
         textAlign: "center",
-        color: "#FFFFFF",
+        color: "#FFF",
         fontWeight: "bold"
     },
     opcoes: {
