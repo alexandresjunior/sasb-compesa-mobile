@@ -13,7 +13,7 @@ const TipoInspecaoInputGroup = () => {
     ];
 
     return (
-        <View>
+        <View style={estilos.container}>
             <Text style={estilos.label}>Tipo de Inspeção: </Text>
             {
                 radio_props.map((obj, i) => (
@@ -47,16 +47,16 @@ const TipoInspecaoInputGroup = () => {
 export default TipoInspecaoInputGroup;
 
 const estilos = StyleSheet.create({
-    row: {
-        flexDirection: "row",
+    container: {
+        marginBottom: 10,
     },
     label: {
         fontSize: 18,
-        marginTop: 5,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginBottom: 15
     },
     texto: {
         fontSize: 18,
-        marginTop: 5,
+        marginBottom: 10
     }
 });
