@@ -3,17 +3,11 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Cabecalho = ({ nome }) => {
     return (
-        <>
-            <View style={estilos.cabecalho}>
-                <View style={estilos.row}>
-                    <Text style={estilos.tituloBranco}>{nome}</Text>
-                </View>
+        <View style={estilos.cabecalho}>
+            <View style={estilos.row}>
+                <Text style={estilos.tituloBranco}>{nome}</Text>
             </View>
-
-            <View style={estilos.container}>
-                <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
-            </View>
-        </>
+        </View>
     )
 }
 
@@ -23,11 +17,6 @@ const estilos = StyleSheet.create({
     cabecalho: {
         height: 150,
         backgroundColor: "#223F99",
-    },
-    container: {
-        marginHorizontal: 25,
-        marginTop: 25,
-        marginBottom: 15
     },
     row: {
         flexDirection: "row",
@@ -40,10 +29,5 @@ const estilos = StyleSheet.create({
         fontWeight: "bold",
         color: "white",
         marginTop: 5
-    },
-    tituloPreto: {
-        fontSize: 18,
-        fontWeight: "bold",
-        color: "#000",
-    },
+    }
 });
