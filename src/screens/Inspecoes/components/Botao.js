@@ -2,14 +2,14 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Botao = ({ texto, linkPara }) => {
+const Botao = ({ texto, linkPara, indice }) => {
     const navigation = useNavigation();
 
     return (
         <View style={estilos.container}>
             <TouchableOpacity
                 style={estilos.botao}
-                onPress={() => { navigation.navigate(linkPara) }}>
+                onPress={() => { navigation.navigate(linkPara, indice) }}>
                 <Text style={estilos.textoBotao}>{texto}</Text>
             </TouchableOpacity>
         </View>

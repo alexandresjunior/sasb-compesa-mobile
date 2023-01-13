@@ -22,7 +22,7 @@ const QuestaoCard = ({questao}) => {
         <View style={estilos.container}>
             <TouchableOpacity onPress={() => setExpandir(!expandir)}>
                 <View style={[estilos.row, { justifyContent: "space-between" }]}>
-                    <Text style={estilos.titulo}>{questao}</Text>
+                    <Text style={estilos.titulo}>{questao.descricao}</Text>
                     <Ionicons
                         name={completo ? "md-checkmark-circle" : "ellipse-outline"}
                         size={32}
@@ -63,7 +63,6 @@ export default QuestaoCard;
 
 const estilos = StyleSheet.create({
     container: {
-        marginHorizontal: 25,
         marginVertical: 5,
         backgroundColor: "#FFF",
         borderRadius: 10,

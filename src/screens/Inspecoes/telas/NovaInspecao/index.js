@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import Botao from "../../components/Botao";
 import Cabecalho from "../../components/Cabecalho";
@@ -7,19 +7,21 @@ import DadosInspecao from "./components/DadosInspecao";
 import LocalizacaoBarragem from "./components/LocalizacaoBarragem";
 import TipoInspecaoInputGroup from "./components/TipoInspecaoInputGroup";
 import { barragem, inspecao } from "../../../../mocks"
+import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 
 const NovaInspecao = () => {
+    const { questoes } = useContext(InspecaoGlobalContext);
+
     return (
         <ScrollView>
             <Cabecalho nome={"Nova Inspeção"} />
-
             <View style={estilos.container}>
                 <DadosBarragem barragem={barragem} />
                 <LocalizacaoBarragem barragem={barragem} />
                 <DadosInspecao inspecao={inspecao} />
                 <TipoInspecaoInputGroup />
 
-                <Botao texto={"Confirmar Dados"} linkPara="Inspecoes" />
+                <Botao texto={"Confirmar Dados"} linkPara="A - INFRAESTRUTURA OPERACIONAL" indice={0} />
             </View>
         </ScrollView>
     )
