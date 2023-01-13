@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import HorizontalCard from "../../components/HorizontalCard";
@@ -6,6 +7,8 @@ import Botao from "./components/Botao";
 import Cabecalho from "./components/Cabecalho";
 
 const Inspecoes = () => {
+    const navigation = useNavigation();
+
     return (
         <FlatList
             data={inspecoes}
@@ -20,7 +23,7 @@ const Inspecoes = () => {
                 </>)
             }}
             ListFooterComponent={() => {
-                return <Botao texto={"Nova Inspeção"} linkPara={"Nova Inspecao"} />
+                return <Botao label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
             }}
         />
     )

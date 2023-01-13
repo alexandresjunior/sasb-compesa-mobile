@@ -6,11 +6,11 @@ import DadosBarragem from "./components/DadosBarragem";
 import DadosInspecao from "./components/DadosInspecao";
 import LocalizacaoBarragem from "./components/LocalizacaoBarragem";
 import TipoInspecaoInputGroup from "./components/TipoInspecaoInputGroup";
-import { barragem, inspecao } from "../../../../mocks"
+import { barragem, inspecao } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 
 const NovaInspecao = () => {
-    const { questoes } = useContext(InspecaoGlobalContext);
+    const { iniciarNovaInspecao } = useContext(InspecaoGlobalContext);
 
     return (
         <ScrollView>
@@ -21,7 +21,7 @@ const NovaInspecao = () => {
                 <DadosInspecao inspecao={inspecao} />
                 <TipoInspecaoInputGroup />
 
-                <Botao texto={"Confirmar Dados"} linkPara="A - INFRAESTRUTURA OPERACIONAL" indice={0} />
+                <Botao label={"Confirmar Dados"} onPress={iniciarNovaInspecao} />
             </View>
         </ScrollView>
     )
