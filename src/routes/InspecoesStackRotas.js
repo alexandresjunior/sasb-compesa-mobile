@@ -5,6 +5,7 @@ import NovaInspecao from "../screens/Inspecoes/telas/NovaInspecao";
 import { questoes } from "../mocks";
 import { InspecaoProvider } from "../contexts/InspecaoGlobalContext";
 import FormularioInspecao from "../screens/Inspecoes/telas/NovaInspecao/components/FormularioInspecao";
+import RelatorioInspecao from "../screens/Inspecoes/telas/RelatorioInspecao";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ const InspecoesStackRotas = () => {
                         )
                     })
                 }
+                <Stack.Screen name="Relatorio Inspecao" component={RelatorioInspecao} />
             </Stack.Navigator>
         </InspecaoProvider>
     )

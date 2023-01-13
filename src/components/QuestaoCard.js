@@ -86,6 +86,7 @@ const estilos = StyleSheet.create({
         fontSize: 18,
         fontWeight: "bold",
         paddingEnd: 25,
-        marginBottom: 20
+        marginBottom: 20,
+        maxWidth: 280
     },
 })

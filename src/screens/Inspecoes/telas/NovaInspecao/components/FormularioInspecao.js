@@ -1,34 +1,48 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import QuestaoCard from "../../../../../components/QuestaoCard";
 import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalContext";
 import Cabecalho from "../../../components/Cabecalho";
 
-const FormularioInspecao = ({ route }) => {
-    const { indice } = route.params;
+const FormularioInspecao = () => {
+    const { questoes, indiceQuestao, questaoAnterior, proximaQuestao } = useContext(InspecaoGlobalContext);
 
-    console.log(indice)
-
-    const { questoes } = useContext(InspecaoGlobalContext);
+    const [secao, setSecao] = useState(questoes[indiceQuestao]);
 
     return (
         <ScrollView>
             <Cabecalho nome={"Nova Inspeção"} />
 
             <View style={estilos.container}>
-                <Text style={estilos.tituloPreto}>{questoes[0].codigo} - {questoes[0].nome}</Text>
+                <Text style={estilos.tituloPreto}>{secao.codigo} - {secao.nome}</Text>
 
                 {
-                    questoes[0]?.itens.map((item, index) => {
-                        return <QuestaoCard questao={item} key={index} />
-                    })
+                    secao.subsecoes ? (
+                        secao.subsecoes.map((subsecao, indiceSubsecao) => {
+                            return (
+                                <View key={indiceSubsecao}>
+                                    <Text style={estilos.tituloPreto}>{secao.subsecoes[indiceSubsecao].codigo} - {secao.subsecoes[indiceSubsecao].nome}</Text>
+                                    {
+                                        subsecao.itens.map((questao, index) => {
+                                            return <QuestaoCard questao={questao} key={index} />
+                                        })
+                                    }
+                                </View>
+                            )
+                        })
+                    ) : (
+                        secao?.itens.map((questao, index) => {
+                            return <QuestaoCard questao={questao} key={index} />
+                        })
+                    )
+
                 }
 
                 <View style={estilos.row}>
-                    <TouchableOpacity style={estilos.botaoOutline} onPress={() => { }}>
+                    <TouchableOpacity style={estilos.botaoOutline} onPress={questaoAnterior}>
                         <Text style={estilos.textoBotaoOutline}>Voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={estilos.botao} onPress={() => { }}>
+                    <TouchableOpacity style={estilos.botao} onPress={proximaQuestao}>
                         <Text style={estilos.textoBotao}>Avançar</Text>
                     </TouchableOpacity>
                 </View>
