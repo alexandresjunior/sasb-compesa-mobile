@@ -1,14 +1,10 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { respostas } from "../mocks";
 
-const RespostaOpcoes = () => {
-    const [situacao, setSituacao] = useState();
-    const [magnitude, setMagnitude] = useState();
-    const [nivelPerigo, setNivelPerigo] = useState();
-
+const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
     return (
-        <View style={estilos.container}>
+        <View>
             <Text style={estilos.titulo}>Situação:</Text>
             <View style={estilos.row}>
                 {
@@ -16,11 +12,13 @@ const RespostaOpcoes = () => {
                         return (
                             <TouchableOpacity style={[
                                 estilos.botao,
-                                situacao === opcao.sigla && estilos.botaoSelecionado
+                                situacao === opcao && estilos.botaoSelecionado
                             ]}
-                                onPress={() => setSituacao(opcao.sigla)}
+                                onPress={() => setSituacao(opcao)}
                                 key={index}>
-                                <Text style={situacao === opcao.sigla ? estilos.textoBotaoSelecionado : estilos.textoBotao}>{opcao.sigla}</Text>
+                                <Text style={situacao === opcao ? estilos.textoBotaoSelecionado : estilos.textoBotao}>
+                                    {opcao.sigla}
+                                </Text>
                             </TouchableOpacity>
                         )
                     })
@@ -34,11 +32,13 @@ const RespostaOpcoes = () => {
                         return (
                             <TouchableOpacity style={[
                                 estilos.botao,
-                                magnitude === opcao.sigla && estilos.botaoSelecionado
+                                magnitude === opcao && estilos.botaoSelecionado
                             ]}
-                                onPress={() => setMagnitude(opcao.sigla)}
+                                onPress={() => setMagnitude(opcao)}
                                 key={index}>
-                                <Text style={magnitude === opcao.sigla ? estilos.textoBotaoSelecionado : estilos.textoBotao}>{opcao.sigla}</Text>
+                                <Text style={magnitude === opcao ? estilos.textoBotaoSelecionado : estilos.textoBotao}>
+                                    {opcao.sigla}
+                                </Text>
                             </TouchableOpacity>
                         )
                     })
@@ -52,15 +52,30 @@ const RespostaOpcoes = () => {
                         return (
                             <TouchableOpacity style={[
                                 estilos.botao,
-                                nivelPerigo === opcao.sigla && estilos.botaoSelecionado
+                                nivelPerigo === opcao && estilos.botaoSelecionado
                             ]}
-                                onPress={() => setNivelPerigo(opcao.sigla)}
+                                onPress={() => setNivelPerigo(opcao)}
                                 key={index}>
-                                <Text style={nivelPerigo === opcao.sigla ? estilos.textoBotaoSelecionado : estilos.textoBotao}>{opcao.sigla}</Text>
+                                <Text style={nivelPerigo === opcao ? estilos.textoBotaoSelecionado : estilos.textoBotao}>
+                                    {opcao.sigla}
+                                </Text>
                             </TouchableOpacity>
                         )
                     })
                 }
+            </View>
+
+            <Text style={estilos.titulo}>Comentários:</Text>
+            <View style={estilos.row}>
+                <TextInput
+                    style={estilos.input}
+                    placeholder="Digite aqui os comentários..."
+                    placeholderTextColor="#CACACA"
+                    keyboardType="text"
+                    multiline={true}
+                    onChangeText={(event) => setComentarios(event.target.value)}
+                    defaultValue={""}
+                />
             </View>
         </View>
     )
@@ -69,9 +84,6 @@ const RespostaOpcoes = () => {
 export default RespostaOpcoes;
 
 const estilos = StyleSheet.create({
-    container: {
-        margin: 25,
-    },
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
@@ -103,6 +115,15 @@ const estilos = StyleSheet.create({
     textoBotaoSelecionado: {
         color: "#fff",
         fontSize: 16
+    },
+    input: {
+        width: 260,
+        height: 100,
+        borderRadius: 5,
+        borderColor: "#223F99",
+        borderWidth: 1,
+        padding: 10,
+        backgroundColor: "white",
+        margin: 10,
     }
-
 });
