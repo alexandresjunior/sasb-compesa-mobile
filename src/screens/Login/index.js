@@ -11,7 +11,7 @@ const Login = () => {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(true);
 
     const { signIn } = useAuth();
 
