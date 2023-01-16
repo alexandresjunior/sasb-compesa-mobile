@@ -1,8 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import logo from "../../../assets/sasb_compesa_logo.png";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
     const navigation = useNavigation();
@@ -10,6 +12,8 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [checked, setChecked] = useState(false);
+
+    const { signIn } = useAuth();
 
     return (
         <>
@@ -50,7 +54,7 @@ const Login = () => {
 
                 <TouchableOpacity
                     style={estilos.botao}
-                    onPress={() => { navigation.navigate('Tab Rotas') }}>
+                    onPress={() => { signIn({ email, senha }) }}>
                     <Text style={estilos.textoBotao}>ENTRAR</Text>
                 </TouchableOpacity>
 
