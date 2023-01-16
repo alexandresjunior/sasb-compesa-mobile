@@ -54,7 +54,7 @@ const Login = () => {
 
                 <TouchableOpacity
                     style={estilos.botao}
-                    onPress={() => { signIn({ email, senha }) }}>
+                    onPress={() => { navigation.navigate('Tab Rotas') }}>
                     <Text style={estilos.textoBotao}>ENTRAR</Text>
                 </TouchableOpacity>
 

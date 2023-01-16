@@ -14,7 +14,11 @@ const StackRotas = () => {
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            {state?.userToken == null ? (
+            <Stack.Screen name="Tela Principal" component={TelaInicial} />
+            <Stack.Screen name="Log In" component={Login} />
+            <Stack.Screen name="Cadastro" component={Cadastro} />
+            <Stack.Screen name="Tab Rotas" component={TabRotas} />
+            {/* {state?.userToken == null ? (
                 <>
                     <Stack.Screen name="Tela Principal" component={TelaInicial} />
                     <Stack.Screen name="Log In" component={Login} />
@@ -22,7 +26,7 @@ const StackRotas = () => {
                 </>
             ) : (
                 <Stack.Screen name="Tab Rotas" component={TabRotas} />
-            )}
+            )} */}
         </Stack.Navigator>
     )
 }

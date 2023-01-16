@@ -4,6 +4,7 @@ import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import SimpleLineIconsIcon from "react-native-vector-icons/SimpleLineIcons";
 import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
+import Perfil from "../screens/Perfil";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,10 +15,15 @@ const TabRotas = () => {
             tabBarIcon: ({ color, size }) => {
                 let iconName = "home";
 
-                if (route.name === "Inspecoes") {
-                    iconName = "docs";
+                switch (route.name) {
+                    case "Inspecoes":
+                        iconName = "docs";
 
-                    return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
+                        return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
+                    case "Perfil":
+                        iconName = "user"
+
+                        return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
                 }
 
                 return <IoniconsIcon name={iconName} size={size} color={color} />
@@ -27,6 +33,7 @@ const TabRotas = () => {
         })}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Inspecoes" component={InspecoesStackRotas} />
+            <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     )
 }
