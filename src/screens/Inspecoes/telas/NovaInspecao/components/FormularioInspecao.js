@@ -5,9 +5,9 @@ import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalCon
 import Cabecalho from "../../../components/Cabecalho";
 
 const FormularioInspecao = () => {
-    const { questoes, indiceQuestao, questaoAnterior, proximaQuestao } = useContext(InspecaoGlobalContext);
+    const { questoes, pagina, setPagina } = useContext(InspecaoGlobalContext);
 
-    const [secao, setSecao] = useState(questoes[indiceQuestao]);
+    const [secao, setSecao] = useState(questoes[pagina]);
 
     return (
         <ScrollView>
@@ -39,10 +39,10 @@ const FormularioInspecao = () => {
                 }
 
                 <View style={estilos.row}>
-                    <TouchableOpacity style={estilos.botaoOutline} onPress={questaoAnterior}>
+                    <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPagina(pagina - 1)}>
                         <Text style={estilos.textoBotaoOutline}>Voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={estilos.botao} onPress={proximaQuestao}>
+                    <TouchableOpacity style={estilos.botao} onPress={() => setPagina(pagina + 1)}>
                         <Text style={estilos.textoBotao}>Avançar</Text>
                     </TouchableOpacity>
                 </View>

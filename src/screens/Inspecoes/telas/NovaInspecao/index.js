@@ -10,7 +10,7 @@ import { barragem, inspecao } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 
 const NovaInspecao = () => {
-    const { iniciarNovaInspecao } = useContext(InspecaoGlobalContext);
+    const { setPagina } = useContext(InspecaoGlobalContext);
 
     return (
         <ScrollView>
@@ -21,7 +21,7 @@ const NovaInspecao = () => {
                 <DadosInspecao inspecao={inspecao} />
                 <TipoInspecaoInputGroup />
 
-                <Botao label={"Confirmar Dados"} onPress={iniciarNovaInspecao} />
+                <Botao label={"Confirmar Dados"} onPress={() => setPagina(0)} />
             </View>
         </ScrollView>
     )

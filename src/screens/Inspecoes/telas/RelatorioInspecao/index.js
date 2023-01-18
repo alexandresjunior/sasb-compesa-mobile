@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 import Cabecalho from "../../components/Cabecalho";
+import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 
 const RelatorioInspecao = () => {
-    const navigation = useNavigation();
+    const { setPagina } = useContext(InspecaoGlobalContext);
 
     let animation = React.createRef();
 
@@ -29,7 +29,7 @@ const RelatorioInspecao = () => {
                 <TouchableOpacity style={estilos.botao} onPress={() => { }}>
                     <Text style={estilos.textoBotao}>Gerar Relatório</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoOutline} onPress={() => { navigation.navigate('Inspecoes') }}>
+                <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPagina(-1)}>
                     <Text style={estilos.textoBotaoOutline}>Voltar à Tela Inicial</Text>
                 </TouchableOpacity>
             </View>

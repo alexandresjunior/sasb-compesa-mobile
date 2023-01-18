@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { questoes, respostas } from "../mocks";
 
@@ -7,36 +7,24 @@ export const InspecaoGlobalContext = createContext({});
 export const InspecaoProvider = ({ children }) => {
     const navigation = useNavigation();
 
-    const [indiceQuestao, setIndiceQuestao] = useState(0);
+    const [pagina, setPagina] = useState(-1);
 
-    const iniciarNovaInspecao = () => {
-        navigation.navigate("A - INFRAESTRUTURA OPERACIONAL", indiceQuestao)
-    }
+    useEffect(() => {
+        atualizarPagina();
+    }, [pagina])
 
-    const questaoAnterior = () => {
-        setIndiceQuestao(indiceQuestao-1);
-
-        if (indiceQuestao < 0) {
-            navigation.navigate("Nova Inspecao");
-            setIndiceQuestao(0);
-        } else {
-            navigation.navigate(`${questoes[indiceQuestao].codigo} - ${questoes[indiceQuestao].nome}`);
-        }
-    }
-
-    const proximaQuestao = () => {
-        setIndiceQuestao(indiceQuestao+1);
-
-        if (indiceQuestao > questoes.length) {
+    const atualizarPagina = () => {
+        if (pagina < 0) {
+            navigation.navigate("Inspecoes Realizadas");
+        } else if (pagina > (questoes.length - 1)) {
             navigation.navigate("Relatorio Inspecao");
-            setIndiceQuestao(questoes.length);
         } else {
-            navigation.navigate(`${questoes[indiceQuestao].codigo} - ${questoes[indiceQuestao].nome}`);
+            navigation.navigate(`${questoes[pagina].codigo} - ${questoes[pagina].nome}`);
         }
     }
 
     return (
-        <InspecaoGlobalContext.Provider value={{ questoes, respostas, iniciarNovaInspecao, indiceQuestao, questaoAnterior, proximaQuestao }}>
+        <InspecaoGlobalContext.Provider value={{ questoes, respostas, pagina, setPagina }}>
             {children}
         </InspecaoGlobalContext.Provider>
     )
