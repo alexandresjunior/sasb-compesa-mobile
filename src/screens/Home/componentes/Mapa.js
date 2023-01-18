@@ -1,14 +1,16 @@
 import React from "react";
-import { Dimensions, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
-import MapView from "react-native-maps";
+import { Dimensions, Image, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import { listaBarragens } from "../../../mocks";
+import dam_icon from "../../../../assets/dam.png";
 
 const Mapa = () => {
     const initialRegion = {
-        latitude: 49.2576508,
-        longitude: -123.2639868,
-        latitudeDelta: 100,
-        longitudeDelta: 100,
+        latitude: -8.470697,
+        longitude: -38.371057,
+        latitudeDelta: 10,
+        longitudeDelta: 10,
     };
 
     return (
@@ -25,10 +27,23 @@ const Mapa = () => {
                     <IoniconsIcon name="search" size={20} color="#D9D9D9" />
                 </TouchableOpacity>
             </View>
+
             <MapView
                 style={estilos.mapa}
                 initialRegion={initialRegion}
-            />
+            >
+                {listaBarragens.map((barragem, index) => (
+                    <Marker
+                        style={estilos.icone}
+                        key={index}
+                        coordinate={{ latitude: barragem.localizacao.latitude, longitude: barragem.localizacao.longitude }}
+                        title={barragem.nome}
+                        description={barragem.titularidade}
+                    >
+                        <Image source={dam_icon} style={estilos.icone} />
+                    </Marker>
+                ))}
+            </MapView>
         </View>
     )
 }
@@ -63,5 +78,9 @@ const estilos = StyleSheet.create({
         marginVertical: 5,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
+    },
+    icone: {
+        width: 30,
+        height: 30
     }
 })
