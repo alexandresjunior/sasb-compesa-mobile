@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { respostas } from "../mocks";
+import { MaterialIcons } from '@expo/vector-icons';
+import LegendaModal from "./LegendaModal";
+import { Magnitude, NivelDePerigo, Situacao } from "../mocks/legenda";
 
 const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
+    const [situacaoModalVisible, setSituacaoModalVisible] = useState(false);
+    const [magnitudeModalVisible, setMagnitudeModalVisible] = useState(false);
+    const [nivelDePerigoModalVisible, setNivelDePerigoModalVisible] = useState(false);
+
     return (
         <View>
-            <Text style={estilos.titulo}>Situação:</Text>
+            <View style={estilos.tooltip}>
+                <Text style={estilos.titulo}>Situação:</Text>
+                <TouchableOpacity style={estilos.icone} onPress={() => setSituacaoModalVisible(true)}>
+                    <MaterialIcons name="info-outline" size={24} color="black" />
+                </TouchableOpacity>
+            </View>
+
+            <LegendaModal
+                modalVisible={situacaoModalVisible}
+                setModalVisible={setSituacaoModalVisible}
+                item={<Situacao />}
+            />
+
             <View style={estilos.row}>
                 {
                     respostas?.situacao.map((opcao, index) => {
@@ -25,7 +44,19 @@ const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelP
                 }
             </View>
 
-            <Text style={estilos.titulo}>Magnitude:</Text>
+            <View style={estilos.tooltip}>
+                <Text style={estilos.titulo}>Magnitude:</Text>
+                <TouchableOpacity style={estilos.icone} onPress={() => setMagnitudeModalVisible(true)}>
+                    <MaterialIcons name="info-outline" size={24} color="black" />
+                </TouchableOpacity>
+            </View>
+
+            <LegendaModal
+                modalVisible={magnitudeModalVisible}
+                setModalVisible={setMagnitudeModalVisible}
+                item={<Magnitude />}
+            />
+
             <View style={estilos.row}>
                 {
                     respostas?.magnitude.map((opcao, index) => {
@@ -45,7 +76,19 @@ const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelP
                 }
             </View>
 
-            <Text style={estilos.titulo}>Nível de Perigo:</Text>
+            <View style={estilos.tooltip}>
+                <Text style={estilos.titulo}>Nível de Perigo:</Text>
+                <TouchableOpacity style={estilos.icone} onPress={() => setNivelDePerigoModalVisible(true)}>
+                    <MaterialIcons name="info-outline" size={24} color="black" />
+                </TouchableOpacity>
+            </View>
+
+            <LegendaModal
+                modalVisible={nivelDePerigoModalVisible}
+                setModalVisible={setNivelDePerigoModalVisible}
+                item={<NivelDePerigo />}
+            />
+
             <View style={estilos.row}>
                 {
                     respostas?.nivelPerigo.map((opcao, index) => {
@@ -84,6 +127,13 @@ const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelP
 export default RespostaOpcoes;
 
 const estilos = StyleSheet.create({
+    tooltip: {
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
+    icone: {
+        paddingEnd: 5
+    },
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
