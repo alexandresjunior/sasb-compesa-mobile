@@ -15,7 +15,7 @@ export const InspecaoProvider = ({ children }) => {
 
     const atualizarPagina = () => {
         if (pagina < 0) {
-            navigation.navigate("Inspecoes Realizadas");
+            navigation.navigate("Selecionar Barragem");
         } else if (pagina > (questoes.length - 1)) {
             navigation.navigate("Relatorio Inspecao");
         } else {
