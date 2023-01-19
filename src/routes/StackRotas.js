@@ -14,7 +14,6 @@ const StackRotas = () => {
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Tela Principal" component={TelaInicial} />
             <Stack.Screen name="Log In" component={Login} />
             <Stack.Screen name="Cadastro" component={Cadastro} />
             <Stack.Screen name="Tab Rotas" component={TabRotas} />
