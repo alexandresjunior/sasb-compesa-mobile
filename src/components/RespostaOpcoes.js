@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Magnitude, NivelDePerigo, Situacao } from "../mocks/legenda";
+import ImagePickerSection from "../screens/Inspecoes/components/formulario/ImagePickerSection";
 import InputSection from "../screens/Inspecoes/components/formulario/InputSection";
 
 const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
@@ -36,6 +37,8 @@ const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelP
                 modalVisible={nivelDePerigoModalVisible}
                 setModalVisible={setNivelDePerigoModalVisible}
             />
+
+            <ImagePickerSection />
 
             <Text style={estilos.titulo}>Comentários:</Text>
             <View style={estilos.row}>
