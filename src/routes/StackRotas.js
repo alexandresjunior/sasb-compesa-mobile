@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import TelaInicial from "../screens/TelaInicial";
 import Login from "../screens/Login";
 import TabRotas from "./TabRotas";
 import Cadastro from "../screens/Cadastro";
