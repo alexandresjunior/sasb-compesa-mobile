@@ -1,5 +1,7 @@
 import React from "react";
+import BarragemCard from "../../components/BarragemCard";
 import SearchBar from "../../components/SearchBar";
+import { listaBarragens } from "../../mocks";
 import Cabecalho from "../Inspecoes/components/Cabecalho";
 
 const Barragem = () => {
@@ -7,6 +9,9 @@ const Barragem = () => {
         <>
             <Cabecalho nome={"Selecionar Barragem"} />
             <SearchBar />
+            {listaBarragens?.map((barragem, index) => (
+                <BarragemCard barragem={barragem} linkPara={"Inspecoes Realizadas"} key={index} />
+            ))}
         </>
     )
 }

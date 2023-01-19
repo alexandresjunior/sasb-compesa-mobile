@@ -170,7 +170,7 @@ export const listaBarragens = [
             "prioridade": 2,
             "frequencia": "ANUAL",
             "mes": "",
-            "status": "EM DIA",
+            "status": "PENDENTE",
             "inspecoes": [
                 {
                     "id": 1,
