@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import imagem from "../../../assets/usuario_icon.png";
+import { GlobalContext } from "../../contexts/GlobalContext";
 import Mapa from "./componentes/Mapa";
 
 const Home = () => {
     const [barragem, setBarragem] = useState("");
+
+    const { networkConnected } = useContext(GlobalContext);
+
+    useEffect(() => {
+        if (!networkConnected) {
+            alert("Dispositivo sem conexão de rede. Algumas funcionalidades são limitadas no modo offline.")
+        }
+    }, [])
+
 
     return (
         <View style={estilos.cabecalho}>
