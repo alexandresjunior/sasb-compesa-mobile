@@ -7,7 +7,7 @@ import Cabecalho from "../Inspecoes/components/Cabecalho";
 const Barragem = () => {
     return (
         <>
-            <Cabecalho nome={"Selecionar Barragem"} />
+            <Cabecalho nome={"Selecionar Barragem"} showButton={true} />
             <SearchBar />
             {listaBarragens?.map((barragem, index) => (
                 <BarragemCard barragem={barragem} linkPara={"Inspecoes Realizadas"} key={index} />
