@@ -2,7 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inspecoes from "../screens/Inspecoes";
 import NovaInspecao from "../screens/Inspecoes/telas/NovaInspecao";
-import { questoes } from "../mocks";
+import { formulario } from "../mocks";
 import { InspecaoProvider } from "../contexts/InspecaoGlobalContext";
 import FormularioInspecao from "../screens/Inspecoes/telas/NovaInspecao/components/FormularioInspecao";
 import RelatorioInspecao from "../screens/Inspecoes/telas/RelatorioInspecao";
@@ -18,7 +18,7 @@ const InspecoesStackRotas = () => {
                 <Stack.Screen name="Inspecoes Realizadas" component={Inspecoes} />
                 <Stack.Screen name="Nova Inspecao" component={NovaInspecao} />
                 {
-                    questoes?.map((questao, indice) => {
+                    formulario?.map((questao, indice) => {
                         return (
                             <Stack.Screen key={indice} name={`${questao.codigo} - ${questao.nome}`} component={FormularioInspecao} />
                         )

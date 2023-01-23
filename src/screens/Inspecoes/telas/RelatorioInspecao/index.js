@@ -3,9 +3,30 @@ import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import LottieView from "lottie-react-native";
 import Cabecalho from "../../components/Cabecalho";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
+import * as Print from "expo-print";
+import { shareAsync } from "expo-sharing";
+import { body, footer, header } from "../../../../templates/RelatorioInspecao";
 
 const RelatorioInspecao = () => {
     const { formulario, setPagina } = useContext(InspecaoGlobalContext);
+
+    const html = header + body(formulario) + footer;
+
+    const printToFile = async () => {
+        const { uri } = await Print.printToFileAsync({
+            html,
+            margins: {
+                left: 85,    // 3cm
+                top: 85,     // 3cm
+                right: 57,   // 2cm
+                bottom: 57,  // 2cm
+            },
+            height: 842,
+            width: 595
+        });
+
+        await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
+    };
 
     let animation = React.createRef();
 
@@ -26,7 +47,7 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={() => { }}>
+                <TouchableOpacity style={estilos.botao} onPress={printToFile}>
                     <Text style={estilos.textoBotao}>Gerar Relatório</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPagina(-1)}>
