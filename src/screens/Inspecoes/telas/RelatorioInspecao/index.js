@@ -5,7 +5,7 @@ import Cabecalho from "../../components/Cabecalho";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 
 const RelatorioInspecao = () => {
-    const { setPagina } = useContext(InspecaoGlobalContext);
+    const { formulario, setPagina } = useContext(InspecaoGlobalContext);
 
     let animation = React.createRef();
 

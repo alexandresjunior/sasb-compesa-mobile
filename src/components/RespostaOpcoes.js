@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Magnitude, NivelDePerigo, Situacao } from "../mocks/legenda";
 import ImagePickerSection from "../screens/Inspecoes/components/formulario/ImagePickerSection";
 import InputSection from "../screens/Inspecoes/components/formulario/InputSection";
 
-const RespostaOpcoes = ({ situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
+const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
     const [situacaoModalVisible, setSituacaoModalVisible] = useState(false);
     const [magnitudeModalVisible, setMagnitudeModalVisible] = useState(false);
     const [nivelDePerigoModalVisible, setNivelDePerigoModalVisible] = useState(false);
+
+    const resposta = {
+        questaoId: questao.indice,
+        resposta: {
+            situacao: situacao?.sigla,
+            magnitude: magnitude?.sigla,
+            nivelPerigo: nivelPerigo?.sigla,
+            anexos: {},
+            comentarios: ""
+        }
+    }
+
+    useEffect(() => {
+        questao.resposta = resposta;
+    }, [completo]);
 
     return (
         <View>
