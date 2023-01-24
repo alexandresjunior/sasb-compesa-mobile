@@ -19,8 +19,18 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
     }
 
     useEffect(() => {
+        /* 
+            Quando 'situacao' for 'Não se Aplica (NA)', 
+            define-se 'magnitude' e 'nivelPerigo' com
+            seus valores iniciais.
+        */
+        if (situacao?.sigla === "NA") {
+            setMagnitude(respostas.magnitude[0])
+            setNivelPerigo(respostas.nivelPerigo[0])
+        }
+
         questao.resposta = resposta;
-    }, [completo]);
+    }, [completo, situacao]);
 
     return (
         <View>

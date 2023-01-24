@@ -211,8 +211,8 @@ export var formulario = [
                 descricao: "Falta de documentação sobre a barragem",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -222,8 +222,8 @@ export var formulario = [
                 descricao: "Falta de material para manutenção",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -233,8 +233,8 @@ export var formulario = [
                 descricao: "Falta de treinamento do pessoal",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -244,8 +244,8 @@ export var formulario = [
                 descricao: "Precariedade no acesso de veículos",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -255,8 +255,8 @@ export var formulario = [
                 descricao: "Falta de energia elétrica",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -266,8 +266,8 @@ export var formulario = [
                 descricao: "Falta de sistema de comunicação eficiente",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -277,8 +277,8 @@ export var formulario = [
                 descricao: "Falta ou deficiência de cercas de proteção",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -288,8 +288,8 @@ export var formulario = [
                 descricao: "Falta ou deficiência nas placas de aviso",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -299,8 +299,8 @@ export var formulario = [
                 descricao: "Falta de acompanhamento da Administração Regional",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -310,8 +310,8 @@ export var formulario = [
                 descricao: "Falta de manual de operação dos equipamentos hidro e eletromecânicos",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -334,8 +334,8 @@ export var formulario = [
                         descricao: "Presença de vegetação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -345,8 +345,8 @@ export var formulario = [
                         descricao: "Erosão nos encontros das ombreiras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -356,8 +356,8 @@ export var formulario = [
                         descricao: "Ocorrência de fissuras e rachaduras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -367,8 +367,8 @@ export var formulario = [
                         descricao: "Ferragem da barragem exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -378,8 +378,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -389,8 +389,8 @@ export var formulario = [
                         descricao: "Abertura de juntas de dilatação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -408,8 +408,8 @@ export var formulario = [
                         descricao: "Movimentos diferenciais entre blocos (nas juntas)",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -419,8 +419,8 @@ export var formulario = [
                         descricao: "Ocorrência de fissuras e rachaduras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -430,8 +430,8 @@ export var formulario = [
                         descricao: "Ferragem da barragem exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -441,8 +441,8 @@ export var formulario = [
                         descricao: "Deterioração da superfície",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -452,8 +452,8 @@ export var formulario = [
                         descricao: "Juntas de dilatação danificadas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -463,8 +463,8 @@ export var formulario = [
                         descricao: "Desalinhamento e/ou ferrugem do guarda-corpo",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -474,8 +474,8 @@ export var formulario = [
                         descricao: "Corrosão nos postes de iluminação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -485,8 +485,8 @@ export var formulario = [
                         descricao: "Corrosão no pórtico",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -496,8 +496,8 @@ export var formulario = [
                         descricao: "Danos na estrutura do guarda-corpo",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -507,8 +507,8 @@ export var formulario = [
                         descricao: "Drenos entupidos ou danificados",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -518,8 +518,8 @@ export var formulario = [
                         descricao: "Vegetação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -529,8 +529,8 @@ export var formulario = [
                         descricao: "Guarda-corpo incompleto ou ausente",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -548,8 +548,8 @@ export var formulario = [
                         descricao: "Presença de vegetação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -559,8 +559,8 @@ export var formulario = [
                         descricao: "Sinais de movimento",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -570,8 +570,8 @@ export var formulario = [
                         descricao: "Ocorrência de fissuras, trincas e rachaduras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -581,8 +581,8 @@ export var formulario = [
                         descricao: "Ferragem da barragem exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -592,8 +592,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -603,8 +603,8 @@ export var formulario = [
                         descricao: "Juntas de dilatação danificadas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -614,8 +614,8 @@ export var formulario = [
                         descricao: "Sinais de percolação ou áreas úmidas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -625,8 +625,8 @@ export var formulario = [
                         descricao: "Carreamento de material na água dos drenos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -636,8 +636,8 @@ export var formulario = [
                         descricao: "Vazão nos drenos de controle",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -647,8 +647,8 @@ export var formulario = [
                         descricao: "Erosão nos encontros das ombreiras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -666,8 +666,8 @@ export var formulario = [
                         descricao: "Árvores de grande porte",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -677,8 +677,8 @@ export var formulario = [
                         descricao: "Sinais de movimento",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -688,8 +688,8 @@ export var formulario = [
                         descricao: "Ferragem da barragem exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -699,8 +699,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -710,8 +710,8 @@ export var formulario = [
                         descricao: "Ocorrência de fissuras e rachaduras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -721,8 +721,8 @@ export var formulario = [
                         descricao: "Juntas de dilatação danificadas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -732,8 +732,8 @@ export var formulario = [
                         descricao: "Sinais de percolação ou áreas úmidas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -743,8 +743,8 @@ export var formulario = [
                         descricao: "Banheiros desativados deteriorados e rachados",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -754,8 +754,8 @@ export var formulario = [
                         descricao: "Guarda-corpo incompleto e/ou ausente e enferrujado",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -773,8 +773,8 @@ export var formulario = [
                         descricao: "Acesso precário aos instrumentos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -784,8 +784,8 @@ export var formulario = [
                         descricao: "Piezômetros entupidos ou defeituosos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -795,8 +795,8 @@ export var formulario = [
                         descricao: "Marcos de referência defeituosos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -806,8 +806,8 @@ export var formulario = [
                         descricao: "Medidores de vazão defeituosos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -817,8 +817,8 @@ export var formulario = [
                         descricao: "Outros instrumentos danificados",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -828,8 +828,8 @@ export var formulario = [
                         descricao: "Falta de instrumentação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -839,8 +839,8 @@ export var formulario = [
                         descricao: "Falta de registro de leituras da instrumentação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -850,8 +850,8 @@ export var formulario = [
                         descricao: "Marcos superficiais defeituosos ou ausentes",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -876,8 +876,8 @@ export var formulario = [
                         descricao: "Presença de vegetação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -887,8 +887,8 @@ export var formulario = [
                         descricao: "Obstrução ou entulhos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -898,8 +898,8 @@ export var formulario = [
                         descricao: "Desalinhamento dos muros laterais ou taludes",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -909,8 +909,8 @@ export var formulario = [
                         descricao: "Ferragem do concreto exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -920,8 +920,8 @@ export var formulario = [
                         descricao: "Erosão ou escorregamentos nos taludes laterais",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -931,8 +931,8 @@ export var formulario = [
                         descricao: "Erosão na base dos canais escavados",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -942,8 +942,8 @@ export var formulario = [
                         descricao: "Erosão na área a jusante do vertedor",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -953,8 +953,8 @@ export var formulario = [
                         descricao: "Construções irregulares (aterro, estrada, casa, cerca)",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -972,8 +972,8 @@ export var formulario = [
                         descricao: "Fissuras (trincas ou rachaduras)",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -983,8 +983,8 @@ export var formulario = [
                         descricao: "Ferragem do concreto exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -994,8 +994,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1005,8 +1005,8 @@ export var formulario = [
                         descricao: "Descalçamento da estrutura",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1016,8 +1016,8 @@ export var formulario = [
                         descricao: "Juntas de dilatação danificadas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1027,8 +1027,8 @@ export var formulario = [
                         descricao: "Sinais de deslocamento da estrutura",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1038,8 +1038,8 @@ export var formulario = [
                         descricao: "Vegetação e entulho",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1049,8 +1049,8 @@ export var formulario = [
                         descricao: "Erosão nos contatos dos muros",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1060,8 +1060,8 @@ export var formulario = [
                         descricao: "Sinais de percolação ou áreas úmidas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1071,8 +1071,8 @@ export var formulario = [
                         descricao: "Carreamento de material na água dos drenos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1082,8 +1082,8 @@ export var formulario = [
                         descricao: "Vazão nos drenos de controle",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1101,8 +1101,8 @@ export var formulario = [
                         descricao: "Erosão na fundação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1112,8 +1112,8 @@ export var formulario = [
                         descricao: "Erosão nos contatos dos muros",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1123,8 +1123,8 @@ export var formulario = [
                         descricao: "Fissuras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1134,8 +1134,8 @@ export var formulario = [
                         descricao: "Ferragem do concreto exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1145,8 +1145,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1156,8 +1156,8 @@ export var formulario = [
                         descricao: "Erosão no talude",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1167,8 +1167,8 @@ export var formulario = [
                         descricao: "Rip-rap incompleto, destruído ou deslocado no contato",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1178,8 +1178,8 @@ export var formulario = [
                         descricao: "Vegetação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1189,8 +1189,8 @@ export var formulario = [
                         descricao: "Drenos operantes",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1208,8 +1208,8 @@ export var formulario = [
                         descricao: "Fissuras, trincas ou rachaduras",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1219,8 +1219,8 @@ export var formulario = [
                         descricao: "Ferragem do concreto exposta",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1230,8 +1230,8 @@ export var formulario = [
                         descricao: "Deterioração",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1241,8 +1241,8 @@ export var formulario = [
                         descricao: "Ocorrência de buracos na soleira",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1252,8 +1252,8 @@ export var formulario = [
                         descricao: "Erosão",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1263,8 +1263,8 @@ export var formulario = [
                         descricao: "Presença de entulho na bacia",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1274,8 +1274,8 @@ export var formulario = [
                         descricao: "Presença de vegetação na bacia",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1285,8 +1285,8 @@ export var formulario = [
                         descricao: "Falha no enrocamento de protação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1311,8 +1311,8 @@ export var formulario = [
                         descricao: "Assoreamento",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1322,8 +1322,8 @@ export var formulario = [
                         descricao: "Obstrução e entulhos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1333,8 +1333,8 @@ export var formulario = [
                         descricao: "Ferragem exposta na estrutura de concreto",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1344,8 +1344,8 @@ export var formulario = [
                         descricao: "Deterioração no concreto",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1355,8 +1355,8 @@ export var formulario = [
                         descricao: "Falta de grade de proteção",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1366,8 +1366,8 @@ export var formulario = [
                         descricao: "Defeitos na grade",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1377,8 +1377,8 @@ export var formulario = [
                         descricao: "Problemas na estrutura elétrica",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1388,8 +1388,8 @@ export var formulario = [
                         descricao: "Presença de animais peçonhentos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1399,8 +1399,8 @@ export var formulario = [
                         descricao: "Peças enferrujadas ou corroídas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1418,8 +1418,8 @@ export var formulario = [
                         descricao: "Corrosão e vazamentos na tubulação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1429,8 +1429,8 @@ export var formulario = [
                         descricao: "Sinais de abrasão ou cavitação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1440,8 +1440,8 @@ export var formulario = [
                         descricao: "Ruídos estranhos",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1451,8 +1451,8 @@ export var formulario = [
                         descricao: "Defeitos nos dispositivos de controle",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1462,8 +1462,8 @@ export var formulario = [
                         descricao: "Surgências de água na caixa de concreto",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1473,8 +1473,8 @@ export var formulario = [
                         descricao: "Precariedade de acesso (vegetação)",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1484,8 +1484,8 @@ export var formulario = [
                         descricao: "Vazamento nos dispositivos de controle",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1495,8 +1495,8 @@ export var formulario = [
                         descricao: "Falta de manutenção",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1506,8 +1506,8 @@ export var formulario = [
                         descricao: "Construções irregulares a jusante",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1517,8 +1517,8 @@ export var formulario = [
                         descricao: "Falta ou deficiência de drenagem da caixa de válvulas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1528,8 +1528,8 @@ export var formulario = [
                         descricao: "Presença de entulho dentro da caixa de válvulas",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1539,8 +1539,8 @@ export var formulario = [
                         descricao: "Defeitos na caixa de concreto",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1550,8 +1550,8 @@ export var formulario = [
                         descricao: "Defeitos na cerca de proteção",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1561,8 +1561,8 @@ export var formulario = [
                         descricao: "Elementos hidromecânicos enferrujados",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1572,8 +1572,8 @@ export var formulario = [
                         descricao: "Defeito no bloco de ancoragem da tubulação",
                         resposta: {
                             situacao: "NA",
-                            magnitude: "NA",
-                            nivelPerigo: 2,
+                            magnitude: "I",
+                            nivelPerigo: 0,
                             anexos: {},
                             comentarios: ""
                         }
@@ -1593,8 +1593,8 @@ export var formulario = [
                 descricao: "Presença de vegetação",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1604,8 +1604,8 @@ export var formulario = [
                 descricao: "Sinais de movimento",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1615,8 +1615,8 @@ export var formulario = [
                 descricao: "Ocorrência de fissuras, trincas e rachaduras",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1626,8 +1626,8 @@ export var formulario = [
                 descricao: "Ferragem da barragem exposta",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1637,8 +1637,8 @@ export var formulario = [
                 descricao: "Deterioração",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1648,8 +1648,8 @@ export var formulario = [
                 descricao: "Juntas de dilatação danificadas",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1659,8 +1659,8 @@ export var formulario = [
                 descricao: "Sinais de percolação ou áreas úmidas",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1670,8 +1670,8 @@ export var formulario = [
                 descricao: "Carreamento de material na água dos drenos",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1681,8 +1681,8 @@ export var formulario = [
                 descricao: "Vazão nos drenos de controle",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1692,8 +1692,8 @@ export var formulario = [
                 descricao: "Erosão no encontro com o terreno natural",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1711,8 +1711,8 @@ export var formulario = [
                 descricao: "Réguas danificadas ou faltantes",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1722,8 +1722,8 @@ export var formulario = [
                 descricao: "Construções em áreas de proteção",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1733,8 +1733,8 @@ export var formulario = [
                 descricao: "Poluição por esgoto, lixo, pesticidas etc.",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1744,8 +1744,8 @@ export var formulario = [
                 descricao: "Indícios de má qualidade da água",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1755,8 +1755,8 @@ export var formulario = [
                 descricao: "Erosões",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1766,8 +1766,8 @@ export var formulario = [
                 descricao: "Assoreamento",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1777,8 +1777,8 @@ export var formulario = [
                 descricao: "Desmoronamento nas margens",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1788,8 +1788,8 @@ export var formulario = [
                 descricao: "Existência de vegetação aquática excessiva",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1799,8 +1799,8 @@ export var formulario = [
                 descricao: "Desmatamentos na área de proteção",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1810,8 +1810,8 @@ export var formulario = [
                 descricao: "Presença de animais e peixes mortos",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1821,8 +1821,8 @@ export var formulario = [
                 descricao: "Animais pastando",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1832,8 +1832,8 @@ export var formulario = [
                 descricao: "Árvores na área do reservatório e próximas ao paramento",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1851,8 +1851,8 @@ export var formulario = [
                 descricao: "Sinais de movimentos na rocha de fundação",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1862,8 +1862,8 @@ export var formulario = [
                 descricao: "Desintegração/decomposição da rocha",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1873,8 +1873,8 @@ export var formulario = [
                 descricao: "Piping nas juntas rochosas",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1884,8 +1884,8 @@ export var formulario = [
                 descricao: "Construções irregulares próximas ao leito do rio",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1895,8 +1895,8 @@ export var formulario = [
                 descricao: "Vazamento (fuga d'água) nas ombreiras",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1906,8 +1906,8 @@ export var formulario = [
                 descricao: "Árvores/arbustos e vegetação na faixa de 10m da barragem",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1917,8 +1917,8 @@ export var formulario = [
                 descricao: "Erosão nos encontros das ombreiras",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1928,8 +1928,8 @@ export var formulario = [
                 descricao: "Cavernas e buracos nas ombreiras",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1947,8 +1947,8 @@ export var formulario = [
                 descricao: "Ausência de placa medidora de vazão",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1958,8 +1958,8 @@ export var formulario = [
                 descricao: "Corrosão da placa",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1969,8 +1969,8 @@ export var formulario = [
                 descricao: "Defeito no concreto",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1980,8 +1980,8 @@ export var formulario = [
                 descricao: "Falta de escala de leitura de vazão",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -1991,8 +1991,8 @@ export var formulario = [
                 descricao: "Assoreamento da câmara de medição",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -2002,8 +2002,8 @@ export var formulario = [
                 descricao: "Erosão a jusante do medidor",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -2021,8 +2021,8 @@ export var formulario = [
                 descricao: "Estado do pavimento",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
@@ -2032,8 +2032,8 @@ export var formulario = [
                 descricao: "Condições de drenagem (com água estagnada)",
                 resposta: {
                     situacao: "NA",
-                    magnitude: "NA",
-                    nivelPerigo: 2,
+                    magnitude: "I",
+                    nivelPerigo: 0,
                     anexos: {},
                     comentarios: ""
                 }
