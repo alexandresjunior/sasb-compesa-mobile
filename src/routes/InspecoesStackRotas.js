@@ -19,6 +19,12 @@ const InspecoesStackRotas = () => {
                 <Stack.Screen name="Nova Inspecao" component={NovaInspecao} />
                 {
                     formulario?.map((questao, indice) => {
+                        questao.subsecoes?.map((subsecao, indice) => {
+                            return (
+                                <Stack.Screen key={indice} name={`${subsecao.codigo} - ${subsecao.nome}`} component={FormularioInspecao} />
+                            )
+                        })
+                        
                         return (
                             <Stack.Screen key={indice} name={`${questao.codigo} - ${questao.nome}`} component={FormularioInspecao} />
                         )
