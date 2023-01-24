@@ -10,14 +10,11 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
     const [nivelDePerigoModalVisible, setNivelDePerigoModalVisible] = useState(false);
 
     const resposta = {
-        questaoId: questao.indice,
-        resposta: {
-            situacao: situacao?.sigla,
-            magnitude: magnitude?.sigla,
-            nivelPerigo: nivelPerigo?.sigla,
-            anexos: {},
-            comentarios: ""
-        }
+        situacao: situacao?.sigla,
+        magnitude: magnitude?.sigla,
+        nivelPerigo: nivelPerigo?.sigla,
+        anexos: {},
+        comentarios: ""
     }
 
     useEffect(() => {
