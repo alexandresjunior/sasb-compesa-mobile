@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Magnitude, NivelDePerigo, Situacao } from "../mocks/legenda";
 import ImagePickerSection from "../screens/Inspecoes/components/formulario/ImagePickerSection";
 import InputSection from "../screens/Inspecoes/components/formulario/InputSection";
+import { respostas } from "../mocks";
 
 const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
     const [situacaoModalVisible, setSituacaoModalVisible] = useState(false);
@@ -26,6 +27,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
             <InputSection
                 titulo={"Situação:"}
                 legenda={<Situacao />}
+                opcoes={respostas.situacao}
                 answer={situacao}
                 setAnswer={setSituacao}
                 modalVisible={situacaoModalVisible}
@@ -35,6 +37,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
             <InputSection
                 titulo={"Magnitude:"}
                 legenda={<Magnitude />}
+                opcoes={respostas.magnitude}
                 answer={magnitude}
                 setAnswer={setMagnitude}
                 modalVisible={magnitudeModalVisible}
@@ -44,6 +47,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
             <InputSection
                 titulo={"Nível de Perigo:"}
                 legenda={<NivelDePerigo />}
+                opcoes={respostas.nivelPerigo}
                 answer={nivelPerigo}
                 setAnswer={setNivelPerigo}
                 modalVisible={nivelDePerigoModalVisible}

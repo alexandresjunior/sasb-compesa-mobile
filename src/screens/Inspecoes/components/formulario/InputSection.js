@@ -4,7 +4,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import LegendaModal from "../../../../components/LegendaModal";
 import { respostas } from "../../../../mocks";
 
-const InputSection = ({titulo, legenda, answer, setAnswer, modalVisible, setModalVisible}) => {
+const InputSection = ({titulo, legenda, opcoes, answer, setAnswer, modalVisible, setModalVisible}) => {
     return (
         <>
             <View style={estilos.tooltip}>
@@ -22,7 +22,7 @@ const InputSection = ({titulo, legenda, answer, setAnswer, modalVisible, setModa
 
             <View style={estilos.row}>
                 {
-                    respostas?.situacao.map((opcao, index) => {
+                    opcoes?.map((opcao, index) => {
                         return (
                             <TouchableOpacity style={[
                                 estilos.botao,
