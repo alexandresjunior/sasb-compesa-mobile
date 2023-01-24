@@ -5,7 +5,7 @@ import Cabecalho from "../../components/Cabecalho";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
-import { body, footer, header } from "../../../../templates/RelatorioInspecao";
+import { body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
 
 const RelatorioInspecao = () => {
     const { formulario, setPagina } = useContext(InspecaoGlobalContext);

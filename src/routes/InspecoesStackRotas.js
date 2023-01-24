@@ -13,7 +13,8 @@ const Stack = createNativeStackNavigator();
 const InspecoesStackRotas = () => {
     return (
         <InspecaoProvider>
-            <Stack.Navigator initialRouteName="Selecionar Barragem" screenOptions={{ headerShown: false }}>
+            <Stack.Navigator initialRouteName="Relatorio Inspecao" screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Relatorio Inspecao" component={RelatorioInspecao} />
                 <Stack.Screen name="Selecionar Barragem" component={Barragem} />
                 <Stack.Screen name="Inspecoes Realizadas" component={Inspecoes} />
                 <Stack.Screen name="Nova Inspecao" component={NovaInspecao} />
@@ -24,7 +25,7 @@ const InspecoesStackRotas = () => {
                         )
                     })
                 }
-                <Stack.Screen name="Relatorio Inspecao" component={RelatorioInspecao} />
+                {/* <Stack.Screen name="Relatorio Inspecao" component={RelatorioInspecao} /> */}
             </Stack.Navigator>
         </InspecaoProvider>
     )
