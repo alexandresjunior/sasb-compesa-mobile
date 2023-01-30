@@ -2,27 +2,27 @@ import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const ImageViewerSection = ({ imageSource, fileName, legenda }) => {
+const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
+    const removerAnexoDaLista = (indice) => {
+        const lista = anexos.filter((_, index) => index !== indice);
+        setAnexos(lista);
+    }
+
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
                 <View>
-                    <Text style={estilos.texto}>
-                        <Text style={estilos.titulo}>Nome: </Text>
-                        {fileName}
-                    </Text>
+                    <Image style={estilos.imagem} source={anexo.source} />
 
                     <Text style={estilos.texto}>
-                        <Text style={estilos.titulo}>Legenda: </Text>
-                        {legenda}
+                        <Text style={estilos.titulo}>Descrição: </Text>
+                        {anexo.descricao}
                     </Text>
                 </View>
 
-                <TouchableOpacity onPress={() => { }}>
-                    <Ionicons name="close-circle-outline" size={20} />
+                <TouchableOpacity onPress={() => removerAnexoDaLista(indice)}>
+                    <Ionicons name="close-circle-outline" size={20} color={"red"} />
                 </TouchableOpacity>
-
-                {/* <Image source={{uri: imageSource}}  /> */}
             </View>
         </View>
     )
@@ -45,12 +45,13 @@ const estilos = StyleSheet.create({
         marginEnd: 5
     },
     texto: {
+        marginTop: 10,
         flexWrap: "wrap",
         width: 250,
         marginVertical: 5
     },
     imagem: {
-        width: 100,
-        height: 100,
+        width: 65,
+        height: 65,
     }
 })

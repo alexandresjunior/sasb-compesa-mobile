@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import ImageViewerSection from "./ImageViewerSection";
 import ImagePickerModal from "./ImagePickerModal";
 
 const ImagePickerSection = ({ anexos, setAnexos }) => {
-    const [legenda, setLegenda] = useState("");
     const [modalVisible, setModalVisible] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [fileName, setFileName] = useState("");
+    const [source, setSource] = useState("");
 
     const pickImageAsync = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -17,11 +15,7 @@ const ImagePickerSection = ({ anexos, setAnexos }) => {
         });
 
         if (!result.canceled) {
-            result.assets[0].fileName = "Imagem_1.jpg";
-            setFileName(result.assets[0].fileName);
-            setSelectedImage(result.assets[0].uri);
-            console.log(result);
-
+            setSource(result.assets)
             setModalVisible(true)
         } else {
             alert("Nenhuma imagem foi selecionada!");
@@ -38,15 +32,15 @@ const ImagePickerSection = ({ anexos, setAnexos }) => {
             <ImagePickerModal
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}
-                legenda={legenda}
-                setLegenda={setLegenda}
                 anexos={anexos}
                 setAnexos={setAnexos}
+                source={source}
+                setSource={setSource}
             />
 
             {
-                anexos?.map((anexo, index) => {
-                    return <ImageViewerSection imageSource={anexo} fileName={fileName} legenda={legenda} key={index} />
+                anexos?.map((anexo, indice) => {
+                    return <ImageViewerSection anexo={anexo} anexos={anexos} setAnexos={setAnexos} indice={indice} key={indice} />
                 })
             }
         </>

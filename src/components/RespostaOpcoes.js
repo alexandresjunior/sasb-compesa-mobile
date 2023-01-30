@@ -76,7 +76,9 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
                     placeholderTextColor="#CACACA"
                     keyboardType="text"
                     multiline={true}
-                    onChangeText={(event) => setComentarios(event.target.value)}
+                    onChangeText={(comentarios) => {
+                        setComentarios(comentarios)
+                    }}
                     defaultValue={""}
                 />
             </View>

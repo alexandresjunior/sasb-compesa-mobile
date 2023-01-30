@@ -1,11 +1,14 @@
-import React from "react";
-import { Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import { Image, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-const ImagePickerModal = ({ modalVisible, setModalVisible, legenda, setLegenda, anexos, setAnexos }) => {
+const ImagePickerModal = ({ modalVisible, setModalVisible, anexos, setAnexos, source, setSource }) => {
+    const [descricao, setDescricao] = useState("");
+
     const salvarAnexo = () => {
-        setAnexos([...anexos, legenda])
+        setAnexos([...anexos, { source: source, descricao: descricao }])
         setModalVisible(!modalVisible)
-        console.log(anexos)
+        setSource("")
+        setDescricao("")
     }
 
     return (
@@ -18,18 +21,19 @@ const ImagePickerModal = ({ modalVisible, setModalVisible, legenda, setLegenda, 
             }}>
             <View style={estilos.container}>
                 <View style={estilos.modal}>
-                    <Text style={estilos.titulo}>Adicionar descrição:</Text>
+                    <Image style={estilos.imagem} source={source} />
 
+                    <Text style={estilos.titulo}>Adicionar descrição:</Text>
                     <TextInput
                         style={estilos.input}
                         placeholder="Digite uma descrição..."
                         placeholderTextColor={"#CACACA"}
                         keyboardType="text"
                         multiline={true}
-                        onChangeText={(legenda) => {
-                            setLegenda(legenda)
+                        onChangeText={(descricao) => {
+                            setDescricao(descricao)
                         }}
-                        defaultValue={legenda}
+                        defaultValue={descricao}
                     />
 
                     <TouchableOpacity
@@ -97,4 +101,9 @@ const estilos = StyleSheet.create({
     textoModal: {
         textAlign: 'center',
     },
+    imagem: {
+        width: 200,
+        height: 200,
+        marginBottom: 15
+    }
 });
