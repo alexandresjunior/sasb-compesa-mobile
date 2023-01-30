@@ -5,6 +5,7 @@ import TabRotas from "./TabRotas";
 import Cadastro from "../screens/Cadastro";
 import { AuthContext } from "../contexts/AuthContext";
 import { useAuth } from "../hooks/useAuth";
+import Suporte from "../screens/Suporte";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ const StackRotas = () => {
             ) : (
                 <Stack.Screen name="Tab Rotas" component={TabRotas} />
             )} */}
+            <Stack.Screen name="Suporte" component={Suporte} />
         </Stack.Navigator>
     )
 }

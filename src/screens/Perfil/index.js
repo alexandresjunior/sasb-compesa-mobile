@@ -4,7 +4,7 @@ import Cabecalho from "../Inspecoes/components/Cabecalho";
 import { usuario } from "../../mocks";
 
 // const Perfil = ({ usuario }) => {
-const Perfil = () => {
+const Perfil = ({ navigation }) => {
     return (
         <>
             <Cabecalho nome={"Perfil"} />
@@ -38,13 +38,13 @@ const Perfil = () => {
             <View style={estilos.separador} />
 
             <View style={estilos.container}>
-                <TouchableOpacity onPress={() => { }}>
+                <TouchableOpacity onPress={() => { navigation.navigate("Suporte") }}>
                     <Text style={estilos.link}>Editar dados de usuário</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { }}>
+                <TouchableOpacity onPress={() => { navigation.navigate("Suporte") }}>
                     <Text style={estilos.link}>Alterar senha</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { }}>
+                <TouchableOpacity onPress={() => { navigation.navigate("Log In") }}>
                     <Text style={estilos.link}>Sair</Text>
                 </TouchableOpacity>
             </View>

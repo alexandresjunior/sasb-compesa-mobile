@@ -68,7 +68,7 @@ const Login = () => {
                     <View style={estilos.opcoes}>
                         <Text style={{ marginStart: 10 }}>Mantenha-me conectado</Text>
 
-                        <TouchableOpacity style={{}} onPress={() => { }}>
+                        <TouchableOpacity style={{}} onPress={() => { navigation.navigate("Suporte") }}>
                             <Text style={estilos.link}>Esqueci a senha</Text>
                         </TouchableOpacity>
                     </View>
