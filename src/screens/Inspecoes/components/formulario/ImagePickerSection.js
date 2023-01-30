@@ -3,6 +3,7 @@ import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import ImageViewerSection from "./ImageViewerSection";
 import ImagePickerModal from "./ImagePickerModal";
+import ImageViewerCarousel from "./ImageViewerCarousel";
 
 const ImagePickerSection = ({ anexos, setAnexos }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -38,11 +39,7 @@ const ImagePickerSection = ({ anexos, setAnexos }) => {
                 setSource={setSource}
             />
 
-            {
-                anexos?.map((anexo, indice) => {
-                    return <ImageViewerSection anexo={anexo} anexos={anexos} setAnexos={setAnexos} indice={indice} key={indice} />
-                })
-            }
+            <ImageViewerCarousel anexos={anexos} setAnexos={setAnexos} />
         </>
     )
 }

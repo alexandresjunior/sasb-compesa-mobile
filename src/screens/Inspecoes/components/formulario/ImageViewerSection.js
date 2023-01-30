@@ -3,6 +3,10 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
+    const editarAnexoDaLista = (indice) => {
+        // TODO
+    }
+
     const removerAnexoDaLista = (indice) => {
         const lista = anexos.filter((_, index) => index !== indice);
         setAnexos(lista);
@@ -11,7 +15,7 @@ const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
-                <View>
+                <View style={estilos.row}>
                     <Image style={estilos.imagem} source={anexo.source} />
 
                     <Text style={estilos.texto}>
@@ -19,8 +23,13 @@ const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
                         {anexo.descricao}
                     </Text>
                 </View>
+                <TouchableOpacity style={estilos.row} onPress={() => editarAnexoDaLista(indice)}>
+                    <Text style={{ color: "#223F99", marginEnd: 5 }}>Editar</Text>
+                    <Ionicons name="create-outline" size={20} color={"#223F99"} />
+                </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => removerAnexoDaLista(indice)}>
+                <TouchableOpacity style={estilos.row} onPress={() => removerAnexoDaLista(indice)}>
+                    <Text style={{ color: "red", marginEnd: 5 }}>Excluir</Text>
                     <Ionicons name="close-circle-outline" size={20} color={"red"} />
                 </TouchableOpacity>
             </View>
@@ -33,11 +42,17 @@ export default ImageViewerSection;
 const estilos = StyleSheet.create({
     container: {
         margin: 10,
-        height: 100,
+        borderWidth: 1,
+        borderColor: "#223F99",
+        borderRadius: 5,
+        padding: 15,
+        width: 200
     },
     row: {
         flexDirection: "row",
-        marginVertical: 2.5
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
     titulo: {
         fontSize: 14,
@@ -51,7 +66,7 @@ const estilos = StyleSheet.create({
         marginVertical: 5
     },
     imagem: {
-        width: 65,
-        height: 65,
+        width: 75,
+        height: 75,
     }
 })
