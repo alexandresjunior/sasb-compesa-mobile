@@ -3,16 +3,18 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RespostaOpcoes from "./RespostaOpcoes";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const QuestaoCard = ({questao}) => {
+const QuestaoCard = ({ questao }) => {
     const [situacao, setSituacao] = useState();
     const [magnitude, setMagnitude] = useState();
     const [nivelPerigo, setNivelPerigo] = useState();
+    const [anexos, setAnexos] = useState([]);
     const [comentarios, setComentarios] = useState();
 
     const [expandir, setExpandir] = useState(false);
     const [completo, setCompleto] = useState(false);
 
     useEffect(() => {
+        /* Itens Obrigatórios */
         if (situacao && magnitude && nivelPerigo) {
             setCompleto(true)
         }
@@ -33,6 +35,7 @@ const QuestaoCard = ({questao}) => {
             {
                 expandir ? (
                     <RespostaOpcoes
+                        questao={questao} completo={completo}
                         situacao={situacao} setSituacao={setSituacao}
                         magnitude={magnitude} setMagnitude={setMagnitude}
                         nivelPerigo={nivelPerigo} setNivelPerigo={setNivelPerigo}

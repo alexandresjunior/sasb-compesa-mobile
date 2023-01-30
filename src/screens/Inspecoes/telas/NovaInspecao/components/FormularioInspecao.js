@@ -5,9 +5,9 @@ import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalCon
 import Cabecalho from "../../../components/Cabecalho";
 
 const FormularioInspecao = () => {
-    const { questoes, pagina, setPagina } = useContext(InspecaoGlobalContext);
+    const { formulario, pagina, setPagina } = useContext(InspecaoGlobalContext);
 
-    const [secao, setSecao] = useState(questoes[pagina]);
+    const [secao, setSecao] = useState(formulario[pagina]);
 
     return (
         <ScrollView>

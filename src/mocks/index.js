@@ -199,61 +199,122 @@ export const listaBarragens = [
     }
 ]
 
-export const questoes = [
+export var formulario = [
     {
         indice: 1,
+        pagina: 1,
         codigo: "A",
         nome: "INFRAESTRUTURA OPERACIONAL",
         itens: [
             {
                 indice: 1,
                 descricao: "Falta de documentação sobre a barragem",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Falta de material para manutenção",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 3,
                 descricao: "Falta de treinamento do pessoal",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 4,
                 descricao: "Precariedade no acesso de veículos",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 5,
                 descricao: "Falta de energia elétrica",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 6,
                 descricao: "Falta de sistema de comunicação eficiente",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 7,
                 descricao: "Falta ou deficiência de cercas de proteção",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 8,
                 descricao: "Falta ou deficiência nas placas de aviso",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 9,
                 descricao: "Falta de acompanhamento da Administração Regional",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 10,
                 descricao: "Falta de manual de operação dos equipamentos hidro e eletromecânicos",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     },
@@ -264,261 +325,536 @@ export const questoes = [
         subsecoes: [
             {
                 indice: 1,
+                pagina: 2,
                 codigo: "B.1",
                 nome: "PARAMENTO DE MONTANTE",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Presença de vegetação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Erosão nos encontros das ombreiras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ocorrência de fissuras e rachaduras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Ferragem da barragem exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Abertura de juntas de dilatação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 2,
+                pagina: 3,
                 codigo: "B.2",
                 nome: "CRISTA",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Movimentos diferenciais entre blocos (nas juntas)",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Ocorrência de fissuras e rachaduras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ferragem da barragem exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Deterioração da superfície",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Juntas de dilatação danificadas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Desalinhamento e/ou ferrugem do guarda-corpo",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Corrosão nos postes de iluminação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Corrosão no pórtico",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Danos na estrutura do guarda-corpo",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 10,
                         descricao: "Drenos entupidos ou danificados",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 11,
                         descricao: "Vegetação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 12,
                         descricao: "Guarda-corpo incompleto ou ausente",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 3,
+                pagina: 4,
                 codigo: "B.3",
                 nome: "PARAMENTO DE JUSANTE",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Presença de vegetação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Sinais de movimento",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ocorrência de fissuras, trincas e rachaduras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Ferragem da barragem exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Juntas de dilatação danificadas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Sinais de percolação ou áreas úmidas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Carreamento de material na água dos drenos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Vazão nos drenos de controle",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 10,
                         descricao: "Erosão nos encontros das ombreiras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 4,
+                pagina: 5,
                 codigo: "B.4",
                 nome: "PLATAFORMAS DE JUSANTE",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Árvores de grande porte",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Sinais de movimento",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ferragem da barragem exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Ocorrência de fissuras e rachaduras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Juntas de dilatação danificadas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Sinais de percolação ou áreas úmidas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Banheiros desativados deteriorados e rachados",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Guarda-corpo incompleto e/ou ausente e enferrujado",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 5,
+                pagina: 6,
                 codigo: "B.5",
                 nome: "INSTRUMENTAÇÃO",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Acesso precário aos instrumentos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Piezômetros entupidos ou defeituosos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Marcos de referência defeituosos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Medidores de vazão defeituosos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Outros instrumentos danificados",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Falta de instrumentação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Falta de registro de leituras da instrumentação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Marcos superficiais defeituosos ou ausentes",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             }
@@ -531,209 +867,429 @@ export const questoes = [
         subsecoes: [
             {
                 indice: 1,
+                pagina: 7,
                 codigo: "C.1",
                 nome: "CANAL DE APROXIMAÇÃO E RESTITUIÇÃO",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Presença de vegetação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Obstrução ou entulhos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Desalinhamento dos muros laterais ou taludes",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Ferragem do concreto exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Erosão ou escorregamentos nos taludes laterais",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Erosão na base dos canais escavados",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Erosão na área a jusante do vertedor",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Construções irregulares (aterro, estrada, casa, cerca)",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 2,
+                pagina: 8,
                 codigo: "C.2",
                 nome: "ESTRUTURA DO VERTEDOURO",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Fissuras (trincas ou rachaduras)",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Ferragem do concreto exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Descalçamento da estrutura",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Juntas de dilatação danificadas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Sinais de deslocamento da estrutura",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Vegetação e entulho",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Erosão nos contatos dos muros",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Sinais de percolação ou áreas úmidas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 10,
                         descricao: "Carreamento de material na água dos drenos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 11,
                         descricao: "Vazão nos drenos de controle",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 3,
+                pagina: 9,
                 codigo: "C.3",
                 nome: "MUROS LATERAIS",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Erosão na fundação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Erosão nos contatos dos muros",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Fissuras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Ferragem do concreto exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Erosão no talude",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Rip-rap incompleto, destruído ou deslocado no contato",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Vegetação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Drenos operantes",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 4,
+                pagina: 10,
                 codigo: "C.4",
                 nome: "BACIA DE DISSIPAÇÃO",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Fissuras, trincas ou rachaduras",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Ferragem do concreto exposta",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Deterioração",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Ocorrência de buracos na soleira",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Erosão",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Presença de entulho na bacia",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Presença de vegetação na bacia",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Falha no enrocamento de protação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             }
@@ -746,135 +1302,281 @@ export const questoes = [
         subsecoes: [
             {
                 indice: 1,
+                pagina: 11,
                 codigo: "D.1",
                 nome: "BOCA DE MONTANTE",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Assoreamento",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Obstrução e entulhos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ferragem exposta na estrutura de concreto",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Deterioração no concreto",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Falta de grade de proteção",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Defeitos na grade",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Problemas na estrutura elétrica",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Presença de animais peçonhentos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Peças enferrujadas ou corroídas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             },
             {
                 indice: 2,
+                pagina: 12,
                 codigo: "D.2",
                 nome: "ESTRUTURA DE SAÍDA",
                 itens: [
                     {
                         indice: 1,
                         descricao: "Corrosão e vazamentos na tubulação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 2,
                         descricao: "Sinais de abrasão ou cavitação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 3,
                         descricao: "Ruídos estranhos",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 4,
                         descricao: "Defeitos nos dispositivos de controle",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 5,
                         descricao: "Surgências de água na caixa de concreto",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 6,
                         descricao: "Precariedade de acesso (vegetação)",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 7,
                         descricao: "Vazamento nos dispositivos de controle",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 8,
                         descricao: "Falta de manutenção",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 9,
                         descricao: "Construções irregulares a jusante",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 10,
                         descricao: "Falta ou deficiência de drenagem da caixa de válvulas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 11,
                         descricao: "Presença de entulho dentro da caixa de válvulas",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 12,
                         descricao: "Defeitos na caixa de concreto",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 13,
                         descricao: "Defeitos na cerca de proteção",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 14,
                         descricao: "Elementos hidromecânicos enferrujados",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     },
                     {
                         indice: 15,
                         descricao: "Defeito no bloco de ancoragem da tubulação",
-                        resposta: ""
+                        resposta: {
+                            situacao: "NA",
+                            magnitude: "I",
+                            nivelPerigo: 0,
+                            anexos: {},
+                            comentarios: ""
+                        }
                     }
                 ]
             }
@@ -882,226 +1584,459 @@ export const questoes = [
     },
     {
         indice: 5,
+        pagina: 13,
         codigo: "E",
         nome: "MUROS DE CONTENÇÃO",
         itens: [
             {
                 indice: 1,
                 descricao: "Presença de vegetação",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Sinais de movimento",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 3,
                 descricao: "Ocorrência de fissuras, trincas e rachaduras",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 4,
                 descricao: "Ferragem da barragem exposta",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 5,
                 descricao: "Deterioração",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 6,
                 descricao: "Juntas de dilatação danificadas",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 7,
                 descricao: "Sinais de percolação ou áreas úmidas",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 8,
                 descricao: "Carreamento de material na água dos drenos",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 9,
                 descricao: "Vazão nos drenos de controle",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 10,
                 descricao: "Erosão no encontro com o terreno natural",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     },
     {
         indice: 6,
+        pagina: 14,
         codigo: "F",
         nome: "RESERVATÓRIO",
         itens: [
             {
                 indice: 1,
                 descricao: "Réguas danificadas ou faltantes",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Construções em áreas de proteção",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 3,
                 descricao: "Poluição por esgoto, lixo, pesticidas etc.",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 4,
                 descricao: "Indícios de má qualidade da água",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 5,
                 descricao: "Erosões",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 6,
                 descricao: "Assoreamento",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 7,
                 descricao: "Desmoronamento nas margens",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 8,
                 descricao: "Existência de vegetação aquática excessiva",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 9,
                 descricao: "Desmatamentos na área de proteção",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 10,
                 descricao: "Presença de animais e peixes mortos",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 11,
                 descricao: "Animais pastando",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 12,
                 descricao: "Árvores na área do reservatório e próximas ao paramento",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     },
     {
         indice: 7,
+        pagina: 15,
         codigo: "G",
         nome: "REGIÃO A JUSANTE DA BARRAGEM",
         itens: [
             {
                 indice: 1,
                 descricao: "Sinais de movimentos na rocha de fundação",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Desintegração/decomposição da rocha",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 3,
                 descricao: "Piping nas juntas rochosas",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 4,
                 descricao: "Construções irregulares próximas ao leito do rio",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 5,
                 descricao: "Vazamento (fuga d'água) nas ombreiras",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 6,
                 descricao: "Árvores/arbustos e vegetação na faixa de 10m da barragem",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 7,
                 descricao: "Erosão nos encontros das ombreiras",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 8,
                 descricao: "Cavernas e buracos nas ombreiras",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     },
     {
         indice: 8,
+        pagina: 16,
         codigo: "H",
         nome: "MEDIDORES DE VAZÃO",
         itens: [
             {
                 indice: 1,
                 descricao: "Ausência de placa medidora de vazão",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Corrosão da placa",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 3,
                 descricao: "Defeito no concreto",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 4,
                 descricao: "Falta de escala de leitura de vazão",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 5,
                 descricao: "Assoreamento da câmara de medição",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 6,
                 descricao: "Erosão a jusante do medidor",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     },
     {
         indice: 9,
+        pagina: 17,
         codigo: "I",
         nome: "ESTRADAS DE ACESSO",
         itens: [
             {
                 indice: 1,
                 descricao: "Estado do pavimento",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             },
             {
                 indice: 2,
                 descricao: "Condições de drenagem (com água estagnada)",
-                resposta: ""
+                resposta: {
+                    situacao: "NA",
+                    magnitude: "I",
+                    nivelPerigo: 0,
+                    anexos: {},
+                    comentarios: ""
+                }
             }
         ]
     }
