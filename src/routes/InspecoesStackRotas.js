@@ -2,15 +2,18 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inspecoes from "../screens/Inspecoes";
 import NovaInspecao from "../screens/Inspecoes/telas/NovaInspecao";
-import { formulario } from "../mocks";
 import { InspecaoProvider } from "../contexts/InspecaoGlobalContext";
 import FormularioInspecao from "../screens/Inspecoes/telas/NovaInspecao/components/FormularioInspecao";
 import RelatorioInspecao from "../screens/Inspecoes/telas/RelatorioInspecao";
 import Barragem from "../screens/Barragem";
+import { obterPaginasDoFormulario } from "../utils";
+import { formulario } from "../mocks";
 
 const Stack = createNativeStackNavigator();
 
 const InspecoesStackRotas = () => {
+    const paginas = obterPaginasDoFormulario(formulario);
+
     return (
         <InspecaoProvider>
             <Stack.Navigator initialRouteName="Selecionar Barragem" screenOptions={{ headerShown: false }}>
@@ -18,15 +21,9 @@ const InspecoesStackRotas = () => {
                 <Stack.Screen name="Inspecoes Realizadas" component={Inspecoes} />
                 <Stack.Screen name="Nova Inspecao" component={NovaInspecao} />
                 {
-                    formulario?.map((questao, indice) => {
-                        questao.subsecoes?.map((subsecao, indice) => {
-                            return (
-                                <Stack.Screen key={indice} name={`${subsecao.codigo} - ${subsecao.nome}`} component={FormularioInspecao} />
-                            )
-                        })
-                        
+                    paginas?.map((pagina, indice) => {
                         return (
-                            <Stack.Screen key={indice} name={`${questao.codigo} - ${questao.nome}`} component={FormularioInspecao} />
+                            <Stack.Screen key={indice} name={`${pagina.titulo} - ${pagina.subtitulo}`} component={FormularioInspecao} />
                         )
                     })
                 }

@@ -8,7 +8,7 @@ import { shareAsync } from "expo-sharing";
 import { body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
 
 const RelatorioInspecao = () => {
-    const { formulario, setPagina } = useContext(InspecaoGlobalContext);
+    const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
     const html = header + body(formulario) + footer;
 
@@ -50,7 +50,7 @@ const RelatorioInspecao = () => {
                 <TouchableOpacity style={estilos.botao} onPress={printToFile}>
                     <Text style={estilos.textoBotao}>Gerar Relatório</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPagina(-1)}>
+                <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(-1)}>
                     <Text style={estilos.textoBotaoOutline}>Voltar à Tela Inicial</Text>
                 </TouchableOpacity>
             </View>

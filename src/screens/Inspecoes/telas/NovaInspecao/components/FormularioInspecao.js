@@ -5,44 +5,31 @@ import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalCon
 import Cabecalho from "../../../components/Cabecalho";
 
 const FormularioInspecao = () => {
-    const { formulario, pagina, setPagina } = useContext(InspecaoGlobalContext);
+    const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
-    const [secao, setSecao] = useState(formulario[pagina]);
+    const [pagina] = useState(paginas[paginaAtual]);
 
     return (
         <ScrollView>
             <Cabecalho nome={"Nova Inspeção"} />
 
             <View style={estilos.container}>
-                <Text style={estilos.tituloPreto}>{secao.codigo} - {secao.nome}</Text>
+                <Text style={estilos.tituloPreto}>{pagina.titulo}</Text>
+                {
+                    !!pagina.subtitulo && <Text style={estilos.tituloPreto}>{pagina.subtitulo}</Text>
+                }
 
                 {
-                    secao.subsecoes ? (
-                        secao.subsecoes.map((subsecao, indiceSubsecao) => {
-                            return (
-                                <View key={indiceSubsecao}>
-                                    <Text style={estilos.tituloPreto}>{secao.subsecoes[indiceSubsecao].codigo} - {secao.subsecoes[indiceSubsecao].nome}</Text>
-                                    {
-                                        subsecao.itens.map((questao, index) => {
-                                            return <QuestaoCard questao={questao} key={index} />
-                                        })
-                                    }
-                                </View>
-                            )
-                        })
-                    ) : (
-                        secao?.itens.map((questao, index) => {
-                            return <QuestaoCard questao={questao} key={index} />
-                        })
-                    )
-
+                    pagina.itens.map((questao, index) => {
+                        return <QuestaoCard questao={questao} key={index} />
+                    })
                 }
 
                 <View style={estilos.row}>
-                    <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPagina(pagina - 1)}>
+                    <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(paginaAtual - 1)}>
                         <Text style={estilos.textoBotaoOutline}>Voltar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={estilos.botao} onPress={() => setPagina(pagina + 1)}>
+                    <TouchableOpacity style={estilos.botao} onPress={() => setPaginaAtual(paginaAtual + 1)}>
                         <Text style={estilos.textoBotao}>Avançar</Text>
                     </TouchableOpacity>
                 </View>
