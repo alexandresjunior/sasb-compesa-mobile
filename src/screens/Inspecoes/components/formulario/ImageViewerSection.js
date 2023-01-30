@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const ImageViewerSection = ({ imageSource, fileName }) => {
+const ImageViewerSection = ({ imageSource, fileName, legenda }) => {
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
@@ -14,7 +14,7 @@ const ImageViewerSection = ({ imageSource, fileName }) => {
 
                     <Text style={estilos.texto}>
                         <Text style={estilos.titulo}>Legenda: </Text>
-                        {"Alguma frase descritiva da imagem anexada."}
+                        {legenda}
                     </Text>
                 </View>
 

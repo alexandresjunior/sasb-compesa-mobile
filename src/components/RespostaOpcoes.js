@@ -5,7 +5,7 @@ import ImagePickerSection from "../screens/Inspecoes/components/formulario/Image
 import InputSection from "../screens/Inspecoes/components/formulario/InputSection";
 import { respostas } from "../mocks";
 
-const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, comentarios, setComentarios }) => {
+const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, anexos, setAnexos, comentarios, setComentarios }) => {
     const [situacaoModalVisible, setSituacaoModalVisible] = useState(false);
     const [magnitudeModalVisible, setMagnitudeModalVisible] = useState(false);
     const [nivelDePerigoModalVisible, setNivelDePerigoModalVisible] = useState(false);
@@ -14,8 +14,8 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
         situacao: situacao?.sigla,
         magnitude: magnitude?.sigla,
         nivelPerigo: nivelPerigo?.sigla,
-        anexos: {},
-        comentarios: ""
+        anexos: anexos,
+        comentarios: comentarios
     }
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
         }
 
         questao.resposta = resposta;
-    }, [completo, situacao]);
+    }, [completo, situacao, anexos]);
 
     return (
         <View>
@@ -66,7 +66,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
                 setModalVisible={setNivelDePerigoModalVisible}
             />
 
-            <ImagePickerSection />
+            <ImagePickerSection anexos={anexos} setAnexos={setAnexos} />
 
             <Text style={estilos.titulo}>Comentários:</Text>
             <View style={estilos.row}>

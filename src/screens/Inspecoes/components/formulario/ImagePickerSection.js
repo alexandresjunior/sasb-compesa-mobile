@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import ImageViewerSection from "./ImageViewerSection";
+import ImagePickerModal from "./ImagePickerModal";
 
-const ImagePickerSection = () => {
+const ImagePickerSection = ({ anexos, setAnexos }) => {
+    const [legenda, setLegenda] = useState("");
+    const [modalVisible, setModalVisible] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [fileName, setFileName] = useState("");
 
@@ -17,7 +20,9 @@ const ImagePickerSection = () => {
             result.assets[0].fileName = "Imagem_1.jpg";
             setFileName(result.assets[0].fileName);
             setSelectedImage(result.assets[0].uri);
-            // console.log(result);
+            console.log(result);
+
+            setModalVisible(true)
         } else {
             alert("Nenhuma imagem foi selecionada!");
         }
@@ -30,7 +35,20 @@ const ImagePickerSection = () => {
                 <Text style={estilos.textoBotao}>Selecionar Imagem</Text>
             </TouchableOpacity>
 
-            {!!selectedImage && <ImageViewerSection imageSource={selectedImage} fileName={fileName} />}
+            <ImagePickerModal
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+                legenda={legenda}
+                setLegenda={setLegenda}
+                anexos={anexos}
+                setAnexos={setAnexos}
+            />
+
+            {
+                anexos?.map((anexo, index) => {
+                    return <ImageViewerSection imageSource={anexo} fileName={fileName} legenda={legenda} key={index} />
+                })
+            }
         </>
     )
 }

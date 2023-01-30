@@ -39,6 +39,7 @@ const QuestaoCard = ({ questao }) => {
                         situacao={situacao} setSituacao={setSituacao}
                         magnitude={magnitude} setMagnitude={setMagnitude}
                         nivelPerigo={nivelPerigo} setNivelPerigo={setNivelPerigo}
+                        anexos={anexos} setAnexos={setAnexos}
                         comentarios={comentarios} setComentarios={setComentarios}
                     />
                 ) : completo && (
