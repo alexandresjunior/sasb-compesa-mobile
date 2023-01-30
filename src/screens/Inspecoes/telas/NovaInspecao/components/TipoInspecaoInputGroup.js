@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { RadioButton, RadioButtonInput, RadioButtonLabel } from "react-native-simple-radio-button";
 
 const TipoInspecaoInputGroup = () => {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
 
     const radio_props = [
         { label: '1a. Inspeção Regular', value: 0 },
