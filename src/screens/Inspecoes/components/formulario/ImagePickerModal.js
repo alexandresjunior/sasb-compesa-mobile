@@ -21,7 +21,7 @@ const ImagePickerModal = ({ modalVisible, setModalVisible, anexos, setAnexos, so
             }}>
             <View style={estilos.container}>
                 <View style={estilos.modal}>
-                    <Image style={estilos.imagem} source={source} />
+                    <Image style={estilos.imagem} source={source.assets} />
 
                     <Text style={estilos.titulo}>Adicionar descrição:</Text>
                     <TextInput

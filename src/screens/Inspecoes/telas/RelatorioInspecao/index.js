@@ -5,12 +5,12 @@ import Cabecalho from "../../components/Cabecalho";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
-import { body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
+import { anexos, body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
 
 const RelatorioInspecao = () => {
     const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
-    const html = header + body(formulario) + footer;
+    const html = header + body(formulario) + anexos(formulario) + footer;
 
     const printToFile = async () => {
         const { uri } = await Print.printToFileAsync({

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import ImageViewerSection from "./ImageViewerSection";
 import ImagePickerModal from "./ImagePickerModal";
 import ImageViewerCarousel from "./ImageViewerCarousel";
 
@@ -11,12 +10,15 @@ const ImagePickerSection = ({ anexos, setAnexos }) => {
 
     const pickImageAsync = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
+            base64: true,
             allowsEditing: true,
+            aspect: [16, 9],
             quality: 1,
         });
 
         if (!result.canceled) {
-            setSource(result.assets)
+            // This might be removed in SDK 48 (check deprecated variables)
+            setSource(result)
             setModalVisible(true)
         } else {
             alert("Nenhuma imagem foi selecionada!");

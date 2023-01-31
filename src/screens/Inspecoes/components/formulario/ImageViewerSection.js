@@ -11,7 +11,7 @@ const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
-                <Image style={estilos.imagem} source={anexo.source} />
+                <Image style={estilos.imagem} source={anexo.source.assets} />
 
                 <TouchableOpacity style={estilos.botao} onPress={() => removerAnexoDaLista(indice)}>
                     <Ionicons name="close-circle" size={20} color={"red"} />
