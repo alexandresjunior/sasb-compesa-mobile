@@ -12,7 +12,15 @@ const ImageViewerCarousel = ({ anexos, setAnexos }) => {
         >
             {
                 anexos?.map((anexo, indice) => {
-                    return <ImageViewerSection anexo={anexo} anexos={anexos} setAnexos={setAnexos} indice={indice} key={indice} />
+                    return (
+                        <ImageViewerSection
+                            anexo={anexo}
+                            anexos={anexos}
+                            setAnexos={setAnexos}
+                            indice={indice}
+                            key={indice}
+                        />
+                    )
                 })
             }
         </ScrollView>

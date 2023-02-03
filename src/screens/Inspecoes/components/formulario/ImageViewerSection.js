@@ -11,10 +11,10 @@ const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
-                <Image style={estilos.imagem} source={anexo.source.assets} />
+                <Image style={estilos.imagem} source={anexo} />
 
                 <TouchableOpacity style={estilos.botao} onPress={() => removerAnexoDaLista(indice)}>
-                    <Ionicons name="close-circle" size={20} color={"red"} />
+                    <Ionicons name="close-circle" size={25} color={"red"} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -43,7 +43,7 @@ const estilos = StyleSheet.create({
     botao: {
         position: "absolute",
         backgroundColor: "#fff",
-        borderRadius: 10,
+        borderRadius: 20,
         alignSelf: "flex-start",
         marginStart: 90,
         marginTop: -10

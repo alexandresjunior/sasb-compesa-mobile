@@ -120,15 +120,22 @@ export const anexos = (formulario) => {
                     for (let k in subsecao.itens) {
                         const item = subsecao.itens[k];
 
+                        const descricao = item.descricao;
+                        const situacao = item.resposta.situacao;
+                        const magnitude = item.resposta.magnitude;
+                        const nivelPerigo = item.resposta.nivelPerigo;
+
                         for (let l in item.resposta.anexos) {
                             const anexo = item.resposta.anexos[l];
 
-                            const source = `data:image/jpg;base64,${anexo.source.assets[0].base64}`;
+                            const source = `data:image/jpg;base64,${anexo.base64}`;
+
+                            const legenda = `<b>Figura ${k}.${l}: </b>${descricao} com situação classificada como ${situacao}, magnitude como ${magnitude} e nível de perigo igual a ${nivelPerigo}.`;
 
                             html = html + `
                             <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 10px;">
-                                <img src="${source}" alt="${anexo.descricao}" width="300" height="300" />
-                                <small><b>Legenda:</b> ${anexo.descricao}</small>
+                                <img src="${source}" alt="${legenda}" width="300" height="300" />
+                                <small>${legenda}</small>
                             </div>
                             `
                         }
@@ -152,15 +159,22 @@ export const anexos = (formulario) => {
             for (let j in questao.itens) {
                 const item = questao.itens[j];
 
+                const descricao = item.descricao;
+                const situacao = item.resposta.situacao;
+                const magnitude = item.resposta.magnitude;
+                const nivelPerigo = item.resposta.nivelPerigo;
+
                 for (let l in item.resposta.anexos) {
                     const anexo = item.resposta.anexos[l];
 
-                    const source = `data:image/jpg;base64,${anexo.source.assets[0].base64}`;
+                    const source = `data:image/jpg;base64,${anexo.base64}`;
+
+                    const legenda = `<b>Figura ${j}.${l}: </b>${descricao} com situação classificada como ${situacao}, magnitude como ${magnitude} e nível de perigo igual a ${nivelPerigo}.`;
 
                     html = html + `
                     <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 10px;">
-                        <img src="${source}" alt="${anexo.descricao}" width="300" height="300" />
-                        <small><b>Legenda:</b> ${anexo.descricao}</small>
+                        <img src="${source}" alt="${legenda}" width="300" height="300" />
+                        <small>${legenda}</small>
                     </div>
                     `
                 }

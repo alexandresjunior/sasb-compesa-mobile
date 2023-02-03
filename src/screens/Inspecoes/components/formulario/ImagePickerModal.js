@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
+// DEPRECATED
 const ImagePickerModal = ({ modalVisible, setModalVisible, anexos, setAnexos, source, setSource }) => {
     const [descricao, setDescricao] = useState("");
 
