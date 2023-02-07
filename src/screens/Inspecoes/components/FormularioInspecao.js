@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-nati
 import { InspecaoGlobalContext } from "../../../contexts/InspecaoGlobalContext";
 import Header from "../../../components/Header";
 import QuestionCard from "../../../components/cards/QuestionCard";
+import SmallButton from "../../../components/buttons/SmallButton";
+import SmallButtonOutline from "../../../components/buttons/SmallButtonOutline";
 
 const FormularioInspecao = () => {
     const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
@@ -26,12 +28,8 @@ const FormularioInspecao = () => {
                 }
 
                 <View style={estilos.row}>
-                    <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(paginaAtual - 1)}>
-                        <Text style={estilos.textoBotaoOutline}>Voltar</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={estilos.botao} onPress={() => setPaginaAtual(paginaAtual + 1)}>
-                        <Text style={estilos.textoBotao}>Avançar</Text>
-                    </TouchableOpacity>
+                    <SmallButtonOutline label={"Voltar"} onPress={() => setPaginaAtual(paginaAtual - 1)} />
+                    <SmallButton label={"Avançar"} onPress={() => setPaginaAtual(paginaAtual + 1)} />
                 </View>
             </View>
         </ScrollView>
@@ -54,33 +52,5 @@ const estilos = StyleSheet.create({
         fontWeight: "bold",
         color: "#000",
         marginBottom: 15
-    },
-    botao: {
-        backgroundColor: "#223F99",
-        padding: 15,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "#223F99",
-        width: 170,
-    },
-    textoBotao: {
-        textAlign: "center",
-        color: "#FFF",
-        fontWeight: "bold",
-        fontSize: 18
-    },
-    botaoOutline: {
-        backgroundColor: "#FFF",
-        padding: 15,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "#223F99",
-        width: 170,
-    },
-    textoBotaoOutline: {
-        textAlign: "center",
-        color: "#223F99",
-        fontWeight: "bold",
-        fontSize: 18
     }
 });

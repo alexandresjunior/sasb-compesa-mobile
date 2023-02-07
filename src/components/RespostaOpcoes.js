@@ -11,9 +11,9 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
     const [nivelDePerigoModalVisible, setNivelDePerigoModalVisible] = useState(false);
 
     const resposta = {
-        situacao: situacao?.sigla,
-        magnitude: magnitude?.sigla,
-        nivelPerigo: nivelPerigo?.sigla,
+        situacao: situacao,
+        magnitude: magnitude,
+        nivelPerigo: nivelPerigo,
         anexos: anexos,
         comentarios: comentarios
     }

@@ -7,7 +7,7 @@ import FormularioInspecao from "../screens/Inspecoes/components/FormularioInspec
 import RelatorioInspecao from "../screens/Inspecoes/telas/RelatorioInspecao";
 import Barragem from "../screens/Barragem";
 import { obterPaginasDoFormulario } from "../utils";
-import { formulario } from "../mocks";
+import { formulario } from "../states/formulario";
 
 const Stack = createNativeStackNavigator();
 
