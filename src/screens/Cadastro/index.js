@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import FormButton from "../../components/buttons/FormButton";
+import LargeButton from "../../components/buttons/LargeButton";
 import FormHeader from "../../components/headers/FormHeader";
 import FormTextInput from "../../components/inputs/FormTextInput";
 
@@ -25,7 +25,7 @@ const Cadastro = () => {
                 <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
                 <FormTextInput placeholder={"Confirmar Senha"} type={"password"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} />
 
-                <FormButton text={"CADASTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
+                <LargeButton label={"CADASTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
             </View>
         </>
     )

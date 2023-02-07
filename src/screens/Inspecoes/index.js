@@ -3,8 +3,8 @@ import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import HorizontalCard from "../../components/HorizontalCard";
 import { inspecoes } from "../../mocks";
-import Botao from "./components/Botao";
 import Cabecalho from "./components/Cabecalho";
+import MidButton from "../../components/buttons/MidButton";
 
 const Inspecoes = () => {
     const navigation = useNavigation();
@@ -23,7 +23,7 @@ const Inspecoes = () => {
                 </>)
             }}
             ListFooterComponent={() => {
-                return <Botao label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
+                return <MidButton label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
             }}
         />
     )

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import QuestaoCard from "../../../../../components/QuestaoCard";
 import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalContext";
 import Cabecalho from "../../../components/Cabecalho";
+import QuestionCard from "../../../components/formulario/QuestionCard";
 
 const FormularioInspecao = () => {
     const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
@@ -21,7 +21,7 @@ const FormularioInspecao = () => {
 
                 {
                     pagina.itens.map((questao, index) => {
-                        return <QuestaoCard questao={questao} key={index} />
+                        return <QuestionCard questao={questao} key={index} />
                     })
                 }
 

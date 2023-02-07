@@ -1,17 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Botao = ({ label, onPress }) => {
+const MidButton = ({ label, onPress }) => {
     return (
         <View style={estilos.container}>
-            <TouchableOpacity style={estilos.botao} onPress={onPress}>
-                <Text style={estilos.textoBotao}>{label}</Text>
+            <TouchableOpacity style={estilos.button} onPress={onPress}>
+                <Text style={estilos.label}>{label}</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default Botao;
+export default MidButton;
 
 const estilos = StyleSheet.create({
     container: {
@@ -19,7 +19,7 @@ const estilos = StyleSheet.create({
         marginTop: 25,
         marginBottom: 15
     },
-    botao: {
+    button: {
         backgroundColor: "#223F99",
         borderRadius: 5,
         borderWidth: 1,
@@ -29,7 +29,7 @@ const estilos = StyleSheet.create({
         alignSelf: "center",
         marginBottom: 10
     },
-    textoBotao: {
+    label: {
         textAlign: "center",
         color: "#FFF",
         fontWeight: "bold"

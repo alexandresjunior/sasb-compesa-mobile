@@ -1,17 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const FormButton = ({ text, onPress }) => {
+const LargeButton = ({ label, onPress }) => {
     return (
         <TouchableOpacity
             style={styles.button}
             onPress={onPress}>
-            <Text style={styles.text}>{text}</Text>
+            <Text style={styles.label}>{label}</Text>
         </TouchableOpacity>
     )
 }
 
-export default FormButton;
+export default LargeButton;
 
 const styles = StyleSheet.create({
     button: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         padding: 15,
     },
-    text: {
+    label: {
         textAlign: "center",
         color: "#FFF",
         fontWeight: "bold"

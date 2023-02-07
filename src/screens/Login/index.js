@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import FormButton from "../../components/buttons/FormButton";
+import LargeButton from "../../components/buttons/LargeButton";
 import FormHeader from "../../components/headers/FormHeader";
 import FormTextInput from "../../components/inputs/FormTextInput";
 
@@ -23,7 +23,7 @@ const Login = () => {
                 <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
                 <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
 
-                <FormButton text={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
+                <LargeButton label={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
 
                 <View style={estilos.row}>
                     <Checkbox

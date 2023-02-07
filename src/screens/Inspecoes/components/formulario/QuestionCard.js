@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import RespostaOpcoes from "./RespostaOpcoes";
+import RespostaOpcoes from "../../../../components/RespostaOpcoes";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const QuestaoCard = ({ questao }) => {
+const QuestionCard = ({ questao }) => {
     const [situacao, setSituacao] = useState();
     const [magnitude, setMagnitude] = useState();
     const [nivelPerigo, setNivelPerigo] = useState();
@@ -63,7 +63,7 @@ const QuestaoCard = ({ questao }) => {
     )
 }
 
-export default QuestaoCard;
+export default QuestionCard;
 
 const estilos = StyleSheet.create({
     container: {
