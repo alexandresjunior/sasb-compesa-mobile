@@ -1,37 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Header from "../../components/Header";
-import { usuario } from "../../mocks";
+import Cabecalho from "../Inspecoes/components/Cabecalho";
+import { logout } from "../../services/local";
+import { useNavigation } from "@react-navigation/native";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
-// const Perfil = ({ usuario }) => {
-const Perfil = ({ navigation }) => {
+const Perfil = () => {
+    const navigation = useNavigation()
+
+    const { usuarioLogado } = useContext(GlobalContext)
+
     return (
         <>
             <Header title={"Perfil"} />
             <View style={estilos.container}>
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>Nome: </Text>
-                    <Text style={estilos.texto}>{usuario.nome}</Text>
+                    <Text style={estilos.texto}>{usuarioLogado.nome}</Text>
                 </View>
 
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>Cargo: </Text>
-                    <Text style={estilos.texto}>{usuario.cargo}</Text>
+                    <Text style={estilos.texto}>{usuarioLogado.funcao.nome}</Text>
                 </View>
 
                 <View style={[estilos.row, estilos.titulo]}>
-                    <Text style={estilos.label}>Instituição: </Text>
-                    <Text style={estilos.texto}>{usuario.instituicao}</Text>
+                    <Text style={estilos.label}>Matrícula: </Text>
+                    <Text style={estilos.texto}>{usuarioLogado.matricula}</Text>
                 </View>
 
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>E-mail: </Text>
-                    <Text style={estilos.texto}>{usuario.email}</Text>
+                    <Text style={estilos.texto}>{usuarioLogado.email}</Text>
                 </View>
 
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>Telefone: </Text>
-                    <Text style={estilos.texto}>{usuario.telefone}</Text>
+                    <Text style={estilos.texto}>{usuarioLogado.telefone}</Text>
                 </View>
             </View>
 
@@ -44,7 +49,10 @@ const Perfil = ({ navigation }) => {
                 <TouchableOpacity onPress={() => { navigation.navigate("Suporte") }}>
                     <Text style={estilos.link}>Alterar senha</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { navigation.navigate("Log In") }}>
+                <TouchableOpacity onPress={() => {
+                    logout()
+                    navigation.navigate("Log In")
+                }}>
                     <Text style={estilos.link}>Sair</Text>
                 </TouchableOpacity>
             </View>

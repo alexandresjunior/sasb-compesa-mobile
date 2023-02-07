@@ -5,7 +5,13 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import Mapa from "./components/Mapa";
 
 const Home = () => {
+<<<<<<< HEAD
     const { networkConnected } = useContext(GlobalContext);
+=======
+    const [barragem, setBarragem] = useState("");
+
+    const { usuarioLogado, networkConnected } = useContext(GlobalContext);
+>>>>>>> c9e8602 (Remoção de usuário mockado; Função de logout)
 
     useEffect(() => {
         if (!networkConnected) {
@@ -17,8 +23,13 @@ const Home = () => {
         <View style={styles.header}>
             <View style={styles.row}>
                 <View>
+<<<<<<< HEAD
                     <Text style={styles.title}>Bem vindo!</Text>
                     <Text style={styles.username}>Alexandre de Souza Jr.</Text>
+=======
+                    <Text style={estilos.titulo}>Bem vindo,</Text>
+                    <Text style={estilos.usuario}>{`${usuarioLogado.nome}!`}</Text>
+>>>>>>> c9e8602 (Remoção de usuário mockado; Função de logout)
                 </View>
 
                 <Image source={icon} style={styles.image} />
@@ -45,8 +56,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: "white",
     },
+<<<<<<< HEAD
     username: {
         fontSize: 18,
+=======
+    usuario: {
+        fontSize: 20,
+>>>>>>> c9e8602 (Remoção de usuário mockado; Função de logout)
         fontWeight: "bold",
         color: "white",
         marginTop: 5

@@ -287,11 +287,3 @@ export const respostas = {
         }
     ]
 }
-
-export const usuario = {
-    nome: "Alexandre de Souza Jr.",
-    cargo: "Engenheiro Civil",
-    instituicao: "COMPESA",
-    email: "alexandresouzajr@compesa.com.br",
-    telefone: "(81) 99999-8877"
-}
