@@ -1,10 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
-import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import LargeButton from "../../components/buttons/LargeButton";
-import FormHeader from "../../components/headers/FormHeader";
-import FormTextInput from "../../components/inputs/FormTextInput";
+import React, { useContext, useEffect, useState } from "react";
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import logo from "../../../assets/sasb_compesa_logo.png";
+import { AuthContext } from "../../contexts/AuthContext";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import { useAuth } from "../../hooks/useAuth";
+import { login } from "../../services/api";
 
 const Login = () => {
     const navigation = useNavigation();
@@ -12,6 +14,18 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [checked, setChecked] = useState(true);
+
+    const { usuarioLogado, setUsuarioLogado } = useContext(GlobalContext);
+
+    const fazerLoginUsuario = async () => {
+        await login(email, senha, setUsuarioLogado)
+    }
+
+    useEffect(() => {
+        if (usuarioLogado) {
+            navigation.navigate("Tab Rotas")
+        }
+    }, [usuarioLogado])
 
     return (
         <>
@@ -25,7 +39,23 @@ const Login = () => {
 
                 <LargeButton label={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
 
-                <View style={estilos.row}>
+                <TextInput
+                    style={estilos.input}
+                    placeholder="Senha"
+                    keyboardType="password"
+                    onChangeText={(senha) => {
+                        setSenha(senha)
+                    }}
+                    defaultValue={senha}
+                />
+
+                <TouchableOpacity
+                    style={estilos.botao}
+                    onPress={fazerLoginUsuario}>
+                    <Text style={estilos.textoBotao}>ENTRAR</Text>
+                </TouchableOpacity>
+
+                <View style={estilos.containerRow}>
                     <Checkbox
                         value={checked}
                         onValueChange={() => setChecked(!checked)}

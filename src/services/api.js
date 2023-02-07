@@ -1,7 +1,8 @@
 import axios from "axios";
+import { salvarUsuarioLogado } from "./local";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/",
+  baseURL: "http://10.101.28.49:8081",
   headers: {
     Accept: "application/json",
     Content: "application/json"
@@ -17,6 +18,24 @@ const apiRelatorio = axios.create({
 //   // TODO: Usar localStorage / securityStorage
 //   const token = sessionStorage.getItem("userToken");
 
+export const login = async (email, senha, setUsuario) => {
+  await api.post("/sasb/usuarios/login", { email: email, senha: senha })
+    .then(async (response) => {
+      if (response.status == 200) {
+        setUsuario(response.data)
+        await salvarUsuarioLogado(JSON.stringify(response.data))
+      } else {
+        alert("Email/senha inválidos!")
+      }
+    })
+    .catch(() => alert("Email/senha inválidos!"))
+}
+
+// Interceptação de requisições que usam JWT
+// api.interceptors.request.use((config) => {
+//   // TODO: Usar localStorage / securityStorage
+//   const token = sessionStorage.getItem("userToken");
+
 //   if (token && config.headers) {
 //     config.headers.Authorization = `Bearer ${token}`
 //   }
@@ -26,12 +45,10 @@ const apiRelatorio = axios.create({
 // });
 
 // export const obterJsonWebToken = async (url, setToken) => {
-//   await api.get(url)
+//   await axios.get(url)
 //     .then((response) => setToken(response.data.token))
 //     .catch((error) => console.error(error))
 // }
-
-export default api;
 
 export const obterRelatorioPDF = async (dados) => {
   try {
@@ -43,3 +60,5 @@ export const obterRelatorioPDF = async (dados) => {
     alert(error)
   }
 }
+
+export default api;
