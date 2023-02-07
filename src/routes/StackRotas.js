@@ -3,15 +3,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "../screens/Login";
 import TabRotas from "./TabRotas";
 import Cadastro from "../screens/Cadastro";
-import { AuthContext } from "../contexts/AuthContext";
-import { useAuth } from "../hooks/useAuth";
 import Suporte from "../screens/Suporte";
 
 const Stack = createNativeStackNavigator();
 
 const StackRotas = () => {
-    const { state } = useAuth();
-
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Log In" component={Login} />
