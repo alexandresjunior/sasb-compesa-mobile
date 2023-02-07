@@ -1,7 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import logo from "../../../assets/sasb_compesa_logo.png";
+import { StyleSheet, View } from "react-native";
+import FormButton from "../../components/buttons/FormButton";
+import FormHeader from "../../components/headers/FormHeader";
+import FormTextInput from "../../components/inputs/FormTextInput";
 
 const Cadastro = () => {
     const navigation = useNavigation();
@@ -16,63 +18,14 @@ const Cadastro = () => {
             <View style={estilos.cabecalho}></View>
 
             <View style={estilos.container}>
-                <Image source={logo} style={estilos.imagem} />
+                <FormHeader text={"Já possui uma conta?"} link={"Acessar minha conta"} onPress={() => { navigation.navigate('Log In') }} />
 
-                <View>
-                    <Text style={estilos.titulo}>Bem-vindo!</Text>
-                    <View style={estilos.containerRow}>
-                        <Text>Já possui uma conta?</Text>
-                        <TouchableOpacity onPress={() => { navigation.navigate('Log In') }}>
-                            <Text style={estilos.link}>Acessar minha conta</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                <FormTextInput placeholder={"Matrícula"} type={"numeric"} setValue={setMatricula} defaultValue={matricula} />
+                <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
+                <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
+                <FormTextInput placeholder={"Confirmar Senha"} type={"password"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} />
 
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Matrícula"
-                    keyboardType="numeric"
-                    onChangeText={(matricula) => {
-                        setMatricula(matricula)
-                    }}
-                    defaultValue={matricula}
-                />
-
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Email"
-                    keyboardType="email"
-                    onChangeText={(email) => {
-                        setEmail(email)
-                    }}
-                    defaultValue={email}
-                />
-
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Senha"
-                    keyboardType="password"
-                    onChangeText={(senha) => {
-                        setSenha(senha)
-                    }}
-                    defaultValue={senha}
-                />
-
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Confirmar Senha"
-                    keyboardType="password"
-                    onChangeText={(senhaConfirmacao) => {
-                        setSenhaConfirmacao(senhaConfirmacao)
-                    }}
-                    defaultValue={senhaConfirmacao}
-                />
-
-                <TouchableOpacity
-                    style={estilos.botao}
-                    onPress={() => { navigation.navigate('Tab Rotas') }}>
-                    <Text style={estilos.textoBotao}>CADASTRAR</Text>
-                </TouchableOpacity>
+                <FormButton text={"CADASTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
             </View>
         </>
     )
@@ -88,48 +41,4 @@ const estilos = StyleSheet.create({
     container: {
         margin: 25
     },
-    containerRow: {
-        flexDirection: "row",
-        marginTop: 10
-    },
-    imagem: {
-        marginTop: 15,
-        marginBottom: 35,
-        width: 288,
-        height: 54,
-        alignSelf: 'center'
-    },
-    titulo: {
-        marginTop: 5,
-        fontSize: 18,
-        fontWeight: "bold"
-    },
-    input: {
-        marginTop: 20,
-        height: 50,
-        borderRadius: 5,
-        borderColor: "#CACACA",
-        borderWidth: 1,
-        padding: 10,
-        backgroundColor: "white"
-    },
-    link: {
-        color: "#223F99",
-        paddingStart: 5
-    },
-    botao: {
-        backgroundColor: "#223F99",
-        padding: 10,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "#223F99",
-        width: "100%",
-        marginTop: 35,
-        padding: 15,
-    },
-    textoBotao: {
-        textAlign: "center",
-        color: "#FFFFFF",
-        fontWeight: "bold"
-    }
 })

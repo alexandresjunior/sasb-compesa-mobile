@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
-import React, { useContext, useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import logo from "../../../assets/sasb_compesa_logo.png";
-import { AuthContext } from "../../contexts/AuthContext";
-import { useAuth } from "../../hooks/useAuth";
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import FormButton from "../../components/buttons/FormButton";
+import FormHeader from "../../components/headers/FormHeader";
+import FormTextInput from "../../components/inputs/FormTextInput";
 
 const Login = () => {
     const navigation = useNavigation();
@@ -13,52 +13,19 @@ const Login = () => {
     const [senha, setSenha] = useState("");
     const [checked, setChecked] = useState(true);
 
-    const { signIn } = useAuth();
-
     return (
         <>
             <View style={estilos.cabecalho}></View>
 
             <View style={estilos.container}>
-                <Image source={logo} style={estilos.imagem} />
+                <FormHeader text={"Não possui uma conta?"} link={"Cadastrar nova conta"} onPress={() => { navigation.navigate('Cadastro') }} />
 
-                <View>
-                    <Text style={estilos.titulo}>Bem-vindo!</Text>
-                    <View style={estilos.containerRow}>
-                        <Text>Não possui uma conta?</Text>
-                        <TouchableOpacity onPress={() => { navigation.navigate('Cadastro') }}>
-                            <Text style={estilos.link}>Cadastrar nova conta</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
+                <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
 
-                <TextInput
-                    style={estilos.input}
-                    placeholder="E-mail"
-                    keyboardType="email"
-                    onChangeText={(email) => {
-                        setEmail(email)
-                    }}
-                    defaultValue={email}
-                />
+                <FormButton text={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
 
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Senha"
-                    keyboardType="password"
-                    onChangeText={(senha) => {
-                        setSenha(senha)
-                    }}
-                    defaultValue={senha}
-                />
-
-                <TouchableOpacity
-                    style={estilos.botao}
-                    onPress={() => { navigation.navigate('Tab Rotas') }}>
-                    <Text style={estilos.textoBotao}>ENTRAR</Text>
-                </TouchableOpacity>
-
-                <View style={estilos.containerRow}>
+                <View style={estilos.row}>
                     <Checkbox
                         value={checked}
                         onValueChange={() => setChecked(!checked)}
@@ -88,53 +55,18 @@ const estilos = StyleSheet.create({
     container: {
         margin: 25
     },
-    containerRow: {
+    row: {
         flexDirection: "row",
         marginTop: 10
-    },
-    imagem: {
-        marginTop: 15,
-        marginBottom: 35,
-        width: 288,
-        height: 54,
-        alignSelf: 'center'
-    },
-    titulo: {
-        marginTop: 5,
-        fontSize: 18,
-        fontWeight: "bold"
-    },
-    input: {
-        marginTop: 20,
-        height: 50,
-        borderRadius: 5,
-        borderColor: "#CACACA",
-        borderWidth: 1,
-        padding: 10,
-        backgroundColor: "white"
-    },
-    link: {
-        color: "#223F99",
-        paddingStart: 5
-    },
-    botao: {
-        backgroundColor: "#223F99",
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "#223F99",
-        width: "100%",
-        marginTop: 20,
-        padding: 15,
-    },
-    textoBotao: {
-        textAlign: "center",
-        color: "#FFF",
-        fontWeight: "bold"
     },
     opcoes: {
         flex: 1,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"
+    },
+    link: {
+        color: "#223F99",
+        paddingStart: 5
     }
 })
