@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { InspecaoGlobalContext } from "../../../../../contexts/InspecaoGlobalContext";
-import Cabecalho from "../../../components/Cabecalho";
-import QuestionCard from "../../../components/formulario/QuestionCard";
+import { InspecaoGlobalContext } from "../../../contexts/InspecaoGlobalContext";
+import Header from "../../../components/Header";
+import QuestionCard from "../../../components/cards/QuestionCard";
 
 const FormularioInspecao = () => {
     const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
@@ -11,7 +11,7 @@ const FormularioInspecao = () => {
 
     return (
         <ScrollView>
-            <Cabecalho nome={"Nova Inspeção"} />
+            <Header title={"Nova Inspeção"} />
 
             <View style={estilos.container}>
                 <Text style={estilos.tituloPreto}>{pagina.titulo}</Text>

@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Cabecalho from "../Inspecoes/components/Cabecalho";
+import Header from "../../components/Header";
 
 const Suporte = () => {
     return (
         <>
-            <Cabecalho nome={"Suporte"} />
+            <Header title={"Suporte"} />
             <View style={estilos.container}>
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.texto}>Esta solicitação deverá ser feita diretamente com o administrador.</Text>

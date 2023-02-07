@@ -2,15 +2,15 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const Cabecalho = ({ nome, showButton }) => {
+const Header = ({ title, showButton }) => {
     return (
-        <View style={estilos.cabecalho}>
-            <View style={estilos.row}>
-                <Text style={estilos.tituloBranco}>{nome}</Text>
+        <View style={styles.header}>
+            <View style={styles.row}>
+                <Text style={styles.title}>{title}</Text>
                 {
                     !!showButton && (
                         <TouchableOpacity onPress={() => { }}>
-                            <Ionicons name={"cloud-download-outline"} size={25} style={estilos.icone} />
+                            <Ionicons name={"cloud-download-outline"} size={25} style={styles.icon} />
                         </TouchableOpacity>
                     )
                 }
@@ -19,10 +19,10 @@ const Cabecalho = ({ nome, showButton }) => {
     )
 }
 
-export default Cabecalho;
+export default Header;
 
-const estilos = StyleSheet.create({
-    cabecalho: {
+const styles = StyleSheet.create({
+    header: {
         height: 150,
         backgroundColor: "#223F99",
     },
@@ -32,13 +32,13 @@ const estilos = StyleSheet.create({
         justifyContent: "space-between",
         marginHorizontal: 25,
     },
-    tituloBranco: {
+    title: {
         fontSize: 18,
         fontWeight: "bold",
         color: "white",
         marginTop: 5
     },
-    icone: {
+    icon: {
         color: "#fff",
         verticalAlign: "middle"
     }

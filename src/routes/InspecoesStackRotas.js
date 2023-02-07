@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inspecoes from "../screens/Inspecoes";
 import NovaInspecao from "../screens/Inspecoes/telas/NovaInspecao";
 import { InspecaoProvider } from "../contexts/InspecaoGlobalContext";
-import FormularioInspecao from "../screens/Inspecoes/telas/NovaInspecao/components/FormularioInspecao";
+import FormularioInspecao from "../screens/Inspecoes/components/FormularioInspecao";
 import RelatorioInspecao from "../screens/Inspecoes/telas/RelatorioInspecao";
 import Barragem from "../screens/Barragem";
 import { obterPaginasDoFormulario } from "../utils";

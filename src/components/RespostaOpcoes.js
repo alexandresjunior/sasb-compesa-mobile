@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Magnitude, NivelDePerigo, Situacao } from "../mocks/legenda";
-import ImagePickerSection from "../screens/Inspecoes/components/formulario/ImagePickerSection";
-import InputSection from "../screens/Inspecoes/components/formulario/InputSection";
+import ImagePickerSection from "./sections/ImagePickerSection";
+import InputSection from "./sections/InputSection";
 import { respostas } from "../mocks";
 
 const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, setMagnitude, nivelPerigo, setNivelPerigo, anexos, setAnexos, comentarios, setComentarios }) => {

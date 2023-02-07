@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import HorizontalCard from "../../components/HorizontalCard";
+import HorizontalCard from "../../components/cards/HorizontalCard";
 import { inspecoes } from "../../mocks";
-import Cabecalho from "./components/Cabecalho";
 import MidButton from "../../components/buttons/MidButton";
+import Header from "../../components/Header";
 
 const Inspecoes = () => {
     const navigation = useNavigation();
@@ -16,7 +16,7 @@ const Inspecoes = () => {
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {
                 return (<>
-                    <Cabecalho nome={"Barragem Jaime Nejaim"} />
+                    <Header title={"Barragem Jaime Nejaim"} />
                     <View style={estilos.container}>
                         <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
                     </View>

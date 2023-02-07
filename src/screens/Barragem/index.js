@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
 import FormTextInput from "../../components/inputs/FormTextInput";
 import { listaBarragens } from "../../mocks";
-import Cabecalho from "../Inspecoes/components/Cabecalho";
+import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
 
 const Barragem = () => {
@@ -17,7 +17,7 @@ const Barragem = () => {
             ListHeaderComponent={() => {
                 return (
                     <>
-                        <Cabecalho nome={"Selecionar Barragem"} showButton={true} />
+                        <Header title={"Selecionar Barragem"} showButton={true} />
                         <View style={styles.container}>
                             <FormTextInput placeholder={"Digite o nome da barragem..."} type={"text"} setValue={() => { }} defaultValue={""} />
                         </View>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
-import ImageViewerCarousel from "./ImageViewerCarousel";
+import ImageViewerCarousel from "../ImageViewerCarousel";
 
 const ImagePickerSection = ({ anexos, setAnexos }) => {
     const pickImageAsync = async () => {

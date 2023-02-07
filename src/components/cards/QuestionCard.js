@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import RespostaOpcoes from "../../../../components/RespostaOpcoes";
+import RespostaOpcoes from "../RespostaOpcoes";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const QuestionCard = ({ questao }) => {
