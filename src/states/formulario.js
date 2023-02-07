@@ -3624,11 +3624,7 @@ export const formulario = [
     {
         indice: 9,
         pagina: 17,
-        codigo: {
-            sigla: "I",
-            opcao: "Insignificante",
-            significado: "Anomalia que pode simplesmente ser mantida sob observação pela Administração Local."
-        },
+        codigo: "I",
         nome: "ESTRADAS DE ACESSO",
         itens: [
             {

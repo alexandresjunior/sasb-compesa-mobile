@@ -47,9 +47,9 @@ export const body = (formulario) => {
                             <tr>
                                 <td style="text-align: center;">${item.indice}</td>
                                 <td style="padding: 1px 5px;">${item.descricao}</td>
-                                <td style="text-align: center;">${item.resposta.situacao}</td>
-                                <td style="text-align: center;">${item.resposta.magnitude}</td>
-                                <td style="text-align: center;">${item.resposta.nivelPerigo}</td>
+                                <td style="text-align: center;">${item.resposta.situacao.sigla}</td>
+                                <td style="text-align: center;">${item.resposta.magnitude.sigla}</td>
+                                <td style="text-align: center;">${item.resposta.nivelPerigo.sigla}</td>
                             </tr>
                         `
                     }
@@ -80,9 +80,9 @@ export const body = (formulario) => {
                     <tr>
                         <td style="text-align: center;">${item.indice}</td>
                         <td style="padding: 1px 5px;">${item.descricao}</td>
-                        <td style="text-align: center;">${item.resposta.situacao}</td>
-                        <td style="text-align: center;">${item.resposta.magnitude}</td>
-                        <td style="text-align: center;">${item.resposta.nivelPerigo}</td>
+                        <td style="text-align: center;">${item.resposta.situacao?.sigla}</td>
+                        <td style="text-align: center;">${item.resposta.magnitude?.sigla}</td>
+                        <td style="text-align: center;">${item.resposta.nivelPerigo?.sigla}</td>
                     </tr>
                 `
             }
