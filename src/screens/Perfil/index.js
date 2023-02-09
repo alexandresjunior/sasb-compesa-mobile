@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Cabecalho from "../Inspecoes/components/Cabecalho";
+import Header from "../../components/Header";
 import { usuario } from "../../mocks";
 
 // const Perfil = ({ usuario }) => {
 const Perfil = ({ navigation }) => {
     return (
         <>
-            <Cabecalho nome={"Perfil"} />
+            <Header title={"Perfil"} />
             <View style={estilos.container}>
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>Nome: </Text>

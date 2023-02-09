@@ -47,9 +47,9 @@ export const body = (formulario) => {
                             <tr>
                                 <td style="text-align: center;">${item.indice}</td>
                                 <td style="padding: 1px 5px;">${item.descricao}</td>
-                                <td style="text-align: center;">${item.resposta.situacao}</td>
-                                <td style="text-align: center;">${item.resposta.magnitude}</td>
-                                <td style="text-align: center;">${item.resposta.nivelPerigo}</td>
+                                <td style="text-align: center;">${item.resposta.situacao.sigla}</td>
+                                <td style="text-align: center;">${item.resposta.magnitude.sigla}</td>
+                                <td style="text-align: center;">${item.resposta.nivelPerigo.sigla}</td>
                             </tr>
                         `
                     }
@@ -80,9 +80,9 @@ export const body = (formulario) => {
                     <tr>
                         <td style="text-align: center;">${item.indice}</td>
                         <td style="padding: 1px 5px;">${item.descricao}</td>
-                        <td style="text-align: center;">${item.resposta.situacao}</td>
-                        <td style="text-align: center;">${item.resposta.magnitude}</td>
-                        <td style="text-align: center;">${item.resposta.nivelPerigo}</td>
+                        <td style="text-align: center;">${item.resposta.situacao?.sigla}</td>
+                        <td style="text-align: center;">${item.resposta.magnitude?.sigla}</td>
+                        <td style="text-align: center;">${item.resposta.nivelPerigo?.sigla}</td>
                     </tr>
                 `
             }
@@ -97,6 +97,7 @@ export const body = (formulario) => {
 };
 
 export const anexos = (formulario) => {
+    var indiceFigura = 1;
     var html = '<h1>ANEXOS</h1>';
 
     for (let i in formulario) {
@@ -130,7 +131,7 @@ export const anexos = (formulario) => {
 
                             const source = `data:image/jpg;base64,${anexo.base64}`;
 
-                            const legenda = `<b>Figura ${k}.${l}: </b>${descricao} com situação classificada como ${situacao}, magnitude como ${magnitude} e nível de perigo igual a ${nivelPerigo}.`;
+                            const legenda = `<b>Figura ${indiceFigura}: </b>${descricao} com situação classificada como ${situacao?.sigla}, magnitude como ${magnitude?.sigla} e nível de perigo igual a ${nivelPerigo?.sigla}.`;
 
                             html = html + `
                             <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 10px;">
@@ -138,6 +139,8 @@ export const anexos = (formulario) => {
                                 <small>${legenda}</small>
                             </div>
                             `
+
+                            indiceFigura = indiceFigura + 1
                         }
 
                         html = html + `
@@ -169,7 +172,7 @@ export const anexos = (formulario) => {
 
                     const source = `data:image/jpg;base64,${anexo.base64}`;
 
-                    const legenda = `<b>Figura ${j}.${l}: </b>${descricao} com situação classificada como ${situacao}, magnitude como ${magnitude} e nível de perigo igual a ${nivelPerigo}.`;
+                    const legenda = `<b>Figura ${indiceFigura}: </b>${descricao} com situação classificada como ${situacao?.sigla}, magnitude como ${magnitude?.sigla} e nível de perigo igual a ${nivelPerigo?.sigla}.`;
 
                     html = html + `
                     <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-bottom: 10px;">
@@ -177,6 +180,8 @@ export const anexos = (formulario) => {
                         <small>${legenda}</small>
                     </div>
                     `
+
+                    indiceFigura = indiceFigura + 1
                 }
 
                 html = html + `

@@ -5,23 +5,23 @@ const HorizontalCard = ({ inspecao }) => {
     return (
         <TouchableOpacity onPress={() => { }}>
             <View style={estilos.container}>
-                <Text style={estilos.titulo}>{inspecao.nome}</Text>
+                <Text style={estilos.title}>{inspecao.nome}</Text>
 
                 <View style={estilos.row}>
-                    <Text style={[estilos.texto, { fontWeight: "bold" }]}>Data: </Text>
-                    <Text style={estilos.texto}>{inspecao.data}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Data: </Text>
+                    <Text style={estilos.text}>{inspecao.data}</Text>
                 </View>
                 <View style={estilos.row}>
-                    <Text style={[estilos.texto, { fontWeight: "bold" }]}>Inspetor(a): </Text>
-                    <Text style={estilos.texto}>{inspecao.inspetor}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Inspetor(a): </Text>
+                    <Text style={estilos.text}>{inspecao.inspetor}</Text>
                 </View>
                 <View style={estilos.row}>
-                    <Text style={[estilos.texto, { fontWeight: "bold" }]}>Responsável Técnico: </Text>
-                    <Text style={estilos.texto}>{inspecao.responsavel}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Responsável Técnico: </Text>
+                    <Text style={estilos.text}>{inspecao.responsavel}</Text>
                 </View>
                 <View style={estilos.row}>
-                    <Text style={[estilos.texto, { fontWeight: "bold" }]}>Status: </Text>
-                    <Text style={[estilos.texto, { fontWeight: "bold", color: inspecao.status === 'Concluída' ? "#8BC63E" : "#FDCC0D" }]}>{inspecao.status}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Status: </Text>
+                    <Text style={[estilos.text, { fontWeight: "bold", color: inspecao.status === 'Concluída' ? "#8BC63E" : "#FDCC0D" }]}>{inspecao.status}</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -49,11 +49,11 @@ const estilos = StyleSheet.create({
     row: {
         flexDirection: "row",
     },
-    titulo: {
+    title: {
         fontSize: 18,
         fontWeight: "bold"
     },
-    texto: {
+    text: {
         marginTop: 5,
     }
 })

@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { formulario, respostaOpcoes } from "../mocks";
+import { respostaOpcoes } from "../mocks";
+import { formulario } from "../states/formulario";
 import { obterPaginasDoFormulario } from "../utils";
 
 export const InspecaoGlobalContext = createContext({});

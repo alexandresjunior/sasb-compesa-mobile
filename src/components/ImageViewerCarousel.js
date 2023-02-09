@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import ImageViewerSection from "./ImageViewerSection";
+import ImageViewerSection from "./sections/ImageViewerSection";
 
 const ImageViewerCarousel = ({ anexos, setAnexos }) => {
     return (

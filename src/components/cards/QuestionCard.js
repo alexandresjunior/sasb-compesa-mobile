@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import RespostaOpcoes from "./RespostaOpcoes";
+import RespostaOpcoes from "../RespostaOpcoes";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const QuestaoCard = ({ questao }) => {
+const QuestionCard = ({ questao }) => {
     const [situacao, setSituacao] = useState();
     const [magnitude, setMagnitude] = useState();
     const [nivelPerigo, setNivelPerigo] = useState();
@@ -14,6 +14,13 @@ const QuestaoCard = ({ questao }) => {
     const [completo, setCompleto] = useState(false);
 
     useEffect(() => {
+        /* Obter itens armazenados localmente, se houver! */
+        // setSituacao(questao.resposta.situacao)
+        // setMagnitude(questao.resposta.magnitude)
+        // setNivelPerigo(questao.resposta.nivelPerigo)
+        // setAnexos(questao.resposta.anexos)
+        // setComentarios(questao.resposta.comentarios)
+
         /* Itens Obrigatórios */
         if (situacao && magnitude && nivelPerigo) {
             setCompleto(true)
@@ -63,7 +70,7 @@ const QuestaoCard = ({ questao }) => {
     )
 }
 
-export default QuestaoCard;
+export default QuestionCard;
 
 const estilos = StyleSheet.create({
     container: {

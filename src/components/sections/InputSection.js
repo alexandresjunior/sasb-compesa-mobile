@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
-import LegendaModal from "../../../../components/LegendaModal";
+import LegendaModal from "../modals/LegendaModal";
 
 const InputSection = ({titulo, legenda, opcoes, answer, setAnswer, modalVisible, setModalVisible}) => {
     return (

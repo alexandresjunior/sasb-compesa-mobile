@@ -2,10 +2,10 @@ import React from "react";
 import { Dimensions, Image, StyleSheet, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { listaBarragens } from "../../../mocks";
-import dam_icon from "../../../../assets/dam.png";
-import SearchBar from "../../../components/SearchBar";
+import icon from "../../../../assets/dam.png";
+import SearchBar from "./SearchBar";
 
-const Mapa = () => {
+const map = () => {
     const initialRegion = {
         latitude: -8.470697,
         longitude: -38.371057,
@@ -15,20 +15,20 @@ const Mapa = () => {
 
     return (
         <View>
-            <SearchBar aditionalStyles={{ position: 'absolute', zIndex: 1 }} />
+            <SearchBar />
             <MapView
-                style={estilos.mapa}
+                style={styles.map}
                 initialRegion={initialRegion}
             >
                 {listaBarragens.map((barragem, index) => (
                     <Marker
-                        style={estilos.icone}
+                        style={styles.icon}
                         key={index}
                         coordinate={{ latitude: barragem.localizacao.latitude, longitude: barragem.localizacao.longitude }}
                         title={barragem.nome}
                         description={barragem.titularidade}
                     >
-                        <Image source={dam_icon} style={estilos.icone} />
+                        <Image source={icon} style={styles.icon} />
                     </Marker>
                 ))}
             </MapView>
@@ -36,15 +36,15 @@ const Mapa = () => {
     )
 }
 
-export default Mapa;
+export default map;
 
-const estilos = StyleSheet.create({
-    mapa: {
+const styles = StyleSheet.create({
+    map: {
         marginVertical: 5,
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
     },
-    icone: {
+    icon: {
         width: 30,
         height: 30
     }

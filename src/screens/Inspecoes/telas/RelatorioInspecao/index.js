@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import LottieView from "lottie-react-native";
-import Cabecalho from "../../components/Cabecalho";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
 import { anexos, body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
+import Header from "../../../../components/Header";
 
 const RelatorioInspecao = () => {
     const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
@@ -36,7 +36,7 @@ const RelatorioInspecao = () => {
 
     return (
         <View>
-            <Cabecalho nome={"Nova Inspeção"} />
+            <Header title={"Nova Inspeção"} />
 
             <View style={estilos.botoes}>
                 <LottieView

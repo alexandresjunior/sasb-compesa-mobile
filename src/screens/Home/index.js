@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
-import imagem from "../../../assets/usuario_icon.png";
+import icon from "../../../assets/usuario_icon.png";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import Mapa from "./componentes/Mapa";
+import Mapa from "./components/Mapa";
 
 const Home = () => {
-    const [barragem, setBarragem] = useState("");
-
     const { networkConnected } = useContext(GlobalContext);
 
     useEffect(() => {
@@ -15,16 +13,15 @@ const Home = () => {
         }
     }, [])
 
-
     return (
-        <View style={estilos.cabecalho}>
-            <View style={estilos.row}>
+        <View style={styles.header}>
+            <View style={styles.row}>
                 <View>
-                    <Text style={estilos.titulo}>Bem vindo!</Text>
-                    <Text style={estilos.usuario}>Alexandre de Souza Jr.</Text>
+                    <Text style={styles.title}>Bem vindo!</Text>
+                    <Text style={styles.username}>Alexandre de Souza Jr.</Text>
                 </View>
 
-                <Image source={imagem} style={estilos.imagem} />
+                <Image source={icon} style={styles.image} />
             </View>
             <Mapa />
         </View>
@@ -33,8 +30,8 @@ const Home = () => {
 
 export default Home;
 
-const estilos = StyleSheet.create({
-    cabecalho: {
+const styles = StyleSheet.create({
+    header: {
         height: 150,
         backgroundColor: "#223F99",
     },
@@ -44,17 +41,17 @@ const estilos = StyleSheet.create({
         justifyContent: "space-between",
         marginHorizontal: 25,
     },
-    titulo: {
+    title: {
         fontSize: 14,
         color: "white",
     },
-    usuario: {
+    username: {
         fontSize: 18,
         fontWeight: "bold",
         color: "white",
         marginTop: 5
     },
-    imagem: {
+    image: {
         width: 50,
         height: 50,
         marginBottom: 15,

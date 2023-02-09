@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import IoniconsIcon from "@expo/vector-icons/Ionicons";
 
-const SearchBar = ({ aditionalStyles }) => {
+const SearchBar = () => {
+    const [barragem, setBarragem] = useState("");
+
     return (
-        <View style={[estilos.barraBusca, aditionalStyles]}>
+        <View style={styles.input}>
             <TextInput
-                style={estilos.input}
+                style={styles.text}
                 placeholder="Digite o nome da barragem"
                 keyboardType="text"
-                onChangeText={() => { }}
-                defaultValue={""}
+                onChangeText={(value) => setBarragem(value)}
+                defaultValue={barragem}
             />
             <TouchableOpacity onPress={() => { }}>
                 <IoniconsIcon name="search" size={20} color="#D9D9D9" />
@@ -21,9 +23,10 @@ const SearchBar = ({ aditionalStyles }) => {
 
 export default SearchBar;
 
-const estilos = StyleSheet.create({
-    barraBusca: {
-
+const styles = StyleSheet.create({
+    input: {
+        position: 'absolute',
+        zIndex: 1,
         margin: 25,
         borderRadius: 5,
         borderColor: "#CACACA",
@@ -41,7 +44,7 @@ const estilos = StyleSheet.create({
         elevation: 2,
         padding: 15,
     },
-    input: {
+    text: {
         flex: 1
     },
 })
