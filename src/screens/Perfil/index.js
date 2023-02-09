@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Cabecalho from "../Inspecoes/components/Cabecalho";
 import { logout } from "../../services/local";
 import { useNavigation } from "@react-navigation/native";
 import { GlobalContext } from "../../contexts/GlobalContext";

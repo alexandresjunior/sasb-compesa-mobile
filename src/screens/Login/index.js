@@ -1,12 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import Checkbox from "expo-checkbox";
 import React, { useContext, useEffect, useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import logo from "../../../assets/sasb_compesa_logo.png";
-import { AuthContext } from "../../contexts/AuthContext";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { useAuth } from "../../hooks/useAuth";
 import { login } from "../../services/api";
+import FormTextInput from "../../components/inputs/FormTextInput";
 
 const Login = () => {
     const navigation = useNavigation();
