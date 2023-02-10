@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/compesa_splash.gif",
+      "image": "./assets/splash.gif",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
