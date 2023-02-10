@@ -1,9 +1,9 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import { listaBarragens } from "../../../mocks";
 import icon from "../../../../assets/dam.png";
 import SearchBar from "./SearchBar";
+import { useBarragens } from "../../../hooks/useBarragens";
 
 const map = () => {
     const initialRegion = {
@@ -11,7 +11,9 @@ const map = () => {
         longitude: -38.371057,
         latitudeDelta: 10,
         longitudeDelta: 10,
-    };
+    }
+
+    const barragens = useBarragens()
 
     return (
         <View>
@@ -20,7 +22,7 @@ const map = () => {
                 style={styles.map}
                 initialRegion={initialRegion}
             >
-                {listaBarragens.map((barragem, index) => (
+                {barragens.map((barragem, index) => (
                     <Marker
                         style={styles.icon}
                         key={index}
