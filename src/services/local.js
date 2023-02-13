@@ -41,3 +41,20 @@ export const removerFormularioSalvoLocalmente = async () => {
         console.error(erro)
     }
 }
+
+export const salvarLocalmenteBarragensInfo = async (barragens) => {
+    try {
+        await AsyncStorage.setItem('barragens', JSON.stringify(barragens))
+        await AsyncStorage.setItem('ultimaSincronizacao', new Date())
+    } catch (erro) {
+        console.error(erro)
+    }
+}
+
+export const obterUltimaSincronizacao = async () => {
+    try {
+        await AsyncStorage.getItem('ultimaSincronizacao')
+    } catch (erro) {
+        console.error(erro)
+    }
+}

@@ -1,15 +1,23 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { obterBarragensInfo } from "../services/api";
+import { useBarragens } from "../hooks/useBarragens";
 
 const Header = ({ title, showButton }) => {
+    const [barragens, setBarragens] = useBarragens()
+
+    const obterDadosBarragemApi = async () => {
+        await obterBarragensInfo("/barragens", setBarragens)
+    }
+
     return (
         <View style={styles.header}>
             <View style={styles.row}>
                 <Text style={styles.title}>{title}</Text>
                 {
                     !!showButton && (
-                        <TouchableOpacity onPress={() => { }}>
+                        <TouchableOpacity onPress={obterDadosBarragemApi}>
                             <Ionicons name={"cloud-download-outline"} size={25} style={styles.icon} />
                         </TouchableOpacity>
                     )

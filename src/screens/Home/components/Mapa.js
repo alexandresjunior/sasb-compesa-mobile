@@ -13,7 +13,7 @@ const map = () => {
         longitudeDelta: 10,
     }
 
-    const barragens = useBarragens()
+    const [barragens] = useBarragens()
 
     return (
         <View>

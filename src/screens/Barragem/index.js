@@ -8,7 +8,7 @@ import { useBarragens } from "../../hooks/useBarragens";
 
 const Barragem = () => {
     const navigation = useNavigation()
-    const barragens = useBarragens()
+    const [barragens] = useBarragens()
 
     return (
         <FlatList

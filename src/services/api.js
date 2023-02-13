@@ -1,5 +1,6 @@
 import axios from "axios";
 import { salvarUsuarioLogado } from "./local";
+import { salvarLocalmenteBarragensInfo } from "./local";
 
 const api = axios.create({
   baseURL: "http://localhost:8080",
@@ -51,6 +52,15 @@ export const obterRelatorioPDF = async (dados) => {
   }
 }
 
+export const obterBarragensInfo = async (url, setBarragens) => {
+  await axios.get(url)
+    .then((response) => {
+      setBarragens(response.data)
+      salvarLocalmenteBarragensInfo(response.data)
+    })
+    .catch((error) => console.error(error))
+}
+
 // TODO: Interceptação de requisições que usam JWT
 // api.interceptors.request.use((config) => {
 //   // TODO: Usar localStorage / securityStorage
@@ -69,4 +79,3 @@ export const obterRelatorioPDF = async (dados) => {
 //     .then((response) => setToken(response.data.token))
 //     .catch((error) => console.error(error))
 // }
-
