@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { formatarData } from '../utils';
 
 export const obterUsuarioLogado = async (setUsuarioLogado) => {
     const usuario = await AsyncStorage.getItem('usuario')
@@ -45,7 +46,7 @@ export const removerFormularioSalvoLocalmente = async () => {
 export const salvarLocalmenteBarragensInfo = async (barragens) => {
     try {
         await AsyncStorage.setItem('barragens', JSON.stringify(barragens))
-        await AsyncStorage.setItem('ultimaSincronizacao', new Date())
+        await AsyncStorage.setItem('ultimaSincronizacao', JSON.stringify(formatarData(new Date())))
     } catch (erro) {
         console.error(erro)
     }

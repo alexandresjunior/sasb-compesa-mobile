@@ -53,10 +53,10 @@ export const obterRelatorioPDF = async (dados) => {
 }
 
 export const obterBarragensInfo = async (url, setBarragens) => {
-  await axios.get(url)
+  await api.get(url)
     .then((response) => {
-      setBarragens(response.data)
-      salvarLocalmenteBarragensInfo(response.data)
+      setBarragens(response.data.barragens)
+      salvarLocalmenteBarragensInfo(response.data.barragens)
     })
     .catch((error) => console.error(error))
 }

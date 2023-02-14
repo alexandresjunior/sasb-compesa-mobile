@@ -22,7 +22,7 @@ const map = () => {
                 style={styles.map}
                 initialRegion={initialRegion}
             >
-                {barragens.map((barragem, index) => (
+                {barragens?.map((barragem, index) => (
                     <Marker
                         style={styles.icon}
                         key={index}
