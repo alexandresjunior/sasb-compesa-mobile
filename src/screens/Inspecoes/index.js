@@ -6,17 +6,17 @@ import { inspecoes } from "../../mocks";
 import MidButton from "../../components/buttons/MidButton";
 import Header from "../../components/Header";
 
-const Inspecoes = () => {
-    const navigation = useNavigation();
+const Inspecoes = ({ route, navigation }) => {
+    const { barragem } = route.params;
 
     return (
         <FlatList
-            data={inspecoes}
+            data={barragem.inspecao.relatorios}
             renderItem={({ item }) => <HorizontalCard inspecao={item} />}
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {
                 return (<>
-                    <Header title={"Barragem Jaime Nejaim"} />
+                    <Header title={barragem.nome} />
                     <View style={estilos.container}>
                         <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
                     </View>

@@ -13,7 +13,7 @@ const Barragem = () => {
     return (
         <FlatList
             data={barragens}
-            renderItem={({ item }) => <BarragemCard item={item} onPress={() => navigation.navigate("Inspecoes Realizadas")} />}
+            renderItem={({ item }) => <BarragemCard item={item} onPress={() => navigation.navigate("Inspecoes Realizadas", { barragem: item })} />}
             keyExtractor={item => item.idBarragem}
             ListHeaderComponent={() => {
                 return (

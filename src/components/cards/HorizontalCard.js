@@ -1,15 +1,16 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { capitalizeFirstLetter, convertDate } from "../../utils";
 
 const HorizontalCard = ({ inspecao }) => {
     return (
         <TouchableOpacity onPress={() => { }}>
             <View style={estilos.container}>
-                <Text style={estilos.title}>{inspecao.nome}</Text>
+                <Text style={estilos.title}>Data: {convertDate(inspecao.data)}</Text>
 
                 <View style={estilos.row}>
-                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Data: </Text>
-                    <Text style={estilos.text}>{inspecao.data}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold" }]}>Tipo: </Text>
+                    <Text style={estilos.text}>{capitalizeFirstLetter(inspecao.tipo)}</Text>
                 </View>
                 <View style={estilos.row}>
                     <Text style={[estilos.text, { fontWeight: "bold" }]}>Inspetor(a): </Text>
@@ -21,7 +22,7 @@ const HorizontalCard = ({ inspecao }) => {
                 </View>
                 <View style={estilos.row}>
                     <Text style={[estilos.text, { fontWeight: "bold" }]}>Status: </Text>
-                    <Text style={[estilos.text, { fontWeight: "bold", color: inspecao.status === 'Concluída' ? "#8BC63E" : "#FDCC0D" }]}>{inspecao.status}</Text>
+                    <Text style={[estilos.text, { fontWeight: "bold", color: inspecao.status === 'ENTREGUE' ? "#8BC63E" : "#FDCC0D" }]}>{inspecao.status}</Text>
                 </View>
             </View>
         </TouchableOpacity>

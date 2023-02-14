@@ -39,3 +39,16 @@ export const formatarData = (date) => {
 
     return { data: formattedDate, hora: formattedTime };
 }
+
+export const capitalizeFirstLetter = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+export const convertDate = (dateString) => {
+    const dateArray = dateString.split('-');
+    const convertedDate = dateArray.join('/');
+    
+    return convertedDate;
+}
+
+
