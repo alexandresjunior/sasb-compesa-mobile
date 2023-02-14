@@ -1,10 +1,28 @@
-import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, TouchableOpacity, Linking } from "react-native";
 import { capitalizeFirstLetter, convertDate } from "../../utils";
 
 const HorizontalCard = ({ inspecao }) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const aoClicarNoLink = async () => {
+        setIsLoading(true);
+        try {
+            const supported = await Linking.canOpenURL(inspecao.link)
+            if (supported) {
+                await Linking.openURL(inspecao.link)
+            } else {
+                alert("Não foi possível acessar o documento. Verifique sua conexão e tente novamente mais tarde.");
+            }
+        } catch (error) {
+            alert("O link para acessar este documento não está disponível no momento. Tente novamente mais tarde.")
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
     return (
-        <TouchableOpacity onPress={() => { }}>
+        <TouchableOpacity onPress={aoClicarNoLink}>
             <View style={estilos.container}>
                 <Text style={estilos.title}>Data: {convertDate(inspecao.data)}</Text>
 
