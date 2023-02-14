@@ -9,6 +9,7 @@ const Header = ({ title, showButton }) => {
 
     const obterDadosBarragemApi = async () => {
         await obterBarragensInfo("/barragens", setBarragens)
+        alert("Dados sincronizados com sucesso!")
     }
 
     return (

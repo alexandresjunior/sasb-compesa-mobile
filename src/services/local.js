@@ -52,9 +52,15 @@ export const salvarLocalmenteBarragensInfo = async (barragens) => {
     }
 }
 
-export const obterUltimaSincronizacao = async () => {
+export const obterUltimaSincronizacao = async (setBarragens, setUltimaSincronizacao) => {
     try {
-        await AsyncStorage.getItem('ultimaSincronizacao')
+        const barragens = await AsyncStorage.getItem('barragens')
+        const ultimaSincronizacao = await AsyncStorage.getItem('ultimaSincronizacao')
+
+        if (!!barragens && !!ultimaSincronizacao) {
+            setBarragens(barragens)
+            setUltimaSincronizacao(ultimaSincronizacao)
+        }
     } catch (erro) {
         console.error(erro)
     }
