@@ -4,13 +4,14 @@ import DadosBarragem from "../../components/DadosBarragem";
 import DadosInspecao from "../../components/DadosInspecao";
 import LocalizacaoBarragem from "../../components/LocalizacaoBarragem";
 import TipoInspecaoInputGroup from "../../components/TipoInspecaoInputGroup";
-import { barragem, inspecao } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import MidButton from "../../../../components/buttons/MidButton";
 import Header from "../../../../components/Header";
 
-const NovaInspecao = () => {
+const NovaInspecao = ({ route }) => {
     const { setPaginaAtual } = useContext(InspecaoGlobalContext);
+
+    const { barragem } = route.params;
 
     return (
         <ScrollView>
@@ -18,7 +19,7 @@ const NovaInspecao = () => {
             <View style={estilos.container}>
                 <DadosBarragem barragem={barragem} />
                 <LocalizacaoBarragem barragem={barragem} />
-                <DadosInspecao inspecao={inspecao} />
+                <DadosInspecao inspecao={barragem.inspecao} />
                 <TipoInspecaoInputGroup />
 
                 <MidButton label={"Confirmar Dados"} onPress={() => setPaginaAtual(0)} />

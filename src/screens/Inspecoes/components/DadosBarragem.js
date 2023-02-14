@@ -11,17 +11,12 @@ const DadosBarragem = ({ barragem }) => {
 
             <View style={{ marginBottom: 10 }}>
                 <Text style={estilos.label}>Empreendedor/Administração Regional: </Text>
-                <Text style={estilos.texto}>{barragem.empreendedor}</Text>
+                <Text style={estilos.texto}>{barragem.titularidade}</Text>
             </View>
 
             <View style={{ marginBottom: 10 }}>
                 <Text style={estilos.label}>Riacho/Bacia: </Text>
-                <Text style={estilos.texto}>{barragem.bacia}</Text>
-            </View>
-
-            <View style={estilos.row}>
-                <Text style={estilos.label}>Cota Atual do Nível d'Água: </Text>
-                <Text style={estilos.texto}>{barragem.cotaAtualNivelAgua}</Text>
+                <Text style={estilos.texto}>{barragem.baciaHidrografica.nome}</Text>
             </View>
         </View>
     )
