@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import SimpleLineIconsIcon from "react-native-vector-icons/SimpleLineIcons";
@@ -6,14 +6,12 @@ import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
 import Perfil from "../screens/Perfil";
 import Notificacoes from "../screens/Notificacoes";
-import { useNotificacoes } from "../hooks/useNotificacoes";
+import { NotificacaoContext } from "../contexts/NotificacaoContext";
 
 const Tab = createBottomTabNavigator();
 
 const TabRotas = () => {
-    const [listaDeNotificacoes] = useNotificacoes()
-
-    const badge = listaDeNotificacoes.length > 0 ? { tabBarBadge: listaDeNotificacoes.length } : {}
+    const { badge } = useContext(NotificacaoContext)
 
     return (
         <Tab.Navigator screenOptions={({ route }) => ({

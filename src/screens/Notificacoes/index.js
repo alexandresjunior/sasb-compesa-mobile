@@ -1,19 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList, View } from "react-native";
 import Header from "../../components/Header";
 import NotificationCard from "../../components/NotificationCard";
-import { useNotificacoes } from "../../hooks/useNotificacoes";
+import { NotificacaoContext } from "../../contexts/NotificacaoContext";
 
 const Notificacoes = () => {
-    const [listaDeNotificacoes, setListaDeNotificacoes] = useNotificacoes()
-
-    const dispensarNotificacao = (id) => {
-        setListaDeNotificacoes(listaDeNotificacoes.filter((notificacao) => notificacao.id !== id))
-    }
+    const { notificacoes, dispensarNotificacao } = useContext(NotificacaoContext)
 
     return (
         <FlatList
-            data={listaDeNotificacoes}
+            data={notificacoes}
             renderItem={({ item }) => <NotificationCard notificacao={item} onPress={() => dispensarNotificacao(item.id)} />}
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {

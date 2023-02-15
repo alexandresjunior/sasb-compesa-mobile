@@ -1,4 +1,4 @@
-export const notificacoes = [
+export const notificacoes_mock = [
     {
         id: 1,
         titulo: "Inspeção Pendente",
