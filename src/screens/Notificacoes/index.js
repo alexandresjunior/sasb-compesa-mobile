@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import NotificationCard from "../../components/NotificationCard";
 import Cabecalho from "../Inspecoes/components/Cabecalho";
 
@@ -13,7 +13,7 @@ const Notificacoes = () => {
         {
             id: 2,
             titulo: "Inspeção Pendente",
-            texto: "A inspeção da barragem Brejinho (Pajeú) está pendente! Verifique o calendário de inspeção para mais informações."
+            texto: "A inspeção da barragem Brejinho (Pajeú) está pendente! Realize a inspeção o mais breve possível."
         }
     ]
 
@@ -23,9 +23,11 @@ const Notificacoes = () => {
             renderItem={({ item }) => <NotificationCard notificacao={item} />}
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {
-                return (<>
-                    <Cabecalho nome={"Notificações"} />
-                </>)
+                return (
+                    <View style={{ marginBottom: 25 }}>
+                        <Cabecalho nome={"Notificações"} />
+                    </View>
+                )
             }}
         />
     )
