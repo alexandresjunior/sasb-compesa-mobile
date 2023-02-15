@@ -5,6 +5,7 @@ import SimpleLineIconsIcon from "react-native-vector-icons/SimpleLineIcons";
 import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
 import Perfil from "../screens/Perfil";
+import Notificacoes from "../screens/Notificacoes";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,6 +25,10 @@ const TabRotas = () => {
                         iconName = "user"
 
                         return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
+                    case "Notificacoes":
+                        iconName = "notifications-outline"
+
+                        return <IoniconsIcon name={iconName} size={size} color={color} />
                 }
 
                 return <IoniconsIcon name={iconName} size={size} color={color} />
@@ -33,6 +38,7 @@ const TabRotas = () => {
         })}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Inspecoes" component={InspecoesStackRotas} />
+            <Tab.Screen name="Notificacoes" component={Notificacoes} />
             <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     )
