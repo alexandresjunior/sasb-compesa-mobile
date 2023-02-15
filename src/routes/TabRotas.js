@@ -6,12 +6,14 @@ import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
 import Perfil from "../screens/Perfil";
 import Notificacoes from "../screens/Notificacoes";
-import { notificacoes } from "../mocks/notificacoes";
+import { useNotificacoes } from "../hooks/useNotificacoes";
 
 const Tab = createBottomTabNavigator();
 
 const TabRotas = () => {
-    const badge = notificacoes.length > 0 ? { tabBarBadge: notificacoes.length } : {}
+    const [listaDeNotificacoes] = useNotificacoes()
+
+    const badge = listaDeNotificacoes.length > 0 ? { tabBarBadge: listaDeNotificacoes.length } : {}
 
     return (
         <Tab.Navigator screenOptions={({ route }) => ({

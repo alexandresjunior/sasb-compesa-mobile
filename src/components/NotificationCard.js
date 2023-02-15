@@ -2,12 +2,12 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const NotificationCard = ({ notificacao }) => {
+const NotificationCard = ({ notificacao, onPress }) => {
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
                 <Text style={estilos.titulo}>{notificacao.titulo}</Text>
-                <TouchableOpacity onPress={() => { }}>
+                <TouchableOpacity onPress={onPress}>
                     <Ionicons style={estilos.icone} name={"trash-outline"} size={20} />
                 </TouchableOpacity>
             </View>
