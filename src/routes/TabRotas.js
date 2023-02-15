@@ -6,10 +6,13 @@ import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
 import Perfil from "../screens/Perfil";
 import Notificacoes from "../screens/Notificacoes";
+import { notificacoes } from "../mocks/notificacoes";
 
 const Tab = createBottomTabNavigator();
 
 const TabRotas = () => {
+    const badge = notificacoes.length > 0 ? { tabBarBadge: notificacoes.length } : {}
+
     return (
         <Tab.Navigator screenOptions={({ route }) => ({
             headerShown: false,
@@ -38,7 +41,7 @@ const TabRotas = () => {
         })}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Inspecoes" component={InspecoesStackRotas} />
-            <Tab.Screen name="Notificacoes" component={Notificacoes} />
+            <Tab.Screen name="Notificacoes" component={Notificacoes} options={badge} />
             <Tab.Screen name="Perfil" component={Perfil} />
         </Tab.Navigator>
     )
