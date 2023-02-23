@@ -9,6 +9,7 @@ export const InspecaoGlobalContext = createContext({});
 export const InspecaoProvider = ({ children }) => {
     const navigation = useNavigation();
     const paginas = obterPaginasDoFormulario(formulario);
+    const [barragem, setBarragem] = useState();
     const [paginaAtual, setPaginaAtual] = useState(-1);
     const [respostas, setRespostas] = useState([]);
 
@@ -27,7 +28,7 @@ export const InspecaoProvider = ({ children }) => {
     }
 
     return (
-        <InspecaoGlobalContext.Provider value={{ formulario, respostaOpcoes, paginas, paginaAtual, setPaginaAtual, respostas, setRespostas }}>
+        <InspecaoGlobalContext.Provider value={{ barragem, setBarragem, formulario, respostaOpcoes, paginas, paginaAtual, setPaginaAtual, respostas, setRespostas }}>
             {children}
         </InspecaoGlobalContext.Provider>
     )

@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
 import FormTextInput from "../../components/inputs/FormTextInput";
 import { listaBarragens } from "../../mocks";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
+import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
 
 const Barragem = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
+    const { setBarragem } = useContext(InspecaoGlobalContext)
 
     return (
         <FlatList
             data={listaBarragens}
-            renderItem={({ item }) => <BarragemCard item={item} onPress={() => navigation.navigate("Inspecoes Realizadas")} />}
+            renderItem={({ item }) => <BarragemCard item={item} onPress={() => {
+                navigation.navigate("Inspecoes Realizadas")
+                setBarragem(item)
+            }} />}
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {
                 return (

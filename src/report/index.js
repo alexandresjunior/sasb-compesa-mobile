@@ -1,13 +1,47 @@
-export const header = `
-    <!DOCTYPE html>
-    <html lang="pt-br">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-        </head>
-        
-    <body>
-`;
+export const replaceKeywords = (relatorio, barragem, formulario) => {
+    return relatorio
+        .replace("[$num_vistoria$]", "A DEFINIR")
+        .replace("[$nome_barragem$]", barragem.nome)
+        .replace("[$data$]", "A DEFINIR")
+        .replace("[$titularidade$]", barragem.titularidade)
+        .replace("[$localizacao_barragem$]", `${barragem.localizacao.municipio} - ${barragem.localizacao.estado}`)
+        .replace("[$outorga_captacao$]", barragem.outorgaCaptacao)
+        .replace("[$outorga_construcao$]", barragem.outorgaObraHidrica)
+        .replace("[$data_construcao$]", barragem.anoConstrucao)
+        .replace("[$responsavel_construcao$]", "A DEFINIR")
+        .replace("[$bacia_hidrografica$]", barragem.detalhes.bacia)
+        .replace("[$curso_de_agua_barrado$]", "A DEFINIR")
+        .replace("[$latitude$]", barragem.localizacao.latitude)
+        .replace("[$longitude$]", barragem.localizacao.longitude)
+        .replace("[$sistema_coordenadas$]", "A DEFINIR")
+        .replace("[$finalidade$]", "A DEFINIR")
+        .replace("[$volume$]", barragem.detalhes.capacidadeM3)
+        .replace("[$area_inundada$]", barragem.detalhes.areaInundadaM2)
+        .replace("[$cota$]", "A DEFINIR")
+        .replace("[$area_bacia_hidraulica$]", barragem.detalhes.areaBaciaHidraulicaM2)
+        .replace("[$area_bacia_hidrografica$]", barragem.detalhes.areaBaciaHidrograficaKm2)
+        .replace("[$tipo_de_barragem$]", barragem.detalhes.tipo)
+        .replace("[$cota_do_coroamento$]", barragem.detalhes.cotaCoroamentoM)
+        .replace("[$largura_crista$]", "A DEFINIR")
+        .replace("[$altura_maxima$]", barragem.detalhes.alturaM)
+        .replace("[$comprimento_barragem$]", barragem.detalhes.comprimentoM)
+        .replace("[$comprimento_vertedor$]", "A DEFINIR")
+        .replace("[$cota_soleira$]", "A DEFINIR")
+        .replace("[$risco$]", barragem.seguranca.classificacaoDeRisco)
+        .replace("[$dano_potencial_associado$]", barragem.seguranca.danoPotencialAssociado)
+        .replace("[$dados_inspecao$]", "A DEFINIR")
+        .replace("[$ficha_inspecao$]", body(formulario))
+        .replace("[$nivel_de_perigo_global$]", "A DEFINIR")
+        .replace("[$recomendacoes$]", "A DEFINIR")
+        .replace("[$nome_inspetor$]", "A DEFINIR")
+        .replace("[$ocupacao_inspetor$]", "A DEFINIR")
+        .replace("[$crea_inspetor$]", "A DEFINIR")
+        .replace("[$cpf_inspetor$]", "A DEFINIR")
+        .replace("[$nome_responsavel_tecnico$]", "A DEFINIR")
+        .replace("[$nome_diretor$]", "A DEFINIR")
+        .replace("[$diretoria_tecnica$]", "A DEFINIR")
+        .replace("[$anexos$]", anexos(formulario));
+}
 
 export const body = (formulario) => {
     var html = '<h1>FICHA DE INSPEÇÃO</h1>';
@@ -195,8 +229,3 @@ export const anexos = (formulario) => {
 
     return html;
 }
-
-export const footer = `
-</body>
-</html>
-`;

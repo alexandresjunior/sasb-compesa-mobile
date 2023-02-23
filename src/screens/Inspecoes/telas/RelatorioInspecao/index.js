@@ -4,17 +4,14 @@ import LottieView from "lottie-react-native";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
-import { anexos, body, footer, header } from "../../../../templates/FichaInspecaoTemplate";
 import Header from "../../../../components/Header";
 import { relatorio } from "../../../../../assets/templates/relatorio_de_inspecao.js";
+import { replaceKeywords } from "../../../../report";
 
 const RelatorioInspecao = () => {
-    const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
+    const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
-    // const html = header + body(formulario) + anexos(formulario) + footer;
-
-    const html = relatorio.replace("[$ficha_inspecao$]", body(formulario))
-                          .replace("[$anexos$]", anexos(formulario));
+    const html = replaceKeywords(relatorio, barragem, formulario)
 
     const printToFile = async () => {
         const { uri } = await Print.printToFileAsync({
