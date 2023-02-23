@@ -2895,7 +2895,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;mso-bidi-font-
 Arial'><o:p></o:p></span></b></h2>
 
 <p class=MsoNormal style='margin-top:12.0pt;text-align:justify;line-height:
-150%'>O presente relatório tem por objetivo apresentar os resultados da [$num_vistoria%]ª
+150%'>O presente relatório tem por objetivo apresentar os resultados da [$num_vistoria$]ª
 inspeção de segurança regular da barragem [$nome_barragem$], sob a
 responsabilidade da [$titularidade$]<i style='mso-bidi-font-style:normal'>. </i>A
 vistoria foi realizada no dia [$data$].</p>
