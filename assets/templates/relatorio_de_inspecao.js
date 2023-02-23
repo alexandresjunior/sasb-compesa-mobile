@@ -24,16 +24,16 @@ w\:* {behavior:url(#default#VML);}
   <o:Template>MODELO PLANO DE SEGURANÇA DE BARRAGEM CONFORME ANA TOMO I.dotx</o:Template>
   <o:LastAuthor>Alexandre de Souza Junior</o:LastAuthor>
   <o:Revision>2</o:Revision>
-  <o:TotalTime>1</o:TotalTime>
+  <o:TotalTime>68</o:TotalTime>
   <o:LastPrinted>2019-11-19T18:41:00Z</o:LastPrinted>
-  <o:Created>2023-02-23T12:34:00Z</o:Created>
-  <o:LastSaved>2023-02-23T12:34:00Z</o:LastSaved>
+  <o:Created>2023-02-23T13:17:00Z</o:Created>
+  <o:LastSaved>2023-02-23T13:17:00Z</o:LastSaved>
   <o:Pages>9</o:Pages>
-  <o:Words>739</o:Words>
-  <o:Characters>3993</o:Characters>
-  <o:Lines>33</o:Lines>
+  <o:Words>720</o:Words>
+  <o:Characters>3889</o:Characters>
+  <o:Lines>32</o:Lines>
   <o:Paragraphs>9</o:Paragraphs>
-  <o:CharactersWithSpaces>4723</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>4600</o:CharactersWithSpaces>
   <o:Version>15.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -2483,8 +2483,7 @@ Arial;color:#94A8B3;background:yellow;mso-highlight:yellow'><o:p>&nbsp;</o:p></s
 <p class=MsoNormal align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
 text-align:right;line-height:150%;mso-layout-grid-align:none;text-autospace:
 none'><span style='mso-bidi-font-size:12.0pt;line-height:150%;mso-bidi-font-family:
-Arial;color:#94A8B3;mso-bidi-font-style:italic'>Recife, [$data_dia$] de [$data_mes$]
-de [$data_ano$].<o:p></o:p></span></p>
+Arial;color:#94A8B3;mso-bidi-font-style:italic'>Recife, [$data$].<o:p></o:p></span></p>
 
 <span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:107%;
 font-family:"Arial",sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
@@ -2899,7 +2898,7 @@ Arial'><o:p></o:p></span></b></h2>
 150%'>O presente relatório tem por objetivo apresentar os resultados da [$num_vistoria%]ª
 inspeção de segurança regular da barragem [$nome_barragem$], sob a
 responsabilidade da [$titularidade$]<i style='mso-bidi-font-style:normal'>. </i>A
-vistoria foi realizada no dia [$data_dia$] de [$data_mes$] de [$data_ano$].</p>
+vistoria foi realizada no dia [$data$].</p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'>A Resolução APAC
 Nº 03/2017-DC, de 28 de dezembro de 2017, estabelece a periodicidade de
@@ -2951,22 +2950,22 @@ style='mso-fareast-font-family:Arial'>.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-top:12.0pt;line-height:150%'><b
 style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:Arial'>Outorga
-de Captação</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$outorga_de_captacao$]<span
+de Captação</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$outorga_captacao$]<span
 style='mso-fareast-font-family:Arial'>.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-top:12.0pt;line-height:150%'><b
 style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:Arial'>Outorga
-de Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$outorga_de_construcao$]<span
+de Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$outorga_construcao$]<span
 style='mso-fareast-font-family:Arial'>.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-top:12.0pt;line-height:150%'><b
 style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:Arial'>Data
-da Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$outorga_de_construcao$]<span
+da Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$data_construcao$]<span
 style='mso-fareast-font-family:Arial'>.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-top:12.0pt;line-height:150%'><b
 style='mso-bidi-font-weight:normal'><span style='mso-fareast-font-family:Arial'>Responsável
-pela Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$responsavel_de_construcao$]<span
+pela Construção</span></b><span style='mso-fareast-font-family:Arial'>: </span>[$responsavel_construcao$]<span
 style='mso-fareast-font-family:Arial'>.<o:p></o:p></span></p>
 
 <h2 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
@@ -3191,8 +3190,7 @@ class=Ttulo1Char><b style='mso-bidi-font-weight:normal'><span style='font-size:
 line-height:150%'><span style='mso-fareast-font-family:Arial'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal align=right style='margin-top:12.0pt;text-align:right;
-line-height:150%'><span style='mso-fareast-font-family:Arial'>Recife, [$data_dia$]
-de [$data_mes$] de [$data_ano$].<o:p></o:p></span></p>
+line-height:150%'><span style='mso-fareast-font-family:Arial'>Recife, [$data$].<o:p></o:p></span></p>
 
 <p class=MsoNormal style='text-align:justify;line-height:150%'><span
 style='mso-bidi-font-size:12.0pt;line-height:150%;mso-bidi-font-family:Arial'><o:p>&nbsp;</o:p></span></p>
@@ -3245,7 +3243,8 @@ style='mso-bidi-font-size:12.0pt;line-height:150%;mso-bidi-font-family:Arial'><o
   Barragem <o:p></o:p></span></p>
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:150%'><span style='mso-bidi-font-size:12.0pt;
-  line-height:150%;mso-bidi-font-family:Arial'>Gerente de Segurança de Barragens<o:p></o:p></span></p>
+  line-height:150%;mso-bidi-font-family:Arial'>Gerente de Segurança de
+  Barragens<o:p></o:p></span></p>
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:150%'><span style='mso-bidi-font-size:12.0pt;
   line-height:150%;mso-bidi-font-family:Arial'><o:p>&nbsp;</o:p></span></p>
