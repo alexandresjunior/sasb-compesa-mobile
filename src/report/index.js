@@ -1,14 +1,22 @@
 import { Asset } from 'expo-asset';
 import { manipulateAsync } from 'expo-image-manipulator';
 
-export const generateReport = async () => {
+export const generateReport = async (barragem, formulario) => {
     const coverAsset = Asset.fromModule(require('../../assets/images/background_cover.jpg'));
     const coverImage = await manipulateAsync(coverAsset.localUri ?? coverAsset.uri, [], { base64: true });
 
     const pageAsset = Asset.fromModule(require('../../assets/images/background_page.jpg'));
     const pageImage = await manipulateAsync(pageAsset.localUri ?? pageAsset.uri, [], { base64: true });
 
-    return `
+    const cover = await generateReportCover(barragem, formulario)
+    const summary = await generateReportSummary(barragem, formulario)
+    const presentation = await generateReportPresentationSection(barragem, formulario)
+    const inspection = await generateReportInspectionSection(barragem, formulario)
+    const dangerEvaluation = await generateReportDangerEvaluationSection(barragem, formulario)
+    const recommendation = await generateReportRecommendationSection(barragem, formulario)
+    const attachments = await generateReportAttachmentsSection(barragem, formulario)
+
+    let content = `
         <!DOCTYPE html>
         <html lang="pt-br">
             <head>
@@ -68,28 +76,205 @@ export const generateReport = async () => {
                         text-align: center;
                         padding: 20px;
                     }
+
+                    p {
+                        font-family:Arial, sans-serif;
+                        font-size:14px;font-style:normal;
+                        font-weight:normal;
+                        color:#000000;
+                        background-color:#ffffff;
+                    }
+
+                    .sumario {
+                        page-break-after: always;
+                    }
                 </style>
             </head>
+
             <body>
-                <section class="cover">
-                    <div class="container">
-                        <div class="cover-title">
-                            [$num_vistoria$]º RELATÓRIO DE INSPEÇÃO DE SEGURANÇA REGULAR DA BARRAGEM [$nome_barragem$]
-                        </div>
-                    </div>
+        `;
 
-                    <p align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
-                        text-align:right;line-height:150%;mso-layout-grid-align:none;text-autospace:
-                        none'><span style='font-size:12px;line-height:150%;font-family:
-                        Arial;color:#94A8B3;'>Recife, [$data$].</span></p>
-                </section>
+    content = content + cover
 
-                <section class="page">
+    content = content + summary
 
-                </section>
-            </body>
-        </html>
-    `;
+    content = content + presentation
+
+    content = content + inspection
+
+    content = content + dangerEvaluation
+
+    content = content + recommendation
+
+    content = content + attachments
+
+    content = content + `
+                </body>
+            </html>
+        `;
+
+    return replaceKeywords(content, barragem, formulario)
+}
+
+export const generateReportCover = async (barragem, formulario) => {
+    const html = `
+        <section class="cover">
+            <div class="container">
+                <div class="cover-title">
+                    [$num_vistoria$]º RELATÓRIO DE INSPEÇÃO DE SEGURANÇA REGULAR DA BARRAGEM [$nome_barragem$]
+                </div>
+            </div>
+            <p>Recife, [$data$].</p>
+        </section>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportSummary = async (barragem, formulario) => {
+    const html = `
+        <div class="sumario">
+            <h1>SUMÁRIO</h1>
+            <p>1. Apresentação</p>
+            <p>1.1 Objetivo</p>
+            <p>1.2 Dados da Barragem</p>
+            <p>1.3 Principais Características</p>
+            <p>2. Ficha de Inspeção</p>
+            <p>3. Avaliação do Nível de Perigo da Barragem</p>
+            <p>4. Recomendações</p>
+            <p>5. Anexos</p>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportPresentationSection = async (barragem, formulario) => {
+    const html = `
+        <div class="page">
+            <h1>1. APRESENTAÇÃO</h1>
+            <h2>1.1 OBJETIVO</h2>
+            <p>O presente relatório tem por objetivo apresentar os resultados da [$num_vistoria%]ª inspeção de segurança regular da barragem [$nome_barragem$], sob a responsabilidade da [$titularidade$]. A vistoria foi realizada no dia [$data$].</p>
+            <p>A Resolução APAC Nº 03/2017-DC, de 28 de dezembro de 2017, estabelece a periodicidade de execução ou atualização, a qualificação dos responsáveis técnicos, o conteúdo mínimo e o nível de detalhamento do Plano de Segurança da Barragem, das Inspeções de Segurança Regular e Especial, da Revisão Periódica de Segurança de Barragem e do Plano de Ação de Emergência, conforme art. 8º, 9º, 10º, 11º e 12º da Lei nº 12.334, de 20 de setembro de 2010, que estabelece a Política Nacional de Segurança de Barragens – PNSB.</p>
+            <p>Os empreendedores, em face da sua experiência acumulada, têm a liberdade de adotar seus próprios modelos de ficha de inspeção e relatório, devendo, no entanto, levar em consideração os normativos emitidos pelas suas entidades fiscalizadoras.</p>
+            <p>A inspeção foi realizada visando à verificação das condições estruturais e operacionais do empreendimento após o período construtivo, e a avaliação das ações corretivas e investigativas recomendadas na vistoria anterior.</p>
+        
+            <h2>1.2 DADOS DA BARRAGEM</h2>
+            <p><b>Nome: </b>Barragem [$nome_barragem$].</p>
+            <p><b>Empreendedor ou Responsável Legal: </b>Companhia Pernambucana de Saneamento.</p>
+            <p><b>Localização: </b>[$localizacao_barragem$].</p>
+            <p><b>Outorga de Captação: </b>[$outorga_captacao$].</p>
+            <p><b>Outorga de Construção: </b>[$outorga_construcao$].</p>
+            <p><b>Data da Construção: </b>[$data_construcao$].</p>
+            <p><b>Responsável pela Construção: </b>[$responsavel_construcao$].</p>
+
+            <h2>1.3 PRINCIPAIS CARACTERÍSTICAS</h2>
+            <p><b>Bacia: </b>[$bacia_hidrografica$].</p>
+            <p><b>Curso d’água barrado:  </b>[$curso_de_agua_barrado$].</p>
+            <p><b>Coordenadas:</b></p>
+            <p>Latitude: [$latitude$]   Longitude: [$longitude$]</p>
+            <p>Sistema de coordenadas: [$sistema_coordenadas$]</p>
+            <p><b>Finalidade:</b> [$finalidade$].</p>
+            <p><b>Capacidade do Reservatório:</b> [$volume$]. Fonte: Volume I do Plano de Segurança da Barragem (PSB).</p>
+            <p><b>Área Inundada:</b> [$volume$]. aproximadamente [$area_inundada$] (cota [$cota$]). Fonte: Volume I do Plano de Segurança da Barragem (PSB).</p>
+            <p><b>Área da Bacia Hidráulica:</b> [$area_bacia_hidraulica$].</p>
+            <p><b>Área da Bacia Hidrográfica:</b> [$area_bacia_hidrografica$]. Fonte: Volume I do PSB.</p>
+            <p><b>Tipo de Barragem:</b> [$tipo_de_barragem$].</p>
+            <p><b>Cota do Coroamento:</b> aproximadamente [$cota_do_coroamento$]. Fonte: Volume I do PSB.</p>
+            <p><b>Largura da Crista:</b> [$largura_crista$].</p>
+            <p><b>Altura Máxima:</b> aproximadamente [$altura_maxima$], não considerando a fundação. Fonte: PE3D.</p>
+            <p><b>Comprimento da Barragem:</b> [$comprimento_vertedor$] (medida realizada em campo com uma trena).</p>
+            <p><b>Comprimento do Vertedor:</b> [$comprimento_barragem$] (medida realizada em campo com uma trena).</p>
+            <p><b>Cota da Soleira:</b> aproximadamente [$cota_soleira$]. Fonte: Volume I do PSB.</p>
+            <p><b>Classificação da Barragem Segundo Órgão Fiscalizador:</b> Risco [$risco$], Dano Potencial [$dano_potencial_associado$] (conforme Resolução CNRH nº 143/2012).</p>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportInspectionSection = async (barragem, formulario) => {
+    const html = `
+        <div class="page">
+            <h1>2. FICHA DE INSPEÇÃO</h1>
+            <p>Apresenta-se, a seguir, a Ficha de Inspeção da Barragem [$nome_barragem$]. O registro fotográfico das anomalias identificadas será apresentado sequencialmente.</p>
+            <div>[$dados_inspecao$]</div>
+            <div>[$ficha_inspecao$]</div>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportDangerEvaluationSection = async (barragem, formulario) => {
+    const html = `
+        <div class="page">
+            <h1>3. AVALIAÇÃO DO NÍVEL DE PERIGO DA BARRAGEM</h1>
+            <p>O Nível de Perigo Global da Barragem (NPGB) é [$nivel_de_perigo_global$], consoante com o Art.12º da Resolução nº 03/2017-DC de 28/12/2017, elaborada pela Agência Pernambucana de Águas e Climas – APAC.</p>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportRecommendationSection = async (barragem, formulario) => {
+    const html = `
+        <div class="page">
+            <h1>4. RECOMENDAÇÕES</h1>
+            <p>[$recomendacoes$]</p>
+
+            <p>Recife, [$data$].</p>
+
+            <p>Ciente,</p>
+            <table cellpadding="1" cellspacing="1">
+                <tbody>
+                    <tr>
+                        <td><p align="center">_______________________________________</p>
+
+                        <p align="center">[$nome_inspetor$]</p>
+
+                        <p align="center">[$ocupacao_inspetor$]</p>
+
+                        <p align="center">[$crea_inspetor$] &ndash; [$cpf_inspetor$]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p align="center">_______________________________________</p>
+
+                        <p align="center">[$nome_responsavel_tecnico$]</p>
+
+                        <p align="center">Respons&aacute;vel T&eacute;cnico pela Barragem</p>
+
+                        <p align="center">Gerente de Seguran&ccedil;a de Barragens</p>
+                        </td>
+                        <td>Cell 4</td>
+                    </tr>
+                    <tr>
+                        <td><p align="center">_______________________________________</p>
+
+                        <p align="center">[$nome_diretor$]</p>
+
+                        <p align="center">[$diretoria_tecnica$]</p>
+                        </td>
+                        <td>Cell 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
+}
+
+export const generateReportAttachmentsSection = async (barragem, formulario) => {
+    const html = `
+        <div class="page">
+            <h1>5. ANEXOS</h1>
+            <p>[$anexos$]</p>
+        </div>
+    `
+
+    return replaceKeywords(html, barragem, formulario)
 }
 
 export const replaceKeywords = (relatorio, barragem, formulario) => {

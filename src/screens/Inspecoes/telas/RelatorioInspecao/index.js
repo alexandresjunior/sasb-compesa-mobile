@@ -5,16 +5,13 @@ import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContex
 import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
 import Header from "../../../../components/Header";
-import { relatorio } from "../../../../../assets/templates/relatorio_de_inspecao.js";
-import { generateReport, generateReportCover, generateReportPage, replaceKeywords } from "../../../../report";
+import { generateReport } from "../../../../report";
 
 const RelatorioInspecao = () => {
     const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
-    // const html = replaceKeywords(relatorio, barragem, formulario)
-
     const printToFile = async () => {
-        const html = await generateReport()
+        const html = await generateReport(barragem, formulario)
 
         const { uri } = await Print.printToFileAsync({ html, height: 1122.5, width: 794 });
 
