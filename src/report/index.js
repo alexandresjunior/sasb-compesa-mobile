@@ -24,11 +24,11 @@ export const generateReport = async (barragem, formulario) => {
                 <style>
                     @page {
                         size: A4;
-                        margin: 0;
                     }
 
                     @media print {
-                        html, body, section {
+                        html, body {
+                            font-family: Arial, sans-serif;
                             width: 210mm;
                             height: 297mm;
                         }
@@ -50,15 +50,37 @@ export const generateReport = async (barragem, formulario) => {
                         page-break-after: always;
                     }
 
-                    .container {
+                    p {
+                        font-size: 14px;
+                        text-align: justify;
+                    }
+
+                    h1 {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: rgba(58, 67, 156);
+                    }
+
+                    h2 {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: rgba(58, 67, 156);
+                    }
+
+                    .report-section {
+                        margin: 30mm;
+                        page-break-after: always;
+                    }
+
+                    .report-container {
                         width: 210mm;
                         height: 297mm;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                     }
-            
-                    .cover-title {
+
+                    .report-title {
                         width: 500px;
                         height: 200px;
                         text-align: center;
@@ -66,27 +88,6 @@ export const generateReport = async (barragem, formulario) => {
                         color: rgba(58, 67, 156);
                         font-weight: bold;
                         font-family: Arial, sans-serif;
-                    }
-
-                    .cover-footer {
-                        width: 100%;
-                        height: 10%;
-                        background-color: #f2f2f2;
-                        border-top: 1px solid #ccc;
-                        text-align: center;
-                        padding: 20px;
-                    }
-
-                    p {
-                        font-family:Arial, sans-serif;
-                        font-size:14px;font-style:normal;
-                        font-weight:normal;
-                        color:#000000;
-                        background-color:#ffffff;
-                    }
-
-                    .sumario {
-                        page-break-after: always;
                     }
                 </style>
             </head>
@@ -119,8 +120,8 @@ export const generateReport = async (barragem, formulario) => {
 export const generateReportCover = async (barragem, formulario) => {
     const html = `
         <section class="cover">
-            <div class="container">
-                <div class="cover-title">
+            <div class="report-container">
+                <div class="report-title">
                     [$num_vistoria$]º RELATÓRIO DE INSPEÇÃO DE SEGURANÇA REGULAR DA BARRAGEM [$nome_barragem$]
                 </div>
             </div>
@@ -133,7 +134,7 @@ export const generateReportCover = async (barragem, formulario) => {
 
 export const generateReportSummary = async (barragem, formulario) => {
     const html = `
-        <div class="sumario">
+        <div class="report-section">
             <h1>SUMÁRIO</h1>
             <p>1. Apresentação</p>
             <p>1.1 Objetivo</p>
@@ -151,7 +152,7 @@ export const generateReportSummary = async (barragem, formulario) => {
 
 export const generateReportPresentationSection = async (barragem, formulario) => {
     const html = `
-        <div class="page">
+        <div class="report-section">
             <h1>1. APRESENTAÇÃO</h1>
             <h2>1.1 OBJETIVO</h2>
             <p>O presente relatório tem por objetivo apresentar os resultados da [$num_vistoria%]ª inspeção de segurança regular da barragem [$nome_barragem$], sob a responsabilidade da [$titularidade$]. A vistoria foi realizada no dia [$data$].</p>
@@ -195,7 +196,7 @@ export const generateReportPresentationSection = async (barragem, formulario) =>
 
 export const generateReportInspectionSection = async (barragem, formulario) => {
     const html = `
-        <div class="page">
+        <div class="report-section">
             <h1>2. FICHA DE INSPEÇÃO</h1>
             <p>Apresenta-se, a seguir, a Ficha de Inspeção da Barragem [$nome_barragem$]. O registro fotográfico das anomalias identificadas será apresentado sequencialmente.</p>
             <div>[$dados_inspecao$]</div>
@@ -208,7 +209,7 @@ export const generateReportInspectionSection = async (barragem, formulario) => {
 
 export const generateReportDangerEvaluationSection = async (barragem, formulario) => {
     const html = `
-        <div class="page">
+        <div class="report-section">
             <h1>3. AVALIAÇÃO DO NÍVEL DE PERIGO DA BARRAGEM</h1>
             <p>O Nível de Perigo Global da Barragem (NPGB) é [$nivel_de_perigo_global$], consoante com o Art.12º da Resolução nº 03/2017-DC de 28/12/2017, elaborada pela Agência Pernambucana de Águas e Climas – APAC.</p>
         </div>
@@ -219,7 +220,7 @@ export const generateReportDangerEvaluationSection = async (barragem, formulario
 
 export const generateReportRecommendationSection = async (barragem, formulario) => {
     const html = `
-        <div class="page">
+        <div class="report-section">
             <h1>4. RECOMENDAÇÕES</h1>
             <p>[$recomendacoes$]</p>
 
@@ -229,34 +230,27 @@ export const generateReportRecommendationSection = async (barragem, formulario) 
             <table cellpadding="1" cellspacing="1">
                 <tbody>
                     <tr>
-                        <td><p align="center">_______________________________________</p>
-
-                        <p align="center">[$nome_inspetor$]</p>
-
-                        <p align="center">[$ocupacao_inspetor$]</p>
-
-                        <p align="center">[$crea_inspetor$] &ndash; [$cpf_inspetor$]</p>
+                        <td>
+                            <p align="center">_______________________________________</p>
+                            <p align="center">[$nome_inspetor$]</p>
+                            <p align="center">[$ocupacao_inspetor$]</p>
+                            <p align="center">[$crea_inspetor$] &ndash; [$cpf_inspetor$]</p>
                         </td>
                     </tr>
                     <tr>
-                        <td><p align="center">_______________________________________</p>
-
-                        <p align="center">[$nome_responsavel_tecnico$]</p>
-
-                        <p align="center">Respons&aacute;vel T&eacute;cnico pela Barragem</p>
-
-                        <p align="center">Gerente de Seguran&ccedil;a de Barragens</p>
+                        <td>
+                            <p align="center">_______________________________________</p>
+                            <p align="center">[$nome_responsavel_tecnico$]</p>
+                            <p align="center">Respons&aacute;vel T&eacute;cnico pela Barragem</p>
+                            <p align="center">Gerente de Seguran&ccedil;a de Barragens</p>
                         </td>
-                        <td>Cell 4</td>
                     </tr>
                     <tr>
-                        <td><p align="center">_______________________________________</p>
-
-                        <p align="center">[$nome_diretor$]</p>
-
-                        <p align="center">[$diretoria_tecnica$]</p>
+                        <td>
+                            <p align="center">_______________________________________</p>
+                            <p align="center">[$nome_diretor$]</p>
+                            <p align="center">[$diretoria_tecnica$]</p>
                         </td>
-                        <td>Cell 6</td>
                     </tr>
                 </tbody>
             </table>
@@ -268,7 +262,7 @@ export const generateReportRecommendationSection = async (barragem, formulario) 
 
 export const generateReportAttachmentsSection = async (barragem, formulario) => {
     const html = `
-        <div class="page">
+        <div class="report-section">
             <h1>5. ANEXOS</h1>
             <p>[$anexos$]</p>
         </div>
