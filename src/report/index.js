@@ -1,3 +1,97 @@
+import { Asset } from 'expo-asset';
+import { manipulateAsync } from 'expo-image-manipulator';
+
+export const generateReport = async () => {
+    const coverAsset = Asset.fromModule(require('../../assets/images/background_cover.jpg'));
+    const coverImage = await manipulateAsync(coverAsset.localUri ?? coverAsset.uri, [], { base64: true });
+
+    const pageAsset = Asset.fromModule(require('../../assets/images/background_page.jpg'));
+    const pageImage = await manipulateAsync(pageAsset.localUri ?? pageAsset.uri, [], { base64: true });
+
+    return `
+        <!DOCTYPE html>
+        <html lang="pt-br">
+            <head>
+                <meta charset="utf-8"/>
+                <style>
+                    @page {
+                        size: A4;
+                        margin: 0;
+                    }
+
+                    @media print {
+                        html, body, section {
+                            width: 210mm;
+                            height: 297mm;
+                        }
+                    }
+
+                    .cover {
+                        background-image: url("data:image/jpeg;base64,${coverImage.base64}");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center; 
+                        page-break-after: always;
+                    }
+
+                    .page {
+                        background-image: url("data:image/jpeg;base64,${pageImage.base64}");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        page-break-after: always;
+                    }
+
+                    .container {
+                        width: 210mm;
+                        height: 297mm;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+            
+                    .cover-title {
+                        width: 500px;
+                        height: 200px;
+                        text-align: center;
+                        font-size: 28px;
+                        color: rgba(58, 67, 156);
+                        font-weight: bold;
+                        font-family: Arial, sans-serif;
+                    }
+
+                    .cover-footer {
+                        width: 100%;
+                        height: 10%;
+                        background-color: #f2f2f2;
+                        border-top: 1px solid #ccc;
+                        text-align: center;
+                        padding: 20px;
+                    }
+                </style>
+            </head>
+            <body>
+                <section class="cover">
+                    <div class="container">
+                        <div class="cover-title">
+                            [$num_vistoria$]º RELATÓRIO DE INSPEÇÃO DE SEGURANÇA REGULAR DA BARRAGEM [$nome_barragem$]
+                        </div>
+                    </div>
+
+                    <p align=right style='margin-bottom:0cm;margin-bottom:.0001pt;
+                        text-align:right;line-height:150%;mso-layout-grid-align:none;text-autospace:
+                        none'><span style='font-size:12px;line-height:150%;font-family:
+                        Arial;color:#94A8B3;'>Recife, [$data$].</span></p>
+                </section>
+
+                <section class="page">
+
+                </section>
+            </body>
+        </html>
+    `;
+}
+
 export const replaceKeywords = (relatorio, barragem, formulario) => {
     return relatorio
         .replaceAll("[$num_vistoria$]", "A DEFINIR")

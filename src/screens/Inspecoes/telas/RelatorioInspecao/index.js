@@ -6,25 +6,17 @@ import * as Print from "expo-print";
 import { shareAsync } from "expo-sharing";
 import Header from "../../../../components/Header";
 import { relatorio } from "../../../../../assets/templates/relatorio_de_inspecao.js";
-import { replaceKeywords } from "../../../../report";
+import { generateReport, generateReportCover, generateReportPage, replaceKeywords } from "../../../../report";
 
 const RelatorioInspecao = () => {
     const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
 
-    const html = replaceKeywords(relatorio, barragem, formulario)
+    // const html = replaceKeywords(relatorio, barragem, formulario)
 
     const printToFile = async () => {
-        const { uri } = await Print.printToFileAsync({
-            html,
-            margins: {
-                left: 85,    // 3cm
-                top: 85,     // 3cm
-                right: 57,   // 2cm
-                bottom: 57,  // 2cm
-            },
-            height: 842,
-            width: 595
-        });
+        const html = await generateReport()
+
+        const { uri } = await Print.printToFileAsync({ html, height: 1122.5, width: 794 });
 
         await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
     };
