@@ -29,8 +29,8 @@ const api = axios.create({
 
 export default api;
 
-export const enviarDadosFormulario = async (formulario, setResponse, setModalVisible) => {
-  await api.post("/formulario", formulario)
+export const enviarDadosFormulario = async (dados, setResponse, setModalVisible) => {
+  await api.post("/formulario", dados)
     .then((response) => {
       setResponse(response)
 

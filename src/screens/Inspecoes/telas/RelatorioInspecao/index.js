@@ -7,7 +7,7 @@ import { enviarDadosFormulario } from "../../../../services/api";
 import EnviarDadosModal from "../../../../components/modals/EnviarDadosModal";
 
 const RelatorioInspecao = () => {
-    const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
+    const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
     const [modalVisible, setModalVisible] = useState(false)
     const [response, setResponse] = useState("Enviando dados...")
 
@@ -31,7 +31,7 @@ const RelatorioInspecao = () => {
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
                 <TouchableOpacity style={estilos.botao} onPress={() => {
-                    enviarDadosFormulario(formulario, setResponse, setModalVisible)
+                    enviarDadosFormulario({ barragem: barragem, formulario: formulario }, setResponse, setModalVisible)
                 }}>
                     <Text style={estilos.textoBotao}>Enviar Dados</Text>
                 </TouchableOpacity>
