@@ -2,21 +2,10 @@ import React, { useContext, useEffect } from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import LottieView from "lottie-react-native";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
-import * as Print from "expo-print";
-import { shareAsync } from "expo-sharing";
 import Header from "../../../../components/Header";
-import { generateReport } from "../../../../report";
 
 const RelatorioInspecao = () => {
-    const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
-
-    const printToFile = async () => {
-        const html = await generateReport(barragem, formulario)
-
-        const { uri } = await Print.printToFileAsync({ html, height: 1122.5, width: 794 });
-
-        await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
-    };
+    const { setPaginaAtual } = useContext(InspecaoGlobalContext);
 
     let animation = React.createRef();
 
@@ -37,8 +26,8 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={printToFile}>
-                    <Text style={estilos.textoBotao}>Gerar Relatório</Text>
+                <TouchableOpacity style={estilos.botao} onPress={() => { }}>
+                    <Text style={estilos.textoBotao}>Enviar Dados</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(-1)}>
                     <Text style={estilos.textoBotaoOutline}>Voltar à Tela Inicial</Text>
