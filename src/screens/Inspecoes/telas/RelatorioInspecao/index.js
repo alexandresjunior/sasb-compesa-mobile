@@ -1,11 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import LottieView from "lottie-react-native";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import Header from "../../../../components/Header";
+import { enviarDadosFormulario } from "../../../../services/api";
+import EnviarDadosModal from "../../../../components/modals/EnviarDadosModal";
 
 const RelatorioInspecao = () => {
-    const { setPaginaAtual } = useContext(InspecaoGlobalContext);
+    const { formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
+    const [modalVisible, setModalVisible] = useState(false)
+    const [response, setResponse] = useState("Enviando dados...")
 
     let animation = React.createRef();
 
@@ -26,13 +30,22 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={() => { }}>
+                <TouchableOpacity style={estilos.botao} onPress={() => {
+                    enviarDadosFormulario(formulario, setResponse, setModalVisible)
+                }}>
                     <Text style={estilos.textoBotao}>Enviar Dados</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(-1)}>
-                    <Text style={estilos.textoBotaoOutline}>Voltar à Tela Inicial</Text>
-                </TouchableOpacity>
             </View>
+
+            <EnviarDadosModal
+                modalVisible={modalVisible}
+                mensagem={response}
+                textoBotao={"Voltar à Tela Inicial"}
+                onPress={() => {
+                    setModalVisible(false)
+                    setPaginaAtual(-1)
+                }}
+            />
         </View>
     )
 }
@@ -55,19 +68,6 @@ const estilos = StyleSheet.create({
     textoBotao: {
         textAlign: "center",
         color: "#FFF",
-        fontWeight: "bold",
-        fontSize: 18
-    },
-    botaoOutline: {
-        backgroundColor: "#FFF",
-        padding: 15,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "#223F99",
-    },
-    textoBotaoOutline: {
-        textAlign: "center",
-        color: "#223F99",
         fontWeight: "bold",
         fontSize: 18
     },
