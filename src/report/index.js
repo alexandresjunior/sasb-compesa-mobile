@@ -117,6 +117,53 @@ export const generateReport = async (barragem, formulario) => {
     return replaceKeywords(content, barragem, formulario)
 }
 
+export const pageTest = async () => {
+    const coverAsset = Asset.fromModule(require('../../assets/images/background_cover.jpg'));
+    const coverImage = await manipulateAsync(coverAsset.localUri ?? coverAsset.uri, [], { base64: true });
+
+    return `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Exemplo de página HTML com imagem de fundo</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-image: url("data:image/jpeg;base64,${coverImage.base64}");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                .container {
+                    max-width: 210mm;
+                    max-height: 297mm;
+                    margin: 0 auto;
+                    padding: 2.5cm;
+                    box-sizing: border-box;
+                }
+
+                p {
+                    margin: 1.5em 0;
+                    line-height: 1.5;
+                    text-align: justify;
+                    text-indent: 1.5em;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Título da Página</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod tortor quis tortor accumsan vestibulum. Maecenas sagittis pharetra neque, sit amet eleifend velit sollicitudin ut. Duis pellentesque rhoncus finibus. Nullam in bibendum urna. Fusce non elit et odio convallis rutrum. Sed hendrerit justo et dolor aliquam, vel ullamcorper mi luctus. Aenean sed luctus velit. Sed et interdum metus. Sed tristique semper nisl in convallis. Curabitur placerat, massa eget auctor viverra, lectus tellus consequat augue, in cursus dolor nulla vel nulla. Integer pharetra enim eget elit iaculis, quis rhoncus arcu gravida. Vestibulum aliquet sit amet nisl in congue.</p>
+                <p>Aliquam erat volutpat. Nunc nec ipsum massa. Maecenas faucibus, quam nec suscipit finibus, quam purus euismod odio, in pharetra velit velit vitae nibh. Nullam et mauris mauris. Suspendisse potenti. Sed eu consectetur elit. Vestibulum ac elit quis felis tristique mollis quis a erat. Duis consectetur velit sit amet libero gravida, quis maximus metus rutrum. Sed in lectus ac velit vehicula pharetra. Nam ac lorem nisl. Integer non facilisis orci. Fusce hendrerit sollicitudin tellus, ut feugiat ipsum bibendum sed.</p>
+                <p>Aliquam erat volutpat. Nunc nec ipsum massa. Maecenas faucibus, quam nec suscipit finibus, quam purus euismod odio, in pharetra velit velit vitae nibh. Nullam et mauris mauris. Suspendisse potenti. Sed eu consectetur elit. Vestibulum ac elit quis felis tristique mollis quis a erat. Duis consectetur velit sit amet libero gravida, quis maximus metus rutrum. Sed in lectus ac velit vehicula pharetra. Nam ac lorem nisl. Integer non facilisis orci. Fusce hendrerit sollicitudin tellus, ut feugiat ipsum bibendum sed.</p>
+                <p>Aliquam erat volutpat. Nunc nec ipsum massa. Maecenas faucibus, quam nec suscipit finibus, quam purus euismod odio, in pharetra velit velit vitae nibh. Nullam et mauris mauris. Suspendisse potenti. Sed eu consectetur elit. Vestibulum ac elit quis felis tristique mollis quis a erat. Duis consectetur velit sit amet libero gravida, quis maximus metus rutrum. Sed in lectus ac velit vehicula pharetra. Nam ac lorem nisl. Integer non facilisis orci. Fusce hendrerit sollicitudin tellus, ut feugiat ipsum bibendum sed.</p>
+            </div>
+        </body>
+        </html>
+    `
+}
+
 export const generateReportCover = async (barragem, formulario) => {
     const html = `
         <section class="cover">
