@@ -5,9 +5,11 @@ import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContex
 import Header from "../../../../components/Header";
 import { enviarDadosFormulario } from "../../../../services/api";
 import EnviarDadosModal from "../../../../components/modals/EnviarDadosModal";
+import { NotificacaoContext } from "../../../../contexts/NotificacaoContext";
 
 const RelatorioInspecao = () => {
     const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
+    const { adicionarNotificacao } = useContext(NotificacaoContext)
     const [modalVisible, setModalVisible] = useState(false)
     const [response, setResponse] = useState("Enviando dados...")
 
@@ -33,7 +35,11 @@ const RelatorioInspecao = () => {
                 <TouchableOpacity style={estilos.botao} onPress={() => {
                     enviarDadosFormulario({ barragem: barragem, formulario: formulario }, setResponse, setModalVisible)
                 }}>
-                    <Text style={estilos.textoBotao}>Enviar Dados</Text>
+                    <Text style={estilos.textoBotao}>Gerar Relatório e Enviar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={estilos.botaoOutline} onPress={adicionarNotificacao}>
+                    <Text style={estilos.textoBotaoOutline}>Salvar dados para enviar depois</Text>
                 </TouchableOpacity>
             </View>
 
@@ -68,6 +74,20 @@ const estilos = StyleSheet.create({
     textoBotao: {
         textAlign: "center",
         color: "#FFF",
+        fontWeight: "bold",
+        fontSize: 18
+    },
+    botaoOutline: {
+        backgroundColor: "#fff",
+        padding: 15,
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: "#223F99",
+        marginBottom: 20,
+    },
+    textoBotaoOutline: {
+        textAlign: "center",
+        color: "#223F99",
         fontWeight: "bold",
         fontSize: 18
     },
