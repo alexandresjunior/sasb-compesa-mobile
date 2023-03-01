@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import LargeButton from "../../components/buttons/LargeButton";
 import FormHeader from "../../components/headers/FormHeader";
 import FormTextInput from "../../components/inputs/FormTextInput";
@@ -29,7 +29,11 @@ const Cadastro = () => {
     }
 
     return (
-        <>
+        <ScrollView
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={0}
+            pagingEnabled
+        >
             <View style={estilos.cabecalho}></View>
 
             <View style={estilos.container}>
@@ -42,7 +46,7 @@ const Cadastro = () => {
 
                 <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} />
             </View>
-        </>
+        </ScrollView>
     )
 }
 

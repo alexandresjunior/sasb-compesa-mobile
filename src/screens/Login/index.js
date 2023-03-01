@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { login } from "../../services/api";
 import FormTextInput from "../../components/inputs/FormTextInput";
@@ -28,7 +28,11 @@ const Login = () => {
     }, [usuarioLogado])
 
     return (
-        <>
+        <ScrollView
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={0}
+            pagingEnabled
+        >
             <View style={estilos.cabecalho}></View>
 
             <View style={estilos.container}>
@@ -55,7 +59,7 @@ const Login = () => {
                     </View>
                 </View>
             </View>
-        </>
+        </ScrollView>
     )
 }
 
