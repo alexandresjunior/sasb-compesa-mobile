@@ -19,7 +19,7 @@ const InspecoesStackRotas = () => {
             <Stack.Navigator initialRouteName="Selecionar Barragem" screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Selecionar Barragem" component={Barragem} />
                 <Stack.Screen name="Inspecoes Realizadas" component={Inspecoes} />
-                <Stack.Screen name="Nova Inspecao" component={RelatorioInspecao} />
+                <Stack.Screen name="Nova Inspecao" component={NovaInspecao} />
                 {
                     paginas?.map((pagina, indice) => {
                         return (
