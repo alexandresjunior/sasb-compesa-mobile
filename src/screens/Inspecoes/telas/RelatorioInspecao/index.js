@@ -1,21 +1,39 @@
-import React, { useContext, useEffect } from "react";
-import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import { View, TouchableOpacity, StyleSheet, Text, ActivityIndicator } from "react-native";
 import LottieView from "lottie-react-native";
-import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
-import * as Print from "expo-print";
-import { shareAsync } from "expo-sharing";
 import Header from "../../../../components/Header";
-import { generateReport } from "../../../../report";
+import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
+import { obterRelatorioPDF } from "../../../../services/api";
+import { NotificacaoContext } from "../../../../contexts/NotificacaoContext";
+import { removerEspacos } from "../../../../utils";
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system';
 
 const RelatorioInspecao = () => {
-    const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext);
+    const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
+    const { adicionarNotificacao } = useContext(NotificacaoContext)
+    const [loading, setLoading] = useState(false)
 
-    const printToFile = async () => {
-        const html = await generateReport(barragem, formulario)
+    const compartilharRelatorio = async () => {
+        setLoading(true);
 
-        const { uri } = await Print.printToFileAsync({ html, height: 1122.5, width: 794 });
+        try {
+            // Fazer a chamada à API externa para obter o arquivo PDF
+            const relatorio = await obterRelatorioPDF({ barragem: barragem, formulario: formulario })
 
-        await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
+            // Salva o arquivo no sistema
+            const fileUri = `${FileSystem.documentDirectory}relatorio.pdf`;
+            await FileSystem.writeAsStringAsync(fileUri, relatorio, {
+                encoding: FileSystem.EncodingType.Base64,
+            })
+
+            // Compartilhar o arquivo PDF
+            await Sharing.shareAsync(fileUri);
+        } catch (error) {
+            alert(error);
+        }
+
+        setLoading(false);
     };
 
     let animation = React.createRef();
@@ -37,12 +55,15 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={printToFile}>
-                    <Text style={estilos.textoBotao}>Gerar Relatório</Text>
+                <TouchableOpacity style={estilos.botao} onPress={compartilharRelatorio}>
+                    <Text style={estilos.textoBotao}>Compartilhar Relatório</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={estilos.botaoOutline} onPress={() => setPaginaAtual(-1)}>
-                    <Text style={estilos.textoBotaoOutline}>Voltar à Tela Inicial</Text>
-                </TouchableOpacity>
+
+                {loading && <ActivityIndicator />}
+
+                {/* <TouchableOpacity style={estilos.botaoOutline} onPress={adicionarNotificacao}>
+                    <Text style={estilos.textoBotaoOutline}>Salvar dados para enviar depois</Text>
+                </TouchableOpacity> */}
             </View>
         </View>
     )
@@ -70,11 +91,12 @@ const estilos = StyleSheet.create({
         fontSize: 18
     },
     botaoOutline: {
-        backgroundColor: "#FFF",
+        backgroundColor: "#fff",
         padding: 15,
         borderRadius: 5,
         borderWidth: 1,
         borderColor: "#223F99",
+        marginBottom: 20,
     },
     textoBotaoOutline: {
         textAlign: "center",
@@ -90,4 +112,7 @@ const estilos = StyleSheet.create({
         width: 150,
         marginBottom: 35
     },
+    indicator: {
+        margin: 10,
+    }
 })
