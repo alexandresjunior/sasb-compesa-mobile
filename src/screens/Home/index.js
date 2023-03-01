@@ -5,7 +5,7 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import Mapa from "./components/Mapa";
 
 const Home = () => {
-    const { networkConnected } = useContext(GlobalContext);
+    const { usuarioLogado, networkConnected } = useContext(GlobalContext);
 
     useEffect(() => {
         if (!networkConnected) {
@@ -17,8 +17,8 @@ const Home = () => {
         <View style={styles.header}>
             <View style={styles.row}>
                 <View>
-                    <Text style={styles.title}>Bem vindo!</Text>
-                    <Text style={styles.username}>Alexandre de Souza Jr.</Text>
+                    <Text style={styles.title}>Bem vindo,</Text>
+                    <Text style={styles.username}>{`${usuarioLogado.nome}!`}</Text>
                 </View>
 
                 <Image source={icon} style={styles.image} />
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     username: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: "bold",
         color: "white",
         marginTop: 5

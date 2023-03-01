@@ -1,7 +1,8 @@
 import axios from "axios";
+import { salvarUsuarioLogado } from "./local";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/",
+  baseURL: "http://localhost:8080",
   headers: {
     Accept: "application/json",
     Content: "application/json"
@@ -12,7 +13,45 @@ const apiRelatorio = axios.create({
   baseURL: "https://sasb-compesa-pdf-api-alexandresjunior.vercel.app"
 });
 
-// // Interceptação de requisições que usam JWT
+export const login = async (email, senha, setUsuarioLogado) => {
+  // Response possui os campos: status, mensagem e usuario
+  await apiRelatorio.post("/sasb/login", { email: email, senha: senha })
+    .then(async (response) => {
+      if (response.data.status == 200) {
+        setUsuarioLogado(response.data.usuario)
+        await salvarUsuarioLogado(JSON.stringify(response.data.usuario))
+      } else {
+        alert(response.data.mensagem)
+      }
+    })
+    .catch(() => alert("Erro inesperado! Tente novamente."))
+}
+
+export const cadastrar = async (nome, email, senha, navigation) => {
+  await apiRelatorio.post("/sasb/cadastro", { nome: nome, email: email, senha: senha })
+    .then((response) => {
+      if (response.data.status == 200) {
+        alert(response.data.mensagem)
+        navigation.navigate("Log In")
+      } else {
+        alert(response.data.mensagem)
+      }
+    })
+    .catch(() => alert("Erro inesperado! Tente novamente."))
+}
+
+export const obterRelatorioPDF = async (dados) => {
+  try {
+    const response = await apiRelatorio.get('/sasb/relatorio', { responseType: 'arraybuffer' })
+
+    // Retornar o PDF em base64 
+    return response.request._response
+  } catch (error) {
+    alert(error)
+  }
+}
+
+// TODO: Interceptação de requisições que usam JWT
 // api.interceptors.request.use((config) => {
 //   // TODO: Usar localStorage / securityStorage
 //   const token = sessionStorage.getItem("userToken");
@@ -26,20 +65,8 @@ const apiRelatorio = axios.create({
 // });
 
 // export const obterJsonWebToken = async (url, setToken) => {
-//   await api.get(url)
+//   await axios.get(url)
 //     .then((response) => setToken(response.data.token))
 //     .catch((error) => console.error(error))
 // }
 
-export default api;
-
-export const obterRelatorioPDF = async (dados) => {
-  try {
-    const response = await apiRelatorio.get('/sasb/relatorio', { responseType: 'arraybuffer' })
-
-    // Retornar o PDF em base64 
-    return response.request._response
-  } catch (error) {
-    alert(error)
-  }
-}

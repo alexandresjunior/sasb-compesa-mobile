@@ -1,10 +1,12 @@
-import { useNavigation } from "@react-navigation/native";
-import Checkbox from "expo-checkbox";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import LargeButton from "../../components/buttons/LargeButton";
-import FormHeader from "../../components/headers/FormHeader";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import { login } from "../../services/api";
 import FormTextInput from "../../components/inputs/FormTextInput";
+import FormHeader from "../../components/headers/FormHeader";
+import Checkbox from "expo-checkbox";
+import { useNavigation } from "@react-navigation/native";
+import LargeButton from "../../components/buttons/LargeButton";
 
 const Login = () => {
     const navigation = useNavigation();
@@ -12,6 +14,18 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [checked, setChecked] = useState(true);
+
+    const { usuarioLogado, setUsuarioLogado } = useContext(GlobalContext);
+
+    const fazerLoginUsuario = async () => {
+        await login(email, senha, setUsuarioLogado)
+    }
+
+    useEffect(() => {
+        if (usuarioLogado) {
+            navigation.navigate("Tab Rotas")
+        }
+    }, [usuarioLogado])
 
     return (
         <>
@@ -23,7 +37,7 @@ const Login = () => {
                 <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
                 <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
 
-                <LargeButton label={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
+                <LargeButton label={"ENTRAR"} onPress={fazerLoginUsuario} />
 
                 <View style={estilos.row}>
                     <Checkbox
