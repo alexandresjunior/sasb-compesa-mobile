@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { logout } from "../../services/local";
-import { useNavigation } from "@react-navigation/native";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import Header from "../../components/Header";
+import { useNavigation } from "@react-navigation/native";
 
 const Perfil = () => {
     const navigation = useNavigation()
@@ -20,7 +21,7 @@ const Perfil = () => {
 
                 <View style={[estilos.row, estilos.titulo]}>
                     <Text style={estilos.label}>Cargo: </Text>
-                    <Text style={estilos.texto}>{usuarioLogado.funcao.nome}</Text>
+                    <Text style={estilos.texto}>{usuarioLogado.cargo}</Text>
                 </View>
 
                 <View style={[estilos.row, estilos.titulo]}>

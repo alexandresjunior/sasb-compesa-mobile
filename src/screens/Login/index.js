@@ -1,10 +1,12 @@
-import { useNavigation } from "@react-navigation/native";
-import Checkbox from "expo-checkbox";
 import React, { useContext, useEffect, useState } from "react";
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { login } from "../../services/api";
 import FormTextInput from "../../components/inputs/FormTextInput";
+import FormHeader from "../../components/headers/FormHeader";
+import Checkbox from "expo-checkbox";
+import { useNavigation } from "@react-navigation/native";
+import LargeButton from "../../components/buttons/LargeButton";
 
 const Login = () => {
     const navigation = useNavigation();
@@ -35,25 +37,9 @@ const Login = () => {
                 <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
                 <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
 
-                <LargeButton label={"ENTRAR"} onPress={() => navigation.navigate("Tab Rotas")} />
+                <LargeButton label={"ENTRAR"} onPress={fazerLoginUsuario} />
 
-                <TextInput
-                    style={estilos.input}
-                    placeholder="Senha"
-                    keyboardType="password"
-                    onChangeText={(senha) => {
-                        setSenha(senha)
-                    }}
-                    defaultValue={senha}
-                />
-
-                <TouchableOpacity
-                    style={estilos.botao}
-                    onPress={fazerLoginUsuario}>
-                    <Text style={estilos.textoBotao}>ENTRAR</Text>
-                </TouchableOpacity>
-
-                <View style={estilos.containerRow}>
+                <View style={estilos.row}>
                     <Checkbox
                         value={checked}
                         onValueChange={() => setChecked(!checked)}

@@ -2,7 +2,7 @@ import axios from "axios";
 import { salvarUsuarioLogado } from "./local";
 
 const api = axios.create({
-  baseURL: "http://10.101.28.49:8081",
+  baseURL: "http://localhost:8080",
   headers: {
     Accept: "application/json",
     Content: "application/json"
@@ -13,25 +13,45 @@ const apiRelatorio = axios.create({
   baseURL: "https://sasb-compesa-pdf-api-alexandresjunior.vercel.app"
 });
 
-// // Interceptação de requisições que usam JWT
-// api.interceptors.request.use((config) => {
-//   // TODO: Usar localStorage / securityStorage
-//   const token = sessionStorage.getItem("userToken");
-
-export const login = async (email, senha, setUsuario) => {
-  await api.post("/sasb/usuarios/login", { email: email, senha: senha })
+export const login = async (email, senha, setUsuarioLogado) => {
+  // Response possui os campos: status, mensagem e usuario
+  await apiRelatorio.post("/sasb/login", { email: email, senha: senha })
     .then(async (response) => {
-      if (response.status == 200) {
-        setUsuario(response.data)
-        await salvarUsuarioLogado(JSON.stringify(response.data))
+      if (response.data.status == 200) {
+        setUsuarioLogado(response.data.usuario)
+        await salvarUsuarioLogado(JSON.stringify(response.data.usuario))
       } else {
-        alert("Email/senha inválidos!")
+        alert(response.data.mensagem)
       }
     })
-    .catch(() => alert("Email/senha inválidos!"))
+    .catch(() => alert("Erro inesperado! Tente novamente."))
 }
 
-// Interceptação de requisições que usam JWT
+export const cadastrar = async (nome, email, senha, navigation) => {
+  await apiRelatorio.post("/sasb/cadastro", { nome: nome, email: email, senha: senha })
+    .then((response) => {
+      if (response.data.status == 200) {
+        alert(response.data.mensagem)
+        navigation.navigate("Log In")
+      } else {
+        alert(response.data.mensagem)
+      }
+    })
+    .catch(() => alert("Erro inesperado! Tente novamente."))
+}
+
+export const obterRelatorioPDF = async (dados) => {
+  try {
+    const response = await apiRelatorio.get('/sasb/relatorio', { responseType: 'arraybuffer' })
+
+    // Retornar o PDF em base64 
+    return response.request._response
+  } catch (error) {
+    alert(error)
+  }
+}
+
+// TODO: Interceptação de requisições que usam JWT
 // api.interceptors.request.use((config) => {
 //   // TODO: Usar localStorage / securityStorage
 //   const token = sessionStorage.getItem("userToken");
@@ -50,15 +70,3 @@ export const login = async (email, senha, setUsuario) => {
 //     .catch((error) => console.error(error))
 // }
 
-export const obterRelatorioPDF = async (dados) => {
-  try {
-    const response = await apiRelatorio.get('/sasb/relatorio', { responseType: 'arraybuffer' })
-
-    // Retornar o PDF em base64 
-    return response.request._response
-  } catch (error) {
-    alert(error)
-  }
-}
-
-export default api;
