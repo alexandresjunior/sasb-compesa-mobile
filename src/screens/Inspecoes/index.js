@@ -2,28 +2,29 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import HorizontalCard from "../../components/cards/HorizontalCard";
-import { inspecoes } from "../../mocks";
 import MidButton from "../../components/buttons/MidButton";
 import Header from "../../components/Header";
 
-const Inspecoes = () => {
-    const navigation = useNavigation();
+const Inspecoes = ({ route, navigation }) => {
+    const { barragem } = route.params;
+
+    const relatorios = barragem.inspecao.relatorios;
 
     return (
         <FlatList
-            data={inspecoes}
+            data={relatorios}
             renderItem={({ item }) => <HorizontalCard inspecao={item} />}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.idRelatorioInspecao}
             ListHeaderComponent={() => {
                 return (<>
-                    <Header title={"Barragem Jaime Nejaim"} />
+                    <Header title={barragem.nome} />
                     <View style={estilos.container}>
                         <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
                     </View>
                 </>)
             }}
             ListFooterComponent={() => {
-                return <MidButton label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
+                return <MidButton label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao", { barragem: barragem }) }} />
             }}
         />
     )

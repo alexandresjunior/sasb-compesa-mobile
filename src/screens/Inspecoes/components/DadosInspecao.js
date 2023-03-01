@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { formatarData } from "../../../utils";
 
 const DadosInspecao = ({ inspecao }) => {
+    const [numVistoria] = useState(inspecao.relatorios.length + 1)
+    const dataAtual = formatarData(new Date()).data;
+
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
                 <Text style={estilos.label}>Data da Inspeção: </Text>
-                <Text style={estilos.texto}>{inspecao.data}</Text>
+                <Text style={estilos.texto}>{dataAtual}</Text>
             </View>
 
             <View style={estilos.row}>
                 <Text style={estilos.label}>Vistoria N.: </Text>
-                <Text style={estilos.texto}>{inspecao.numVistoria}</Text>
+                <Text style={estilos.texto}>{numVistoria}</Text>
             </View>
 
             <View style={estilos.row}>
                 <Text style={estilos.label}>Inspetor(a): </Text>
-                <Text style={estilos.texto}>{inspecao.inspetor}</Text>
+                <Text style={estilos.texto}>{"[$NOME DO USUÁRIO$]"}</Text>
             </View>
 
             <View style={estilos.row}>

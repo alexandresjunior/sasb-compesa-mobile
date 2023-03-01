@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { respostaOpcoes } from "../mocks";
 import { formulario } from "../states/formulario";
 import { obterPaginasDoFormulario } from "../utils";
+import { salvarFormularioLocalmente } from "../services/local";
 
 export const InspecaoGlobalContext = createContext({});
 
@@ -17,13 +18,14 @@ export const InspecaoProvider = ({ children }) => {
         atualizarPagina();
     }, [paginaAtual])
 
-    const atualizarPagina = () => {
+    const atualizarPagina = async () => {
         if (paginaAtual < 0) {
             navigation.navigate("Selecionar Barragem");
         } else if (paginaAtual > (paginas.length - 1)) {
             navigation.navigate("Relatorio Inspecao");
         } else {
             navigation.navigate(`${paginas[paginaAtual].titulo} - ${paginas[paginaAtual].subtitulo}`);
+            await salvarFormularioLocalmente(formulario)
         }
     }
 
