@@ -1,17 +1,40 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text, ActivityIndicator } from "react-native";
 import LottieView from "lottie-react-native";
-import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import Header from "../../../../components/Header";
-import { enviarDadosFormulario } from "../../../../services/api";
-import EnviarDadosModal from "../../../../components/modals/EnviarDadosModal";
+import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
+import { obterRelatorioPDF } from "../../../../services/api";
 import { NotificacaoContext } from "../../../../contexts/NotificacaoContext";
+import { removerEspacos } from "../../../../utils";
+import * as Sharing from 'expo-sharing';
+import * as FileSystem from 'expo-file-system';
 
 const RelatorioInspecao = () => {
     const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
     const { adicionarNotificacao } = useContext(NotificacaoContext)
-    const [modalVisible, setModalVisible] = useState(false)
-    const [response, setResponse] = useState("Enviando dados...")
+    const [loading, setLoading] = useState(false)
+
+    const compartilharRelatorio = async () => {
+        setLoading(true);
+
+        try {
+            // Fazer a chamada à API externa para obter o arquivo PDF
+            const relatorio = await obterRelatorioPDF({ barragem: barragem, formulario: formulario })
+
+            // Salva o arquivo no sistema
+            const fileUri = `${FileSystem.documentDirectory}relatorio.pdf`;
+            await FileSystem.writeAsStringAsync(fileUri, relatorio, {
+                encoding: FileSystem.EncodingType.Base64,
+            })
+
+            // Compartilhar o arquivo PDF
+            await Sharing.shareAsync(fileUri);
+        } catch (error) {
+            alert(error);
+        }
+
+        setLoading(false);
+    };
 
     let animation = React.createRef();
 
@@ -32,26 +55,16 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={() => {
-                    enviarDadosFormulario({ barragem: barragem, formulario: formulario }, setResponse, setModalVisible)
-                }}>
-                    <Text style={estilos.textoBotao}>Gerar Relatório e Enviar</Text>
+                <TouchableOpacity style={estilos.botao} onPress={compartilharRelatorio}>
+                    <Text style={estilos.textoBotao}>Compartilhar Relatório</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={estilos.botaoOutline} onPress={adicionarNotificacao}>
+                {loading && <ActivityIndicator />}
+
+                {/* <TouchableOpacity style={estilos.botaoOutline} onPress={adicionarNotificacao}>
                     <Text style={estilos.textoBotaoOutline}>Salvar dados para enviar depois</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
-
-            <EnviarDadosModal
-                modalVisible={modalVisible}
-                mensagem={response}
-                textoBotao={"Voltar à Tela Inicial"}
-                onPress={() => {
-                    setModalVisible(false)
-                    setPaginaAtual(-1)
-                }}
-            />
         </View>
     )
 }
@@ -99,4 +112,7 @@ const estilos = StyleSheet.create({
         width: 150,
         marginBottom: 35
     },
+    indicator: {
+        margin: 10,
+    }
 })

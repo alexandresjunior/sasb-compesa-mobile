@@ -8,6 +8,10 @@ const api = axios.create({
   }
 });
 
+const apiRelatorio = axios.create({
+  baseURL: "https://sasb-compesa-pdf-api-alexandresjunior.vercel.app"
+});
+
 // // Interceptação de requisições que usam JWT
 // api.interceptors.request.use((config) => {
 //   // TODO: Usar localStorage / securityStorage
@@ -29,14 +33,13 @@ const api = axios.create({
 
 export default api;
 
-export const enviarDadosFormulario = async (dados, setResponse, setModalVisible) => {
-  await api.post("/formulario", dados)
-    .then((response) => {
-      setResponse(response)
+export const obterRelatorioPDF = async (dados) => {
+  try {
+    const response = await apiRelatorio.get('/sasb/relatorio', { responseType: 'arraybuffer' })
 
-      if (response.status === 200) {
-        setModalVisible(true)
-      }
-    })
-    .catch((error) => alert(error))
+    // Retornar o PDF em base64 
+    return response.request._response
+  } catch (error) {
+    alert(error)
+  }
 }
