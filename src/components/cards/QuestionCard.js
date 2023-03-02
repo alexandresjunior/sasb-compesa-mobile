@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RespostaOpcoes from "../RespostaOpcoes";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const QuestionCard = ({ questao }) => {
     const [situacao, setSituacao] = useState();
@@ -32,7 +32,7 @@ const QuestionCard = ({ questao }) => {
             <TouchableOpacity onPress={() => setExpandir(!expandir)}>
                 <View style={[estilos.row, { justifyContent: "space-between" }]}>
                     <Text style={estilos.titulo}>{questao.descricao}</Text>
-                    <Ionicons
+                    <Ionicon
                         name={completo ? "md-checkmark-circle" : "ellipse-outline"}
                         size={32}
                         color={"#223F99"}

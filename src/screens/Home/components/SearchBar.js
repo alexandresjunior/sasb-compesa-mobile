@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
-import IoniconsIcon from "@expo/vector-icons/Ionicons";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const SearchBar = () => {
     const [barragem, setBarragem] = useState("");
@@ -15,7 +15,7 @@ const SearchBar = () => {
                 defaultValue={barragem}
             />
             <TouchableOpacity onPress={() => { }}>
-                <IoniconsIcon name="search" size={20} color="#D9D9D9" />
+                <Ionicon name="search" size={20} color="#D9D9D9" />
             </TouchableOpacity>
         </View>
     )

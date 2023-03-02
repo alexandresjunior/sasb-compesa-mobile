@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const Header = ({ title, showButton }) => {
     return (
@@ -10,7 +10,7 @@ const Header = ({ title, showButton }) => {
                 {
                     !!showButton && (
                         <TouchableOpacity onPress={() => { }}>
-                            <Ionicons name={"cloud-download-outline"} size={25} style={styles.icon} />
+                            <Ionicon name={"cloud-download-outline"} size={25} style={styles.icon} />
                         </TouchableOpacity>
                     )
                 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const NotificationCard = ({ notificacao, onPress }) => {
     return (
@@ -8,7 +8,7 @@ const NotificationCard = ({ notificacao, onPress }) => {
             <View style={estilos.row}>
                 <Text style={estilos.titulo}>{notificacao.titulo}</Text>
                 <TouchableOpacity onPress={onPress}>
-                    <Ionicons style={estilos.icone} name={"trash-outline"} size={20} />
+                    <Ionicon style={estilos.icone} name={"trash-outline"} size={20} />
                 </TouchableOpacity>
             </View>
             <Text style={estilos.texto}>{notificacao.texto}</Text>

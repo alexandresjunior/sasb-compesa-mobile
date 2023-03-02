@@ -1,6 +1,6 @@
-import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
     const removerAnexoDaLista = (indice) => {
@@ -14,7 +14,7 @@ const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
                 <Image style={estilos.imagem} source={anexo} />
 
                 <TouchableOpacity style={estilos.botao} onPress={() => removerAnexoDaLista(indice)}>
-                    <Ionicons name="close-circle" size={25} color={"red"} />
+                    <Ionicon name="close-circle" size={25} color={"red"} />
                 </TouchableOpacity>
             </View>
         </View>

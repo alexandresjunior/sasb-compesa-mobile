@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { MaterialIcons } from '@expo/vector-icons';
+import MaterialIcon from "react-native-vector-icons/MaterialIcons";
 import LegendaModal from "../modals/LegendaModal";
 
 const InputSection = ({titulo, legenda, opcoes, answer, setAnswer, modalVisible, setModalVisible}) => {
@@ -9,7 +9,7 @@ const InputSection = ({titulo, legenda, opcoes, answer, setAnswer, modalVisible,
             <View style={estilos.tooltip}>
                 <Text style={estilos.titulo}>{titulo}</Text>
                 <TouchableOpacity style={estilos.icone} onPress={() => setModalVisible(true)}>
-                    <MaterialIcons name="info-outline" size={24} color="black" />
+                    <MaterialIcon name="info-outline" size={24} color="black" />
                 </TouchableOpacity>
             </View>
 
