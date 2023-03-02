@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Dimensions, Image, StyleSheet, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { listaBarragens } from "../../../mocks";
@@ -11,11 +11,13 @@ const map = () => {
         longitude: -38.371057,
         latitudeDelta: 10,
         longitudeDelta: 10,
-    };
+    }
+
+    const [busca, setBusca] = useState("")
 
     return (
         <View>
-            <SearchBar />
+            <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} />
             <MapView
                 style={styles.map}
                 initialRegion={initialRegion}

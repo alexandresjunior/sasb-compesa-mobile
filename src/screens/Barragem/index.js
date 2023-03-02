@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import React, { useContext, useState } from "react";
+import { FlatList, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
-import FormTextInput from "../../components/inputs/FormTextInput";
 import { listaBarragens } from "../../mocks";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
 import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
+import SearchBar from "../Home/components/SearchBar";
 
 const Barragem = () => {
     const navigation = useNavigation()
     const { setBarragem } = useContext(InspecaoGlobalContext)
+    const [busca, setBusca] = useState("")
 
     return (
         <FlatList
@@ -21,12 +22,10 @@ const Barragem = () => {
             keyExtractor={item => item.id}
             ListHeaderComponent={() => {
                 return (
-                    <>
+                    <View>
                         <Header title={"Selecionar Barragem"} showButton={true} />
-                        <View style={styles.container}>
-                            <FormTextInput placeholder={"Digite o nome da barragem..."} type={"text"} setValue={() => { }} defaultValue={""} />
-                        </View>
-                    </>
+                        <SearchBar busca={busca} setBusca={setBusca} position={'relative'} />
+                    </View>
                 )
             }}
         />
@@ -34,10 +33,3 @@ const Barragem = () => {
 }
 
 export default Barragem;
-
-const styles = StyleSheet.create({
-    container: {
-        marginHorizontal: 25,
-        marginBottom: 15
-    },
-})
