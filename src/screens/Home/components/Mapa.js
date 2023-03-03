@@ -1,41 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Dimensions, Image, StyleSheet, TextInput, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import icon from "../../../../assets/dam.png";
 import SearchBar from "./SearchBar";
-import { useBarragens } from "../../../hooks/useBarragens";
-import { listaBarragens } from "../../../mocks";
-import { filtrarBarragensPeloNome } from "../../../utils";
-
-const INITIAL_REGION = {
-    latitude: -8.470697,
-    longitude: -38.371057,
-    latitudeDelta: 1,
-    longitudeDelta: 1,
-}
+import { BarragemContext } from "../../../contexts/BarragemContext";
 
 const Mapa = () => {
-    const [coordenadas, setCoordenadas] = useState(INITIAL_REGION)
-    const [busca, setBusca] = useState()
-    const [barragens, setBarragens] = useState(listaBarragens)
-
-    useEffect(() => {
-        // Filtrar da lista obtida da API e não do state!
-        const barragensFiltradas = filtrarBarragensPeloNome(listaBarragens, busca)
-
-        setBarragens(barragensFiltradas)
-
-        if (barragens?.length === 1) {
-            const barragem = barragens[0]
-
-            setCoordenadas({
-                latitude: barragem.localizacao.latitude,
-                longitude: barragem.localizacao.longitude,
-                latitudeDelta: 1,
-                longitudeDelta: 1,
-            })
-        }
-    }, [busca])
+    const { barragens, busca, setBusca, coordenadas } = useContext(BarragemContext)
 
     return (
         <View>
