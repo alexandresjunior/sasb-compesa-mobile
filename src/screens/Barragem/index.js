@@ -1,43 +1,50 @@
 import React, { useContext } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
-import FormTextInput from "../../components/inputs/FormTextInput";
-import { listaBarragens } from "../../mocks";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
 import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
+import SearchBar from "../Home/components/SearchBar";
+import { BarragemContext } from "../../contexts/BarragemContext";
 
 const Barragem = () => {
     const navigation = useNavigation()
     const { setBarragem } = useContext(InspecaoGlobalContext)
+    const { barragens, busca, setBusca } = useContext(BarragemContext)
 
     return (
-        <FlatList
-            data={listaBarragens}
-            renderItem={({ item }) => <BarragemCard item={item} onPress={() => {
-                navigation.navigate("Inspecoes Realizadas")
-                setBarragem(item)
-            }} />}
-            keyExtractor={item => item.id}
-            ListHeaderComponent={() => {
-                return (
-                    <>
-                        <Header title={"Selecionar Barragem"} showButton={true} />
-                        <View style={styles.container}>
-                            <FormTextInput placeholder={"Digite o nome da barragem..."} type={"text"} setValue={() => { }} defaultValue={""} />
-                        </View>
-                    </>
-                )
-            }}
-        />
+        <View>
+            <Header title={"Selecionar Barragem"} showButton={true} />
+            <SearchBar busca={busca} setBusca={setBusca} position={'relative'} />
+            <FlatList
+                data={barragens}
+                renderItem={({ item }) => <BarragemCard item={item} onPress={() => {
+                    navigation.navigate("Inspecoes Realizadas")
+                    setBarragem(item)
+                }} />}
+                keyExtractor={item => item.id}
+            />
+        </View>
+
+
     )
 }
 
 export default Barragem;
 
 const styles = StyleSheet.create({
-    container: {
-        marginHorizontal: 25,
-        marginBottom: 15
+    input: {
+        margin: 25,
+        borderRadius: 5,
+        borderColor: "#CACACA",
+        borderWidth: 1,
+        color: "#CACACA",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        backgroundColor: "white",
+        padding: 15,
+    },
+    text: {
+        flex: 1
     },
 })

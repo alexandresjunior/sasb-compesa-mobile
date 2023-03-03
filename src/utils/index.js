@@ -25,3 +25,12 @@ export const obterPaginasDoFormulario = (formulario) => {
 
     return paginas;
 }
+
+export const filtrarBarragensPeloNome = (barragens, busca) => {
+    if (!busca) {
+        return barragens;
+    }
+
+    const regex = new RegExp(busca, 'i');
+    return barragens.filter(barragem => regex.test(barragem.nome));
+}

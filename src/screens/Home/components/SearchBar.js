@@ -1,22 +1,18 @@
-import React, { useState } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
 import Ionicon from "react-native-vector-icons/Ionicons";
 
-const SearchBar = () => {
-    const [barragem, setBarragem] = useState("");
-
+const SearchBar = ({ busca, setBusca, position }) => {
     return (
-        <View style={styles.input}>
+        <View style={[styles.input, { position: position }]}>
             <TextInput
                 style={styles.text}
                 placeholder="Digite o nome da barragem"
                 keyboardType="text"
-                onChangeText={(value) => setBarragem(value)}
-                defaultValue={barragem}
+                onChangeText={setBusca}
+                defaultValue={busca}
             />
-            <TouchableOpacity onPress={() => { }}>
-                <Ionicon name="search" size={20} color="#D9D9D9" />
-            </TouchableOpacity>
+            <Ionicon name="search" size={20} color="#D9D9D9" />
         </View>
     )
 }
@@ -25,7 +21,6 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
     input: {
-        position: 'absolute',
         zIndex: 1,
         margin: 25,
         borderRadius: 5,

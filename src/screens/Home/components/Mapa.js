@@ -1,26 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dimensions, Image, StyleSheet, View } from "react-native";
-import MapView, { Marker } from "react-native-maps";
-import { listaBarragens } from "../../../mocks";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import icon from "../../../../assets/dam.png";
 import SearchBar from "./SearchBar";
+import { BarragemContext } from "../../../contexts/BarragemContext";
 
-const map = () => {
-    const initialRegion = {
-        latitude: -8.470697,
-        longitude: -38.371057,
-        latitudeDelta: 10,
-        longitudeDelta: 10,
-    };
+const Mapa = () => {
+    const { barragens, busca, setBusca, coordenadas } = useContext(BarragemContext)
 
     return (
         <View>
-            <SearchBar />
+            <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} />
             <MapView
                 style={styles.map}
-                initialRegion={initialRegion}
+                provider={PROVIDER_GOOGLE}
+                region={coordenadas}
+                animateToRegion={coordenadas}
             >
-                {listaBarragens.map((barragem, index) => (
+                {barragens?.map((barragem, index) => (
                     <Marker
                         style={styles.icon}
                         key={index}
@@ -36,7 +33,7 @@ const map = () => {
     )
 }
 
-export default map;
+export default Mapa;
 
 const styles = StyleSheet.create({
     map: {
@@ -47,5 +44,28 @@ const styles = StyleSheet.create({
     icon: {
         width: 30,
         height: 30
-    }
+    },
+    input: {
+        position: 'absolute',
+        zIndex: 1,
+        margin: 25,
+        borderRadius: 5,
+        borderColor: "#CACACA",
+        borderWidth: 1,
+        color: "#CACACA",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        backgroundColor: "white",
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+        padding: 15,
+    },
+    text: {
+        flex: 1
+    },
 })

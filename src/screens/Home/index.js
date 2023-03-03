@@ -5,7 +5,7 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import Mapa from "./components/Mapa";
 
 const Home = () => {
-    const { usuarioLogado, networkConnected } = useContext(GlobalContext);
+    const { usuarioLogado, networkConnected } = useContext(GlobalContext)
 
     useEffect(() => {
         if (!networkConnected) {
