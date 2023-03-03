@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList, StyleSheet, TextInput, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
@@ -15,16 +15,7 @@ const Barragem = () => {
     return (
         <View>
             <Header title={"Selecionar Barragem"} showButton={true} />
-            {/* <SearchBar busca={busca} setBusca={setBusca} position={'relative'} /> */}
-            <View style={styles.input}>
-                <TextInput
-                    style={styles.text}
-                    placeholder="Digite o nome da barragem"
-                    keyboardType="text"
-                    onChangeText={setBusca}
-                    defaultValue={busca}
-                />
-            </View>
+            <SearchBar busca={busca} setBusca={setBusca} position={'relative'} />
             <FlatList
                 data={barragens}
                 renderItem={({ item }) => <BarragemCard item={item} onPress={() => {

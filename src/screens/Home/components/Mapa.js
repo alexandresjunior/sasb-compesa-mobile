@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Dimensions, Image, StyleSheet, TextInput, View } from "react-native";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import icon from "../../../../assets/dam.png";
 import SearchBar from "./SearchBar";
@@ -10,17 +10,7 @@ const Mapa = () => {
 
     return (
         <View>
-            {/* <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} /> */}
-            <View style={styles.input}>
-                <TextInput
-                    style={styles.text}
-                    placeholder="Digite o nome da barragem"
-                    keyboardType="text"
-                    onChangeText={setBusca}
-                    defaultValue={busca}
-                />
-            </View>
-
+            <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} />
             <MapView
                 style={styles.map}
                 provider={PROVIDER_GOOGLE}
