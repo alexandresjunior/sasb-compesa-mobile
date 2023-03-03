@@ -1,44 +1,60 @@
 import React, { useEffect, useState } from "react";
-import { Dimensions, Image, StyleSheet, View } from "react-native";
+import { Dimensions, Image, StyleSheet, TextInput, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import icon from "../../../../assets/dam.png";
 import SearchBar from "./SearchBar";
 import { useBarragens } from "../../../hooks/useBarragens";
+import { listaBarragens } from "../../../mocks";
+import { filtrarBarragensPeloNome } from "../../../utils";
 
 const INITIAL_REGION = {
     latitude: -8.470697,
     longitude: -38.371057,
-    latitudeDelta: 10,
-    longitudeDelta: 10,
+    latitudeDelta: 1,
+    longitudeDelta: 1,
 }
 
-const map = () => {
+const Mapa = () => {
     const [coordenadas, setCoordenadas] = useState(INITIAL_REGION)
-    const [busca, setBusca] = useState("")
-    const barragens = useBarragens(busca)
+    const [busca, setBusca] = useState()
+    const [barragens, setBarragens] = useState(listaBarragens)
 
-    // TODO: Mover de acordo com a barragem escolhida e alerta de nenhuma barragem encontrada
     useEffect(() => {
+        // Filtrar da lista obtida da API e não do state!
+        const barragensFiltradas = filtrarBarragensPeloNome(listaBarragens, busca)
+
+        setBarragens(barragensFiltradas)
+
         if (barragens?.length === 1) {
             const barragem = barragens[0]
 
             setCoordenadas({
                 latitude: barragem.localizacao.latitude,
                 longitude: barragem.localizacao.longitude,
-                latitudeDelta: 10,
-                longitudeDelta: 10,
+                latitudeDelta: 1,
+                longitudeDelta: 1,
             })
         }
-        console.log(coordenadas)
-    }, [busca]) // coordenadas?
+    }, [busca])
 
     return (
         <View>
-            <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} />
+            {/* <SearchBar busca={busca} setBusca={setBusca} position={'absolute'} /> */}
+            <View style={styles.input}>
+                <TextInput
+                    style={styles.text}
+                    placeholder="Digite o nome da barragem"
+                    keyboardType="text"
+                    onChangeText={setBusca}
+                    defaultValue={busca}
+                />
+            </View>
+
             <MapView
                 style={styles.map}
                 provider={PROVIDER_GOOGLE}
                 region={coordenadas}
+                animateToRegion={coordenadas}
             >
                 {barragens?.map((barragem, index) => (
                     <Marker
@@ -56,7 +72,7 @@ const map = () => {
     )
 }
 
-export default map;
+export default Mapa;
 
 const styles = StyleSheet.create({
     map: {
@@ -67,5 +83,28 @@ const styles = StyleSheet.create({
     icon: {
         width: 30,
         height: 30
-    }
+    },
+    input: {
+        position: 'absolute',
+        zIndex: 1,
+        margin: 25,
+        borderRadius: 5,
+        borderColor: "#CACACA",
+        borderWidth: 1,
+        color: "#CACACA",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        backgroundColor: "white",
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
+        padding: 15,
+    },
+    text: {
+        flex: 1
+    },
 })
