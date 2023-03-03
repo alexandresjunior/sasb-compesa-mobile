@@ -8,6 +8,7 @@ const ImagePickerSection = ({ anexos, setAnexos }) => {
         let result = await ImagePicker.launchImageLibraryAsync({
             base64: true,
             allowsMultipleSelection: true,
+            selectionLimit: 5,
             aspect: [16, 9],
             quality: 1,
         });
