@@ -74,7 +74,7 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
                     style={estilos.input}
                     placeholder="Digite aqui os comentários..."
                     placeholderTextColor="#CACACA"
-                    keyboardType="text"
+                    inputMode="text"
                     multiline={true}
                     onChangeText={(comentarios) => {
                         setComentarios(comentarios)

@@ -8,7 +8,7 @@ const SearchBar = ({ busca, setBusca, position }) => {
             <TextInput
                 style={styles.text}
                 placeholder="Digite o nome da barragem"
-                keyboardType="text"
+                inputMode="text"
                 onChangeText={setBusca}
                 defaultValue={busca}
             />

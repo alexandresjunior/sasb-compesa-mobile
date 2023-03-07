@@ -11,15 +11,9 @@ const Inspecoes = () => {
     const { barragem } = useContext(InspecaoGlobalContext)
 
     return (
-        <View>
+        <>
+
             <Header title={barragem?.nome} />
-
-            <TouchableOpacity
-                style={estilos.button}
-                onPress={() => { navigation.navigate("Nova Inspecao") }}>
-                <Text style={estilos.label}>{"Nova Inspeção"}</Text>
-            </TouchableOpacity>
-
             <FlatList
                 data={inspecoes}
                 renderItem={({ item }) => <HorizontalCard inspecao={item} />}
@@ -31,8 +25,17 @@ const Inspecoes = () => {
                         </View>
                     </>)
                 }}
+                ListFooterComponent={() => {
+                    return (<>
+                        <TouchableOpacity
+                            style={estilos.button}
+                            onPress={() => { navigation.navigate("Nova Inspecao") }}>
+                            <Text style={estilos.label}>{"Nova Inspeção"}</Text>
+                        </TouchableOpacity>
+                    </>)
+                }}
             />
-        </View>
+        </>
 
     )
 }
@@ -55,7 +58,7 @@ const estilos = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         borderColor: "#223F99",
-        marginTop: 20,
+        marginVertical: 20,
         padding: 15,
         marginHorizontal: 25
     },

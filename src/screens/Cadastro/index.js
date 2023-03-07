@@ -41,8 +41,8 @@ const Cadastro = () => {
 
                 <FormTextInput placeholder={"Nome"} type={"text"} setValue={setNome} defaultValue={nome} />
                 <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
-                <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
-                <FormTextInput placeholder={"Confirmar Senha"} type={"password"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} />
+                <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
+                <FormTextInput placeholder={"Confirmar Senha"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} password={true} />
 
                 <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} />
             </View>
