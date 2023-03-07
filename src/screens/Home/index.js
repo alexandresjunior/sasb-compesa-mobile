@@ -13,11 +13,7 @@ const Home = () => {
     }, [])
 
     return (
-        <ScrollView
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={0}
-            pagingEnabled
-        >
+        <View>
             <View style={styles.header}>
                 <View style={[styles.row, { marginTop: 80, marginHorizontal: 25 }]}>
                     <View>
@@ -29,7 +25,12 @@ const Home = () => {
                 </View>
             </View>
 
-            <View style={styles.container}>
+            <ScrollView
+                style={styles.container}
+                showsHorizontalScrollIndicator={false}
+                scrollEventThrottle={0}
+                pagingEnabled
+            >
                 <Text style={styles.texto}>
                     Este aplicativo tem como objetivo a realização de inspeções de barragens do estado de Pernambuco sob a responsabilidade da COMPESA.
                 </Text>
@@ -76,8 +77,8 @@ const Home = () => {
                         Ao término da inspeção, clique em "Compartilhar Relatório". Aguarde alguns instantes e um arquivo PDF estará disponível para envio por e-mail diretamente de seu dispositivo.
                     </Text>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
 

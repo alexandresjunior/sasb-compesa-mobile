@@ -22,7 +22,7 @@ const TabRotas = () => {
                     let iconName = "home";
 
                     switch (route.name) {
-                        case "Inspecoes":
+                        case "Inspeções":
                             iconName = "docs";
 
                             return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
@@ -30,7 +30,7 @@ const TabRotas = () => {
                             iconName = "user"
 
                             return <SimpleLineIconsIcon name={iconName} size={size} color={color} />
-                        case "Notificacoes":
+                        case "Notificações":
                             iconName = "notifications-outline"
 
                             return <IoniconsIcon name={iconName} size={size} color={color} />
@@ -42,8 +42,8 @@ const TabRotas = () => {
                 tabBarInactiveTintColor: "#000000"
             })}>
                 <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="Inspecoes" component={InspecoesStackRotas} />
-                <Tab.Screen name="Notificacoes" component={Notificacoes} options={badge} />
+                <Tab.Screen name="Inspeções" component={InspecoesStackRotas} />
+                <Tab.Screen name="Notificações" component={Notificacoes} options={badge} />
                 <Tab.Screen name="Perfil" component={Perfil} />
             </Tab.Navigator>
         </BarragemProvider>

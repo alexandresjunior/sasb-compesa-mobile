@@ -8,27 +8,27 @@ const Notificacoes = () => {
     const { notificacoes, dispensarNotificacao } = useContext(NotificacaoContext)
 
     return (
-        notificacoes?.length > 0 ? (
-            <FlatList
-                data={notificacoes}
-                renderItem={({ item }) => <NotificationCard notificacao={item} onPress={() => dispensarNotificacao(item.id)} />}
-                keyExtractor={item => item.id}
-                ListHeaderComponent={() => {
-                    return (
-                        <View style={{ marginBottom: 25 }}>
-                            <Header title={"Notificações"} />
-                        </View>
-                    )
-                }}
-            />
-        ) : (
+        <View>
             <View style={{ marginBottom: 25 }}>
                 <Header title={"Notificações"} />
-                <View style={estilos.container}>
-                    <Text style={estilos.texto}>Não há notificações no momento.</Text>
-                </View>
             </View>
-        )
+            {
+                notificacoes?.length > 0 ? (
+                    <FlatList
+                        data={notificacoes}
+                        renderItem={({ item }) => <NotificationCard notificacao={item} onPress={() => dispensarNotificacao(item.id)} />}
+                        keyExtractor={item => item.id}
+                    />
+                ) : (
+                    <View style={{ marginBottom: 25 }}>
+                        <Header title={"Notificações"} />
+                        <View style={estilos.container}>
+                            <Text style={estilos.texto}>Não há notificações no momento.</Text>
+                        </View>
+                    </View>
+                )
+            }
+        </View>
 
     )
 }

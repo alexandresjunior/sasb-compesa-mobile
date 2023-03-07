@@ -1,31 +1,39 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import React, { useContext } from "react";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HorizontalCard from "../../components/cards/HorizontalCard";
 import { inspecoes } from "../../mocks";
-import MidButton from "../../components/buttons/MidButton";
 import Header from "../../components/Header";
+import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
 
 const Inspecoes = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
+    const { barragem } = useContext(InspecaoGlobalContext)
 
     return (
-        <FlatList
-            data={inspecoes}
-            renderItem={({ item }) => <HorizontalCard inspecao={item} />}
-            keyExtractor={item => item.id}
-            ListHeaderComponent={() => {
-                return (<>
-                    <Header title={"Barragem Jaime Nejaim"} />
-                    <View style={estilos.container}>
-                        <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
-                    </View>
-                </>)
-            }}
-            ListFooterComponent={() => {
-                return <MidButton label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
-            }}
-        />
+        <View>
+            <Header title={barragem?.nome} />
+
+            <TouchableOpacity
+                style={estilos.button}
+                onPress={() => { navigation.navigate("Nova Inspecao") }}>
+                <Text style={estilos.label}>{"Nova Inspeção"}</Text>
+            </TouchableOpacity>
+
+            <FlatList
+                data={inspecoes}
+                renderItem={({ item }) => <HorizontalCard inspecao={item} />}
+                keyExtractor={item => item.id}
+                ListHeaderComponent={() => {
+                    return (<>
+                        <View style={estilos.container}>
+                            <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
+                        </View>
+                    </>)
+                }}
+            />
+        </View>
+
     )
 }
 
@@ -42,4 +50,18 @@ const estilos = StyleSheet.create({
         fontWeight: "bold",
         color: "#000",
     },
+    button: {
+        backgroundColor: "#223F99",
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: "#223F99",
+        marginTop: 20,
+        padding: 15,
+        marginHorizontal: 25
+    },
+    label: {
+        textAlign: "center",
+        color: "#FFF",
+        fontWeight: "bold"
+    }
 });
