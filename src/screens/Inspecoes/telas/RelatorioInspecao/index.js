@@ -5,7 +5,7 @@ import Header from "../../../../components/Header";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import { obterRelatorioPDF } from "../../../../services/api";
 import { NotificacaoContext } from "../../../../contexts/NotificacaoContext";
-import { removerEspacos } from "../../../../utils";
+import completedGif from "../../../../../assets/check.json";
 import * as Sharing from 'expo-sharing';
 import * as FileSystem from 'expo-file-system';
 
@@ -48,7 +48,7 @@ const RelatorioInspecao = () => {
 
             <View style={estilos.botoes}>
                 <LottieView
-                    source={require("../../../../../assets/check.json")}
+                    source={completedGif}
                     style={{ width: 300, height: 300 }}
                     loop={true}
                     ref={animation}
