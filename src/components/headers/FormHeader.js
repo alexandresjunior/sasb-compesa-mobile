@@ -4,19 +4,16 @@ import logo from "../../../assets/sasb_compesa_logo.png";
 
 const FormHeader = ({ text, link, onPress }) => {
     return (
-        <>
+        <View>
             <Image source={logo} style={styles.image} />
-
-            <View>
-                <Text style={styles.title}>Bem-vindo(a)!</Text>
-                <View style={styles.row}>
-                    <Text>{text}</Text>
-                    <TouchableOpacity onPress={onPress}>
-                        <Text style={styles.link}>{link}</Text>
-                    </TouchableOpacity>
-                </View>
+            <Text style={styles.title}>Bem-vindo(a)!</Text>
+            <View style={styles.row}>
+                <Text>{text}</Text>
+                <TouchableOpacity onPress={onPress}>
+                    <Text style={styles.link}>{link}</Text>
+                </TouchableOpacity>
             </View>
-        </>
+        </View>
     )
 }
 
@@ -28,7 +25,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     image: {
-        marginTop: 15,
+        marginTop: 35,
         marginBottom: 35,
         width: 288,
         height: 54,

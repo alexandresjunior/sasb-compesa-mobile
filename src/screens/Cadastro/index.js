@@ -1,10 +1,17 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
-import LargeButton from "../../components/buttons/LargeButton";
-import FormHeader from "../../components/headers/FormHeader";
-import FormTextInput from "../../components/inputs/FormTextInput";
-import { cadastrar } from "../../services/api";
+import { useNavigation } from '@react-navigation/core';
+import React, { useState } from 'react';
+import {
+    View,
+    KeyboardAvoidingView,
+    StyleSheet,
+    Platform,
+    TouchableWithoutFeedback,
+    Keyboard,
+} from 'react-native';
+import LargeButton from '../../components/buttons/LargeButton';
+import FormHeader from '../../components/headers/FormHeader';
+import FormTextInput from '../../components/inputs/FormTextInput';
+import { cadastrar } from '../../services/api';
 
 const Cadastro = () => {
     const navigation = useNavigation();
@@ -29,35 +36,44 @@ const Cadastro = () => {
     }
 
     return (
-        <ScrollView
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={0}
-            pagingEnabled
-        >
-            <View style={estilos.cabecalho}></View>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={styles.container}>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={styles.inner}>
+                    <View style={styles.header}></View>
+                    <View style={styles.form}>
+                        <FormHeader text={"Já possui uma conta?"} link={"Acessar minha conta"} onPress={() => { navigation.navigate('Log In') }} />
 
-            <View style={estilos.container}>
-                <FormHeader text={"Já possui uma conta?"} link={"Acessar minha conta"} onPress={() => { navigation.navigate('Log In') }} />
+                        <FormTextInput placeholder={"Nome"} setValue={setNome} defaultValue={nome} />
+                        <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
+                        <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
+                        <FormTextInput placeholder={"Confirmar Senha"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} password={true} />
 
-                <FormTextInput placeholder={"Nome"} setValue={setNome} defaultValue={nome} />
-                <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
-                <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
-                <FormTextInput placeholder={"Confirmar Senha"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} password={true} />
+                        <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} />
+                    </View>
+                </View>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
+    );
+};
 
-                <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} />
-            </View>
-        </ScrollView>
-    )
-}
-
-export default Cadastro;
-
-const estilos = StyleSheet.create({
-    cabecalho: {
-        height: 200,
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    inner: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    header: {
+        marginTop: -200,
+        height: 250,
         backgroundColor: "#223F99"
     },
-    container: {
-        margin: 25
+    form: {
+        marginHorizontal: 25
     },
-})
+});
+
+export default Cadastro;
