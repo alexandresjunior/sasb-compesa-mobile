@@ -1,15 +1,16 @@
 import React from "react";
 import { StyleSheet, TextInput } from "react-native";
 
-const FormTextInput = ({ placeholder, type, setValue, defaultValue }) => {
+const FormTextInput = ({ placeholder, type = 'text', setValue, defaultValue, password = false }) => {
     return (
         <TextInput
             style={styles.input}
             placeholder={placeholder}
-            keyboardType={type}
+            inputMode={type}
             onChangeText={(value) => {
                 setValue(value)
             }}
+            secureTextEntry={password}
             defaultValue={defaultValue}
         />
     )

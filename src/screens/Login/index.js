@@ -39,7 +39,7 @@ const Login = () => {
                 <FormHeader text={"Não possui uma conta?"} link={"Cadastrar nova conta"} onPress={() => { navigation.navigate('Cadastro') }} />
 
                 <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
-                <FormTextInput placeholder={"Senha"} type={"password"} setValue={setSenha} defaultValue={senha} />
+                <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
 
                 <LargeButton label={"ENTRAR"} onPress={fazerLoginUsuario} />
 
