@@ -13,9 +13,12 @@ const Barragem = () => {
     const { barragens, busca, setBusca } = useContext(BarragemContext)
 
     return (
-        <View>
-            <Header title={"Selecionar Barragem"} showButton={true} />
-            <SearchBar busca={busca} setBusca={setBusca} position={'relative'} />
+        <>
+            <View>
+                <Header title={"Selecionar Barragem"} showButton={true} />
+                <SearchBar busca={busca} setBusca={setBusca} position={'relative'} />
+            </View>
+
             <FlatList
                 data={barragens}
                 renderItem={({ item }) => <BarragemCard item={item} onPress={() => {
@@ -24,9 +27,7 @@ const Barragem = () => {
                 }} />}
                 keyExtractor={item => item.id}
             />
-        </View>
-
-
+        </>
     )
 }
 
