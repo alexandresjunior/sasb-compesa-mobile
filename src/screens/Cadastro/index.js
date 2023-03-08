@@ -7,6 +7,7 @@ import {
     Platform,
     TouchableWithoutFeedback,
     Keyboard,
+    ActivityIndicator,
 } from 'react-native';
 import LargeButton from '../../components/buttons/LargeButton';
 import FormHeader from '../../components/headers/FormHeader';
@@ -21,6 +22,8 @@ const Cadastro = () => {
     const [senha, setSenha] = useState("");
     const [senhaConfirmacao, setSenhaConfirmacao] = useState("");
 
+    const [loading, setLoading] = useState(false)
+
     const cadastrarUsuario = async () => {
         if (!nome) {
             alert('O campo nome é obrigatório!')
@@ -32,7 +35,16 @@ const Cadastro = () => {
             return
         }
 
-        await cadastrar(nome, email, senha, navigation)
+        setLoading(true)
+
+        try {
+            await cadastrar(nome, email, senha, navigation)
+        }
+        catch (error) {
+            alert(error)
+        }
+
+        setLoading(false)
     }
 
     return (
@@ -50,7 +62,9 @@ const Cadastro = () => {
                         <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
                         <FormTextInput placeholder={"Confirmar Senha"} setValue={setSenhaConfirmacao} defaultValue={senhaConfirmacao} password={true} />
 
-                        <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} />
+                        <LargeButton label={"CADASTRAR"} onPress={cadastrarUsuario} disabled={loading} />
+
+                        {loading && <ActivityIndicator style={{ marginVertical: 30 }} />}
                     </View>
                 </View>
             </TouchableWithoutFeedback>

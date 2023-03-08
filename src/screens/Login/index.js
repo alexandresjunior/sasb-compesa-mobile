@@ -8,6 +8,7 @@ import {
     Keyboard,
     Text,
     TouchableOpacity,
+    ActivityIndicator,
 } from 'react-native';
 import LargeButton from '../../components/buttons/LargeButton';
 import FormHeader from '../../components/headers/FormHeader';
@@ -18,16 +19,27 @@ import Checkbox from 'expo-checkbox';
 import { useNavigation } from '@react-navigation/core';
 
 const Login = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation()
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const [checked, setChecked] = useState(true);
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
 
-    const { usuarioLogado, setUsuarioLogado } = useContext(GlobalContext);
+    const [checked, setChecked] = useState(true)
+    const [loading, setLoading] = useState(false)
+
+    const { usuarioLogado, setUsuarioLogado } = useContext(GlobalContext)
 
     const fazerLoginUsuario = async () => {
-        await login(email, senha, setUsuarioLogado)
+        setLoading(true)
+
+        try {
+            await login(email, senha, setUsuarioLogado)
+        }
+        catch (error) {
+            alert(error)
+        }
+
+        setLoading(false)
     }
 
     useEffect(() => {
@@ -49,7 +61,7 @@ const Login = () => {
                         <FormTextInput placeholder={"E-mail"} type={"email"} setValue={setEmail} defaultValue={email} />
                         <FormTextInput placeholder={"Senha"} setValue={setSenha} defaultValue={senha} password={true} />
 
-                        <LargeButton label={"ENTRAR"} onPress={fazerLoginUsuario} />
+                        <LargeButton label={"ENTRAR"} onPress={fazerLoginUsuario} disabled={loading} />
 
                         <View style={styles.row}>
                             <Checkbox
@@ -66,6 +78,8 @@ const Login = () => {
                                 </TouchableOpacity>
                             </View>
                         </View>
+
+                        {loading && <ActivityIndicator style={{ marginVertical: 30 }} />}
                     </View>
                 </View>
             </TouchableWithoutFeedback>

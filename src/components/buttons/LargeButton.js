@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const LargeButton = ({ label, onPress }) => {
+const LargeButton = ({ label, onPress, disabled = false }) => {
     return (
         <TouchableOpacity
-            style={styles.button}
-            onPress={onPress}>
+            style={[styles.button, { opacity: disabled ? 0.5 : 1 }]}
+            onPress={onPress}
+            disabled={disabled}>
             <Text style={styles.label}>{label}</Text>
         </TouchableOpacity>
     )

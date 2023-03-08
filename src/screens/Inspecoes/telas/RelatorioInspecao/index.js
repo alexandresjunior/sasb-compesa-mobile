@@ -12,10 +12,11 @@ import * as FileSystem from 'expo-file-system';
 const RelatorioInspecao = () => {
     const { barragem, formulario, setPaginaAtual } = useContext(InspecaoGlobalContext)
     const { adicionarNotificacao } = useContext(NotificacaoContext)
+
     const [loading, setLoading] = useState(false)
 
     const compartilharRelatorio = async () => {
-        setLoading(true);
+        setLoading(true)
 
         try {
             // Fazer a chamada à API externa para obter o arquivo PDF
@@ -30,10 +31,10 @@ const RelatorioInspecao = () => {
             // Compartilhar o arquivo PDF
             await Sharing.shareAsync(fileUri);
         } catch (error) {
-            alert(error);
+            alert(error)
         }
 
-        setLoading(false);
+        setLoading(false)
     };
 
     let animation = React.createRef();
@@ -55,7 +56,10 @@ const RelatorioInspecao = () => {
                 />
                 <Text style={estilos.titulo}>Inspeção realizada com sucesso!</Text>
 
-                <TouchableOpacity style={estilos.botao} onPress={compartilharRelatorio}>
+                <TouchableOpacity
+                    style={[estilos.botao, { opacity: loading ? 0.5 : 1 }]}
+                    onPress={compartilharRelatorio}
+                    disabled={loading}>
                     <Text style={estilos.textoBotao}>Compartilhar Relatório</Text>
                 </TouchableOpacity>
 
