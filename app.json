@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Inspeção App",
+    "name": "Barragem Segura",
     "slug": "sasb-compesa-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.alexandresjunior.sasbcompesamobile"
+      "package": "com.sasb.compesa.inspecao.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
