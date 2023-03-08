@@ -24,7 +24,7 @@ const estilos = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         borderColor: "#223F99",
-        width: 200,
+        width: "100%",
         padding: 15,
         alignSelf: "center",
         marginBottom: 10
