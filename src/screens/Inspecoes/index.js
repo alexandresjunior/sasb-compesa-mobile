@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HorizontalCard from "../../components/cards/HorizontalCard";
 import { inspecoes } from "../../mocks";
-import MidButton from "../../components/buttons/MidButton";
 import Header from "../../components/Header";
 import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
 import { useNavigation } from "@react-navigation/native";
@@ -22,10 +21,12 @@ const Inspecoes = () => {
                 data={inspecoes}
                 renderItem={({ item }) => <HorizontalCard inspecao={item} />}
                 keyExtractor={item => item.id}
-                ListFooterComponent={() => {
-                    return <MidButton label={"Nova Inspeção"} onPress={() => { navigation.navigate("Nova Inspecao") }} />
-                }}
             />
+            <View style={[estilos.container, { position: "absolute", bottom: 0, right: 0 }]}>
+                <TouchableOpacity style={estilos.button} onPress={() => { navigation.navigate("Nova Inspecao") }}>
+                    <Text style={estilos.label}>{"Nova Inspeção"}</Text>
+                </TouchableOpacity>
+            </View>
         </>
     )
 }
@@ -38,9 +39,28 @@ const estilos = StyleSheet.create({
         marginTop: 25,
         marginBottom: 15
     },
+    row: {
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
     tituloPreto: {
         fontSize: 18,
         fontWeight: "bold",
         color: "#000",
     },
+    button: {
+        backgroundColor: "#223F99",
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: "#223F99",
+        width: "100%",
+        padding: 15,
+        alignSelf: "center",
+        marginBottom: 10
+    },
+    label: {
+        textAlign: "center",
+        color: "#FFF",
+        fontWeight: "bold"
+    }
 });
