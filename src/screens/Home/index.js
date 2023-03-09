@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import icon from "../../../assets/usuario_icon.png";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import Mapa from "./components/Mapa";
 
 const Home = () => {
     const { usuarioLogado, networkConnected } = useContext(GlobalContext)
@@ -23,7 +22,6 @@ const Home = () => {
 
                 <Image source={icon} style={styles.image} />
             </View>
-            <Mapa />
         </View>
     )
 }
