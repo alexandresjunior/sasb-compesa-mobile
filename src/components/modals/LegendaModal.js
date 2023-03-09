@@ -60,7 +60,4 @@ const estilos = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
-    textoModal: {
-        textAlign: 'center',
-    },
 });

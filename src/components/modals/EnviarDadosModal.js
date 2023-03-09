@@ -53,14 +53,6 @@ const estilos = StyleSheet.create({
         backgroundColor: '#223F99',
         width: 175
     },
-    botaoDisabled: {
-        marginTop: 30,
-        borderRadius: 5,
-        padding: 15,
-        backgroundColor: '#223F99',
-        width: 175,
-        opacity: 0.5
-    },
     texto: {
         fontSize: 16,
         textAlign: 'center',
@@ -68,9 +60,6 @@ const estilos = StyleSheet.create({
     textoBotao: {
         color: 'white',
         fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    textoModal: {
         textAlign: 'center',
     },
 });

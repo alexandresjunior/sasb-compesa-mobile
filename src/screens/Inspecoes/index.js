@@ -39,10 +39,6 @@ const estilos = StyleSheet.create({
         marginTop: 25,
         marginBottom: 15
     },
-    row: {
-        flexDirection: "row",
-        justifyContent: "space-between"
-    },
     tituloPreto: {
         fontSize: 18,
         fontWeight: "bold",

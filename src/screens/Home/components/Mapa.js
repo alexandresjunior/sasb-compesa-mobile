@@ -45,27 +45,4 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30
     },
-    input: {
-        position: 'absolute',
-        zIndex: 1,
-        margin: 25,
-        borderRadius: 5,
-        borderColor: "#CACACA",
-        borderWidth: 1,
-        color: "#CACACA",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        backgroundColor: "white",
-        shadowOpacity: 0.20,
-        shadowRadius: 1.41,
-        elevation: 2,
-        padding: 15,
-    },
-    text: {
-        flex: 1
-    },
 })

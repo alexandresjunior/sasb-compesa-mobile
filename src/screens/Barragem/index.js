@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, View } from "react-native";
 import BarragemCard from "./components/BarragemCard";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
@@ -32,20 +32,3 @@ const Barragem = () => {
 }
 
 export default Barragem;
-
-const styles = StyleSheet.create({
-    input: {
-        margin: 25,
-        borderRadius: 5,
-        borderColor: "#CACACA",
-        borderWidth: 1,
-        color: "#CACACA",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        backgroundColor: "white",
-        padding: 15,
-    },
-    text: {
-        flex: 1
-    },
-})

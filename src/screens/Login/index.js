@@ -67,7 +67,7 @@ const Login = () => {
                             <Checkbox
                                 value={checked}
                                 onValueChange={() => setChecked(!checked)}
-                                color={true ? "#223F99" : undefined}
+                                color={checked ? "#223F99" : undefined}
                             />
 
                             <View style={styles.options}>
