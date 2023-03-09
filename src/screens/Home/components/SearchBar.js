@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import Ionicon from "@expo/vector-icons/Ionicons";
 
 const SearchBar = ({ busca, setBusca, position }) => {
     return (

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import SimpleLineIconsIcon from "react-native-vector-icons/SimpleLineIcons";
+import IoniconsIcon from "@expo/vector-icons/Ionicons";
+import SimpleLineIconsIcon from "@expo/vector-icons/SimpleLineIcons";
 import Home from "../screens/Home";
 import InspecoesStackRotas from "./InspecoesStackRotas";
 import Perfil from "../screens/Perfil";

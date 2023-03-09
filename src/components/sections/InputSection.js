@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import MaterialIcon from "react-native-vector-icons/MaterialIcons";
+import MaterialIcon from "@expo/vector-icons/MaterialIcons";
 import LegendaModal from "../modals/LegendaModal";
 
 const InputSection = ({titulo, legenda, opcoes, answer, setAnswer, modalVisible, setModalVisible}) => {

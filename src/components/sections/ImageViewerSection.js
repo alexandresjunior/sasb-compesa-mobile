@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import Ionicon from "@expo/vector-icons/Ionicons";
 
 const ImageViewerSection = ({ anexo, anexos, setAnexos, indice }) => {
     const removerAnexoDaLista = (indice) => {

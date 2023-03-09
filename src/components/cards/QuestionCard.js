@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RespostaOpcoes from "../RespostaOpcoes";
-import Ionicon from "react-native-vector-icons/Ionicons";
+import Ionicon from "@expo/vector-icons/Ionicons";
 
 const QuestionCard = ({ questao }) => {
     const [situacao, setSituacao] = useState();
