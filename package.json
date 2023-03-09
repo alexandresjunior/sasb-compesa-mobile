@@ -31,7 +31,8 @@
     "react-native-simple-radio-button": "^2.7.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.21.0"
   },
   "private": true
 }
