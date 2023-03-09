@@ -10,20 +10,18 @@ export const InspecaoProvider = ({ children }) => {
     const navigation = useNavigation();
     const paginas = obterPaginasDoFormulario(formulario);
     const [barragem, setBarragem] = useState();
-    const [paginaAtual, setPaginaAtual] = useState(-1);
+    const [paginaAtual, setPaginaAtual] = useState(1);
     const [respostas, setRespostas] = useState([]);
 
-    useEffect(() => {
-        atualizarPagina();
-    }, [paginaAtual])
+    // useEffect(() => {
+    //     atualizarPagina();
+    // }, [paginaAtual])
 
     const atualizarPagina = () => {
         if (paginaAtual < 0) {
             navigation.navigate("Selecionar Barragem");
         } else if (paginaAtual > (paginas.length - 1)) {
             navigation.navigate("Relatorio Inspecao");
-        } else {
-            navigation.navigate(`${paginas[paginaAtual].titulo} - ${paginas[paginaAtual].subtitulo}`);
         }
     }
 

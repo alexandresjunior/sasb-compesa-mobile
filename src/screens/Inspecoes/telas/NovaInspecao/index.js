@@ -1,27 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import DadosBarragem from "../../components/DadosBarragem";
-import DadosInspecao from "../../components/DadosInspecao";
-import LocalizacaoBarragem from "../../components/LocalizacaoBarragem";
-import TipoInspecaoInputGroup from "../../components/TipoInspecaoInputGroup";
-import { barragem, inspecao } from "../../../../mocks";
+import { barragem } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
-import MidButton from "../../../../components/buttons/MidButton";
 import Header from "../../../../components/Header";
+import FormularioSection from "../../components/FormularioSection";
 
 const NovaInspecao = () => {
-    const { setPaginaAtual } = useContext(InspecaoGlobalContext);
+    const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
+
+    const [pagina] = useState(paginas[paginaAtual])
+
+    // TODO: AddEventListener para click no botão de voltar
+
+    const renderPage = () => {
+        switch (paginaAtual) {
+            case 1:
+                return <ConfirmarDados barragem={barragem} nextPage={() => setPaginaAtual(paginaAtual + 1)} />
+            default:
+                return <FormularioSection pagina={pagina} prevPage={() => setPaginaAtual(paginaAtual - 1)} nextPage={() => setPaginaAtual(paginaAtual + 1)} />
+        }
+    }
 
     return (
         <ScrollView>
             <Header title={"Nova Inspeção"} />
             <View style={estilos.container}>
-                <DadosBarragem barragem={barragem} />
-                <LocalizacaoBarragem barragem={barragem} />
-                <DadosInspecao inspecao={inspecao} />
-                <TipoInspecaoInputGroup />
-
-                <MidButton label={"Confirmar Dados"} onPress={() => setPaginaAtual(0)} />
+                {renderPage()}
             </View>
         </ScrollView>
     )
@@ -32,5 +36,5 @@ export default NovaInspecao;
 const estilos = StyleSheet.create({
     container: {
         margin: 25
-    }
+    },
 });
