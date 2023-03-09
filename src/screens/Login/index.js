@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     View,
     KeyboardAvoidingView,
@@ -27,26 +27,15 @@ const Login = () => {
     const [checked, setChecked] = useState(true)
     const [loading, setLoading] = useState(false)
 
-    const { usuarioLogado, setUsuarioLogado } = useContext(GlobalContext)
+    const { setUsuarioLogado } = useContext(GlobalContext)
 
     const fazerLoginUsuario = async () => {
         setLoading(true)
 
-        try {
-            await login(email, senha, setUsuarioLogado)
-        }
-        catch (error) {
-            alert(error)
-        }
+        await login(email, senha, setUsuarioLogado, navigation)
 
         setLoading(false)
     }
-
-    useEffect(() => {
-        if (usuarioLogado) {
-            navigation.navigate("Tab Rotas")
-        }
-    }, [usuarioLogado])
 
     return (
         <KeyboardAvoidingView

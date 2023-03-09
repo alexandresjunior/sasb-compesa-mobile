@@ -18,7 +18,7 @@ const Home = () => {
             <View style={styles.row}>
                 <View>
                     <Text style={styles.title}>Bem vindo,</Text>
-                    <Text style={styles.username}>{`${usuarioLogado.nome}!`}</Text>
+                    <Text style={styles.username}>{`${usuarioLogado?.nome}!`}</Text>
                 </View>
 
                 <Image source={icon} style={styles.image} />

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { salvarUsuarioLogado } from "./local";
 
 const api = axios.create({
   baseURL: "http://localhost:8080",
@@ -13,13 +12,13 @@ const apiRelatorio = axios.create({
   baseURL: "https://sasb-compesa-pdf-api-alexandresjunior.vercel.app"
 });
 
-export const login = async (email, senha, setUsuarioLogado) => {
+export const login = async (email, senha, setUsuarioLogado, navigation) => {
   // Response possui os campos: status, mensagem e usuario
   await apiRelatorio.post("/sasb/login", { email: email, senha: senha })
     .then(async (response) => {
-      if (response.data.status == 200) {
+      if (response.data.status === 200) {
         setUsuarioLogado(response.data.usuario)
-        await salvarUsuarioLogado(JSON.stringify(response.data.usuario))
+        navigation.navigate("Tab Rotas")
       } else {
         alert(response.data.mensagem)
       }
@@ -30,7 +29,7 @@ export const login = async (email, senha, setUsuarioLogado) => {
 export const cadastrar = async (nome, email, senha, navigation) => {
   await apiRelatorio.post("/sasb/cadastro", { nome: nome, email: email, senha: senha })
     .then((response) => {
-      if (response.data.status == 200) {
+      if (response.data.status === 200) {
         alert(response.data.mensagem)
         navigation.navigate("Log In")
       } else {
@@ -51,22 +50,4 @@ export const obterRelatorioPDF = async (dados) => {
   }
 }
 
-// TODO: Interceptação de requisições que usam JWT
-// api.interceptors.request.use((config) => {
-//   // TODO: Usar localStorage / securityStorage
-//   const token = sessionStorage.getItem("userToken");
-
-//   if (token && config.headers) {
-//     config.headers.Authorization = `Bearer ${token}`
-//   }
-// }, (error) => {
-//   console.error("Erro no interceptor do axios!")
-//   return Promise.reject(error);
-// });
-
-// export const obterJsonWebToken = async (url, setToken) => {
-//   await axios.get(url)
-//     .then((response) => setToken(response.data.token))
-//     .catch((error) => console.error(error))
-// }
 
