@@ -9,7 +9,7 @@ import { BarragemContext } from "../../contexts/BarragemContext";
 
 const Barragem = () => {
     const navigation = useNavigation()
-    const { setBarragem } = useContext(InspecaoGlobalContext)
+    const { setBarragem, setPaginaAtual } = useContext(InspecaoGlobalContext)
     const { barragens, busca, setBusca } = useContext(BarragemContext)
 
     return (
@@ -24,6 +24,7 @@ const Barragem = () => {
                 renderItem={({ item }) => <BarragemCard item={item} onPress={() => {
                     navigation.navigate("Inspecoes Realizadas")
                     setBarragem(item)
+                    setPaginaAtual(0)
                 }} />}
                 keyExtractor={item => item.id}
             />

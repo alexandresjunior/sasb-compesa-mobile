@@ -3,8 +3,9 @@ import DadosBarragem from "./DadosBarragem";
 import DadosInspecao from "./DadosInspecao";
 import LocalizacaoBarragem from "./LocalizacaoBarragem";
 import TipoInspecaoInputGroup from "./TipoInspecaoInputGroup";
+import MidButton from "../../../components/buttons/MidButton";
 
-const ConfirmarDados = ({ barragem, nextPage }) => {
+const ConfirmarDados = ({ barragem, inspecao, nextPage }) => {
     return (
         <>
             <DadosBarragem barragem={barragem} />

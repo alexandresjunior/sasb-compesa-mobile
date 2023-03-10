@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import SmallButton from "../../../components/buttons/SmallButton";
 import SmallButtonOutline from "../../../components/buttons/SmallButtonOutline";
+import QuestionCard from "../../../components/cards/QuestionCard";
 
 const FormularioSection = ({pagina, prevPage, nextPage}) => {
     return (

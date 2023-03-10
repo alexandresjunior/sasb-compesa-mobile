@@ -1,31 +1,48 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { barragem } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import Header from "../../../../components/Header";
 import FormularioSection from "../../components/FormularioSection";
+import ConfirmarDados from "../../components/ConfirmarDados";
+import { formatarData } from "../../../../utils";
 
 const NovaInspecao = () => {
-    const { paginas, paginaAtual, setPaginaAtual } = useContext(InspecaoGlobalContext);
+    const { paginas, paginaAtual, proximaPagina, paginaAnterior } = useContext(InspecaoGlobalContext);
 
-    const [pagina] = useState(paginas[paginaAtual])
+    const [pagina, setPagina] = useState(paginas[paginaAtual])
+    const [conteudoPagina, setConteudoPagina] = useState()
+
+    const scrollViewRef = useRef()
+
+    const novaInspecao = {
+        data: formatarData(new Date()),
+        numVistoria: "05",
+        inspetor: "Eng. Taianne Ellis",
+        responsavel: "Eng. Hudson Pedrosa"
+    }
+
+    useEffect(() => {
+        setPagina(paginas[paginaAtual])
+        renderPage()
+        scrollViewRef.current.scrollTo({ y: 0, animated: true })
+    }, [paginaAtual])
 
     // TODO: AddEventListener para click no botão de voltar
 
     const renderPage = () => {
-        switch (paginaAtual) {
-            case 1:
-                return <ConfirmarDados barragem={barragem} nextPage={() => setPaginaAtual(paginaAtual + 1)} />
-            default:
-                return <FormularioSection pagina={pagina} prevPage={() => setPaginaAtual(paginaAtual - 1)} nextPage={() => setPaginaAtual(paginaAtual + 1)} />
+        if (paginaAtual === 0) {
+            setConteudoPagina(<ConfirmarDados barragem={barragem} inspecao={novaInspecao} nextPage={proximaPagina} />)
+        } else {
+            setConteudoPagina(<FormularioSection pagina={pagina} prevPage={paginaAnterior} nextPage={proximaPagina} />)
         }
     }
 
     return (
-        <ScrollView>
+        <ScrollView ref={scrollViewRef}>
             <Header title={"Nova Inspeção"} />
             <View style={estilos.container}>
-                {renderPage()}
+                {conteudoPagina}
             </View>
         </ScrollView>
     )
