@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const DadosInspecao = ({ inspecao }) => {
-    const { usuarioLogado } = useContext(GlobalContext)
-
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
@@ -19,7 +16,7 @@ const DadosInspecao = ({ inspecao }) => {
 
             <View style={estilos.row}>
                 <Text style={estilos.label}>Inspetor(a): </Text>
-                <Text style={estilos.texto}>{usuarioLogado?.nome}</Text>
+                <Text style={estilos.texto}>{inspecao.inspetor}</Text>
             </View>
 
             <View style={estilos.row}>

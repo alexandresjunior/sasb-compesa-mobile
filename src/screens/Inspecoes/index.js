@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import HorizontalCard from "../../components/cards/HorizontalCard";
-import { inspecoes } from "../../mocks";
 import Header from "../../components/Header";
 import { InspecaoGlobalContext } from "../../contexts/InspecaoGlobalContext";
 import { useNavigation } from "@react-navigation/native";

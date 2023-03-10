@@ -1,22 +1,3 @@
-export const inspecao = {
-    data: "20/12/2022",
-    numVistoria: "05",
-    inspetor: "Eng. Taianne Ellis",
-    responsavel: "Eng. Hudson Pedrosa"
-}
-
-export const barragem = {
-    nome: "Jaime Nejaim",
-    empreendedor: "COMPESA/GNR Agreste Central",
-    bacia: "Olho d'Água/UP03 - Rio Ipojuca",
-    cotaAtualNivelAgua: "-",
-    municipio: "Caruaru",
-    estado: "PE",
-    latitude: "-8.357694",
-    longitude: "-36.031853",
-    sistemaCoordenadas: "SIRGAS 2000",
-}
-
 export const listaBarragens = [
     {
         "id": 1,
@@ -33,7 +14,8 @@ export const listaBarragens = [
             "municipio": "Bonito",
             "latitude": -8.47061111111111,
             "longitude": -35.6942777777778,
-            "linkGoogleEarth": "https://goo.gl/maps/Cnow2QgiUcaGAPvXA"
+            "linkGoogleEarth": "https://goo.gl/maps/Cnow2QgiUcaGAPvXA",
+            "sistemaCoordenadas": "SIRGAS 2000"
         },
         "seguranca": {
             "statusPAE": "Em Elaboração",
@@ -115,7 +97,8 @@ export const listaBarragens = [
             "municipio": "Triunfo",
             "latitude": -7.86447222222222,
             "longitude": -38.1193888888889,
-            "linkGoogleEarth": "https://goo.gl/maps/VADSzPmW9YLAz2qZ9"
+            "linkGoogleEarth": "https://goo.gl/maps/VADSzPmW9YLAz2qZ9",
+            "sistemaCoordenadas": "SIRGAS 2000"
         },
         "seguranca": {
             "statusPAE": "Em Elaboração",

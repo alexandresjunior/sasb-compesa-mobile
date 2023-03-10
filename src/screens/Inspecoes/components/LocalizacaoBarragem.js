@@ -7,11 +7,11 @@ const LocalizacaoBarragem = ({ barragem }) => {
             <View style={{ marginBottom: 10 }}>
                 <View style={estilos.row}>
                     <Text style={estilos.label}>Município: </Text>
-                    <Text style={estilos.texto}>{barragem.municipio}</Text>
+                    <Text style={estilos.texto}>{barragem.localizacao.municipio}</Text>
                 </View>
                 <View style={estilos.row}>
                     <Text style={estilos.label}>Estado: </Text>
-                    <Text style={estilos.texto}>{barragem.estado}</Text>
+                    <Text style={estilos.texto}>{barragem.localizacao.estado}</Text>
                 </View>
             </View>
 
@@ -20,15 +20,15 @@ const LocalizacaoBarragem = ({ barragem }) => {
                 <View style={{ marginBottom: 10 }}>
                     <View style={estilos.row}>
                         <Text style={estilos.label}>Latitude: </Text>
-                        <Text style={estilos.texto}>{barragem.latitude}</Text>
+                        <Text style={estilos.texto}>{barragem.localizacao.latitude}</Text>
                     </View>
                     <View style={estilos.row}>
                         <Text style={estilos.label}>Longitude: </Text>
-                        <Text style={estilos.texto}>{barragem.longitude}</Text>
+                        <Text style={estilos.texto}>{barragem.localizacao.longitude}</Text>
                     </View>
                     <View style={estilos.row}>
                         <Text style={estilos.label}>Sistema de Coordenadas: </Text>
-                        <Text style={estilos.texto}>{barragem.sistemaCoordenadas}</Text>
+                        <Text style={estilos.texto}>{barragem.localizacao.sistemaCoordenadas}</Text>
                     </View>
                 </View>
             </View>

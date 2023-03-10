@@ -1,23 +1,26 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import { barragem } from "../../../../mocks";
 import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContext";
 import Header from "../../../../components/Header";
 import FormularioSection from "../../components/FormularioSection";
 import ConfirmarDados from "../../components/ConfirmarDados";
 import { formatarData } from "../../../../utils";
+import { GlobalContext } from "../../../../contexts/GlobalContext";
 
 const NovaInspecao = () => {
-    const { paginas, paginaAtual, avancar, voltar } = useContext(InspecaoGlobalContext)
+    const { barragem, paginas, paginaAtual, avancar, voltar } = useContext(InspecaoGlobalContext)
+    const { usuarioLogado } = useContext(GlobalContext)
 
     const [pagina, setPagina] = useState(paginaAtual !== 0 ? paginas[paginaAtual - 1] : -1)
 
     const scrollViewRef = useRef()
 
+    const numVistoria = barragem?.inspecao?.inspecoes?.length + 1
+
     const novaInspecao = {
         data: formatarData(new Date()),
-        numVistoria: "05",
-        inspetor: "Eng. Taianne Ellis",
+        numVistoria: numVistoria,
+        inspetor: usuarioLogado?.nome,
         responsavel: "Eng. Hudson Pedrosa"
     }
 
