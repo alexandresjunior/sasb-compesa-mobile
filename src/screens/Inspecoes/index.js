@@ -18,7 +18,7 @@ const Inspecoes = () => {
                 <Text style={estilos.tituloPreto}>Inspeções Realizadas</Text>
             </View>
             <FlatList
-                data={inspecoes}
+                data={barragem.inspecao.inspecoes}
                 renderItem={({ item }) => <HorizontalCard inspecao={item} />}
                 keyExtractor={item => item.id}
             />
