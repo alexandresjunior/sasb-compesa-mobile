@@ -89,6 +89,7 @@ const estilos = StyleSheet.create({
     },
     row: {
         flexDirection: "row",
+        flexWrap: "wrap"
     },
     texto: {
         marginTop: 5,
