@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import SmallButton from "../../../components/buttons/SmallButton";
 import SmallButtonOutline from "../../../components/buttons/SmallButtonOutline";
 import QuestionCard from "../../../components/cards/QuestionCard";
 
 const FormularioSection = ({ pagina, prevPage, nextPage }) => {
+    const [numberAnswered, setNumberAnswered] = useState(0)
+
+    const handleAvancar = () => {
+        if (numberAnswered < pagina.itens.length) {
+            alert("Há itens sem resposta. Assinale os itens obrigatórios antes de continuar.")
+
+            return
+        }
+
+        nextPage()
+        setNumberAnswered(0)
+    }
+
     return (
         <>
             <Text style={estilos.tituloPreto}>{pagina.titulo}</Text>
@@ -16,13 +29,14 @@ const FormularioSection = ({ pagina, prevPage, nextPage }) => {
                 pagina.itens.map((questao, index) => {
                     // Gera uma única key para o card
                     const key = `${pagina.id}.${index}`
-                    return <QuestionCard questao={questao} key={key} />
+
+                    return <QuestionCard questao={questao} key={key} numberAnswered={numberAnswered} setNumberAnswered={setNumberAnswered} />
                 })
             }
 
             <View style={estilos.row}>
                 <SmallButtonOutline label={"Voltar"} onPress={prevPage} />
-                <SmallButton label={"Avançar"} onPress={nextPage} />
+                <SmallButton label={"Avançar"} onPress={handleAvancar} />
             </View>
         </>
     )

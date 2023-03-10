@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RespostaOpcoes from "../RespostaOpcoes";
 import Ionicon from "@expo/vector-icons/Ionicons";
 
-const QuestionCard = ({ questao }) => {
+const QuestionCard = ({ questao, numberAnswered, setNumberAnswered }) => {
     const [situacao, setSituacao] = useState();
     const [magnitude, setMagnitude] = useState();
     const [nivelPerigo, setNivelPerigo] = useState();
@@ -24,6 +24,7 @@ const QuestionCard = ({ questao }) => {
         /* Itens Obrigatórios */
         if (situacao && magnitude && nivelPerigo) {
             setCompleto(true)
+            setNumberAnswered(numberAnswered + 1)
         }
     }, [situacao, magnitude, nivelPerigo]);
 
