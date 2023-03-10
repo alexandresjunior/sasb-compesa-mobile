@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { GlobalContext } from "../../../contexts/GlobalContext";
 
 const DadosInspecao = ({ inspecao }) => {
+    const { usuarioLogado } = useContext(GlobalContext)
+
     return (
         <View style={estilos.container}>
             <View style={estilos.row}>
@@ -16,7 +19,7 @@ const DadosInspecao = ({ inspecao }) => {
 
             <View style={estilos.row}>
                 <Text style={estilos.label}>Inspetor(a): </Text>
-                <Text style={estilos.texto}>{inspecao.inspetor}</Text>
+                <Text style={estilos.texto}>{usuarioLogado?.nome}</Text>
             </View>
 
             <View style={estilos.row}>
@@ -35,7 +38,8 @@ const estilos = StyleSheet.create({
     },
     row: {
         flexDirection: "row",
-        marginBottom: 10
+        marginBottom: 10,
+        flexWrap: 'wrap'
     },
     label: {
         fontSize: 18,
