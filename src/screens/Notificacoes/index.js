@@ -20,11 +20,8 @@ const Notificacoes = () => {
                         keyExtractor={item => item.id}
                     />
                 ) : (
-                    <View style={{ marginBottom: 25 }}>
-                        <Header title={"Notificações"} />
-                        <View style={estilos.container}>
-                            <Text style={estilos.texto}>Não há notificações no momento.</Text>
-                        </View>
+                    <View style={estilos.container}>
+                        <Text style={estilos.texto}>Não há notificações no momento.</Text>
                     </View>
                 )
             }
@@ -37,7 +34,6 @@ export default Notificacoes;
 const estilos = StyleSheet.create({
     container: {
         marginHorizontal: 25,
-        marginTop: 25,
         marginBottom: 15
     },
     texto: {
