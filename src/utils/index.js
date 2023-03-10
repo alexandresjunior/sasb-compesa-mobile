@@ -1,3 +1,4 @@
+// TODO: Remover
 export const obterPaginasDoFormulario = (formulario) => {
     const paginas = [];
 
@@ -33,4 +34,12 @@ export const filtrarBarragensPeloNome = (barragens, busca) => {
 
     const regex = new RegExp(busca, 'i');
     return barragens.filter(barragem => regex.test(barragem.nome));
+}
+
+export const formatarData = (data) => {
+    let dia = data.getDate().toString().padStart(2, '0');
+    let mes = (data.getMonth() + 1).toString().padStart(2, '0');
+    let ano = data.getFullYear().toString();
+
+    return dia + '/' + mes + '/' + ano;
 }
