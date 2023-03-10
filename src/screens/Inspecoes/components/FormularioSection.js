@@ -4,7 +4,7 @@ import SmallButton from "../../../components/buttons/SmallButton";
 import SmallButtonOutline from "../../../components/buttons/SmallButtonOutline";
 import QuestionCard from "../../../components/cards/QuestionCard";
 
-const FormularioSection = ({pagina, prevPage, nextPage}) => {
+const FormularioSection = ({ pagina, prevPage, nextPage }) => {
     return (
         <>
             <Text style={estilos.tituloPreto}>{pagina.titulo}</Text>
@@ -14,7 +14,9 @@ const FormularioSection = ({pagina, prevPage, nextPage}) => {
 
             {
                 pagina.itens.map((questao, index) => {
-                    return <QuestionCard questao={questao} key={index} />
+                    // Gera uma única key para o card
+                    const key = `${pagina.id}.${index}`
+                    return <QuestionCard questao={questao} key={key} />
                 })
             }
 

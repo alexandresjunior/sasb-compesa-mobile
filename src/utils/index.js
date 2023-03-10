@@ -1,12 +1,16 @@
 // TODO: Remover
 export const obterPaginasDoFormulario = (formulario) => {
-    const paginas = [];
+    const paginas = []
+    let id = 0
 
     formulario?.map((secao) => {
         if (secao.subsecoes) {
             secao.subsecoes.map((subsecao) => {
+                id = id + 1;
+
                 return (
                     paginas.push({
+                        id: id,
                         titulo: `${secao.codigo} - ${secao.nome}`,
                         subtitulo: `${subsecao.codigo} - ${subsecao.nome}`,
                         itens: subsecao.itens
@@ -14,8 +18,10 @@ export const obterPaginasDoFormulario = (formulario) => {
                 )
             })
         } else {
+            id = id + 1;
             return (
                 paginas.push({
+                    id: id,
                     titulo: `${secao.codigo} - ${secao.nome}`,
                     subtitulo: "",
                     itens: secao.itens

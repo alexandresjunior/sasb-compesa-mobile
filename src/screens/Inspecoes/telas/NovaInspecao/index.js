@@ -8,7 +8,7 @@ import ConfirmarDados from "../../components/ConfirmarDados";
 import { formatarData } from "../../../../utils";
 
 const NovaInspecao = () => {
-    const { paginas, paginaAtual, proximaPagina, paginaAnterior } = useContext(InspecaoGlobalContext);
+    const { paginas, paginaAtual, proximaPagina, paginaAnterior } = useContext(InspecaoGlobalContext)
 
     const [pagina, setPagina] = useState(paginas[paginaAtual])
     const [conteudoPagina, setConteudoPagina] = useState()
