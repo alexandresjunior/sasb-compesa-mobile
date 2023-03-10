@@ -1,4 +1,3 @@
-// TODO: Remover
 export const obterPaginasDoFormulario = (formulario) => {
     const paginas = []
     let id = 0
