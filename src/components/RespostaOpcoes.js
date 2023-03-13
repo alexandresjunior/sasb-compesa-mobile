@@ -15,7 +15,8 @@ const RespostaOpcoes = ({ questao, completo, situacao, setSituacao, magnitude, s
         magnitude: magnitude,
         nivelPerigo: nivelPerigo,
         anexos: anexos,
-        comentarios: comentarios
+        comentarios: comentarios,
+        respondido: completo
     }
 
     useEffect(() => {

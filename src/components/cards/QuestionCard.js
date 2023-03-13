@@ -3,15 +3,15 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RespostaOpcoes from "../RespostaOpcoes";
 import Ionicon from "@expo/vector-icons/Ionicons";
 
-const QuestionCard = ({ questao, numberAnswered, setNumberAnswered }) => {
-    const [situacao, setSituacao] = useState();
-    const [magnitude, setMagnitude] = useState();
-    const [nivelPerigo, setNivelPerigo] = useState();
-    const [anexos, setAnexos] = useState([]);
-    const [comentarios, setComentarios] = useState();
+const QuestionCard = ({ questao }) => {
+    const [situacao, setSituacao] = useState(questao.resposta.respondido ? questao.resposta.situacao : "")
+    const [magnitude, setMagnitude] = useState(questao.resposta.respondido ? questao.resposta.magnitude : "")
+    const [nivelPerigo, setNivelPerigo] = useState(questao.resposta.respondido ? questao.resposta.nivelPerigo : "")
+    const [anexos, setAnexos] = useState(questao.resposta.respondido ? questao.resposta.anexos : [])
+    const [comentarios, setComentarios] = useState(questao.resposta.respondido ? questao.resposta.comentarios : [])
 
     const [expandir, setExpandir] = useState(false);
-    const [completo, setCompleto] = useState(false);
+    const [completo, setCompleto] = useState(questao.resposta.respondido)
 
     useEffect(() => {
         /* Obter itens armazenados localmente, se houver! */
@@ -22,9 +22,8 @@ const QuestionCard = ({ questao, numberAnswered, setNumberAnswered }) => {
         // setComentarios(questao.resposta.comentarios)
 
         /* Itens Obrigatórios */
-        if (situacao && magnitude && nivelPerigo) {
+        if (!completo && situacao && magnitude && nivelPerigo) {
             setCompleto(true)
-            setNumberAnswered(numberAnswered + 1)
         }
     }, [situacao, magnitude, nivelPerigo]);
 

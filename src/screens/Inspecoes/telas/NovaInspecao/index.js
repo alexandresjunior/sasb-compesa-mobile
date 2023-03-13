@@ -4,12 +4,14 @@ import { InspecaoGlobalContext } from "../../../../contexts/InspecaoGlobalContex
 import Header from "../../../../components/Header";
 import FormularioSection from "../../components/FormularioSection";
 import ConfirmarDados from "../../components/ConfirmarDados";
-import { formatarData } from "../../../../utils";
+import { formatarData, obterPaginasDoFormulario } from "../../../../utils";
 import { GlobalContext } from "../../../../contexts/GlobalContext";
 
 const NovaInspecao = () => {
-    const { barragem, paginas, paginaAtual, avancar, voltar } = useContext(InspecaoGlobalContext)
+    const { barragem, formulario, paginaAtual, avancar, voltar } = useContext(InspecaoGlobalContext)
     const { usuarioLogado } = useContext(GlobalContext)
+
+    const paginas = obterPaginasDoFormulario(formulario)
 
     const [pagina, setPagina] = useState(paginaAtual !== 0 ? paginas[paginaAtual - 1] : -1)
 
@@ -41,13 +43,13 @@ const NovaInspecao = () => {
                         <ConfirmarDados
                             barragem={barragem}
                             inspecao={novaInspecao}
-                            nextPage={() => avancar(paginaAtual)}
+                            nextPage={() => avancar(paginaAtual, pagina, paginas)}
                         />
                     ) : (
                         <FormularioSection
                             pagina={pagina}
                             prevPage={() => voltar(paginaAtual)}
-                            nextPage={() => avancar(paginaAtual)}
+                            nextPage={() => avancar(paginaAtual, pagina, paginas)}
                         />
                     )
                 }
